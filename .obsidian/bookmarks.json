@@ -1,0 +1,37 @@
+{
+  "items": [
+    {
+      "type": "group",
+      "ctime": 1781188835689,
+      "items": [
+        {
+          "type": "group",
+          "ctime": 1781189081851,
+          "items": [
+            {
+              "type": "file",
+              "ctime": 1781189099526,
+              "path": "artists/index.md"
+            }
+          ],
+          "title": "artists"
+        },
+        {
+          "type": "group",
+          "ctime": 1781189571528,
+          "items": [
+            {
+              "type": "file",
+              "ctime": 1781189571528,
+              "path": "cards/index.md",
+              "subpath": "#^-",
+              "title": "index"
+            }
+          ],
+          "title": "cards"
+        }
+      ],
+      "title": "sortspec"
+    }
+  ]
+}

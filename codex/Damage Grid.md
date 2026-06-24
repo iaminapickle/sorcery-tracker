@@ -1,0 +1,18 @@
+---
+kind: sorcery-codex
+cssclasses: [sorcery-codex]
+title: "Damage Grid"
+finder: "damage grid,grid damage"
+---
+
+To simplify rules text and illustrate the extent of effects over a wide area, some cards show a damage grid, e.g. [[Craterize]].
+
+Damage grids may use a bold square to indicate the center of the card’s effect, or a dot to show the location of the origin of the effect on the grid, e.g. [[Cone of Flame]], [[Mester Stoor Worm]].
+
+A damage grid may be rotated and reflected, though some effects may specify otherwise. E.g. [[Flame Wave]] may only be reflected, not rotated.
+
+A damage grid affects each unit at the shown squares and **in the same region as the origin of the effect**, though some effects may specify otherwise. E.g. [[Craterize]] specifies "above and below." 
+
+By default, an effect with a damage grid may be oriented so that the grid is partially outside the realm, as long as the source or origin square in the realm.
+
+Damage grids do not inherently target sites or locations in the grid; effects will use the word "target" if they actually target a site or location.

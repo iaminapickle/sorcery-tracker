@@ -1,0 +1,6354 @@
+{
+  "Alpha": [
+    {
+      "cardName": "Apprentice Wizard",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Blood Ravens",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Candlemas Monks",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Cloud Spirit",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Daperyll Vampire",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Dead of Night Demon",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "East-West Dragon",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Grandmaster Wizard",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Grim Reaper",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Gyre Hippogriffs",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Haast Eagle",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Headless Haunt",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Highland Clansmen",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Highland Falconer",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Highland Princess",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Hounds of Ondaros",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Kite Archer",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Lord of the Void",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Men of Leng",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Midnight Rogue",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Moon Clan Werewolf",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Nightmare",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Nimbus Jinn",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Palliburrie Bats",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Peregrine Apparition",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Phantasmal Shade",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Phantom Steed",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Phase Assassin",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Plumed Pegasus",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Puppet Master",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Recurring Specter",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Riddle Sphinx",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Roaming Monster",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Skirmishers of Mu",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Sky Baron",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Sling Pixies",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Snow Leopard",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Spectral Stalker",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Spire Lich",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Ultimate Horror",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Vril Revenant",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Wind Sylph",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Witherwing Hero",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Zephyranne Airship",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Blink",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Browse",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Chain Lightning",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Chaos Twister",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Disenchant",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Dream-Quest",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Fade",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Flanking Maneuver",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Grapple Shot",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Lightning Bolt",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Mortality",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Occult Ritual",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Psionic Blast",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Rain of Arrows",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Raise Dead",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Recall",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Telekinesis",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Teleport",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Unlikely Alliance",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Waypoint Portal",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Whirling Blades",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Windblast",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Evil Presence",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Summoning Sphere",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Thunderstorm",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Wall of Air",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Albespine Pikemen",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Älvalinne Dryads",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Amazon Warriors",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Atlas Wanderers",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Autumn Unicorn",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Belmotte Longbowmen",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Bone Rabble",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Bosk Troll",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Cave Trolls",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Conqueror Worm",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Crown Prince",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Dalcean Phalanx",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Dwarven Digging Team",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Frontier Settlers",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Gneissgnath Gnomes",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Grey Wolves",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "House Arn Bannerman",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "King of the Realm",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Land Surveyor",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Mage Slayer",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Master Tracker",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Midland Army",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Miracle Workers",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Monastery Gargoyle",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Monster Hunter",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Mordric Druids",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Mountain Giant",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Pudge Butcher",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Queen of Midland",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Root Spider",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Royal Bodyguard",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Scent Hounds",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Scourge Zombies",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Shield Maidens",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Silver Valkyries",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Sirian Templar",
+      "rarity": "Exceptional",
+      "product": "Booster",
+      "productLabel": "Booster",
+      "slug": "alp-sirian_templar-b-s"
+    },
+    {
+      "cardName": "Sirian Templar",
+      "rarity": "Exceptional",
+      "product": "Box_Topper",
+      "productLabel": "Box Topper",
+      "slug": "alp-sirian_templar-bt-s"
+    },
+    {
+      "cardName": "Sisters of Silence",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Slumbering Giantess",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Squirming Mass",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Stone-gaze Gorgons",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Tragedy Worrywart",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Vanguard Knights",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Wicked Witch",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Wild Boars",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Wraetannis Titan",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Yourke Crossbowmen",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Assorted Animals",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Border Militia",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Bury",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Call to War",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Cave-In",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Common Sense",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Craterize",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Dispel",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Divine Healing",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Earthquake",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Exorcism",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Gigantism",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Minecart Madness",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Overpower",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Shield Wall",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Star-seeds of Uhr",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Unravel",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Crusade",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Entangle Terrain",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Rest in Peace",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Ancient Dragon",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Aramos Mercenaries",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Askelon Phoenix",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Awakened Mummies",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Azuridge Caravan",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Bane Widow",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Beast of Burden",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Bull Demons of Adum",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Cauldron Crones",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Cerberus in Chains",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Clamor of Harpies",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Colicky Dragonettes",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Courtesan Thaïs",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Death Dealer",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Doomsday Prophet",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Escyllion Cyclops",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Far East Assassin",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Grösse Poltergeist",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Hillock Basilisk",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Infernal Legion",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Karkemish Chimera",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Lava Salamander",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Maze Minotaur",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Ogre Goons",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Outback Strider",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Panorama Manticore",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Petrosian Cavalry",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Pit Vipers",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Quarrelsome Kobolds",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Raal Dromedary",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Rimland Nomads",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Sacred Scarabs",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Sand Worm",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Scavenging Fiend",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Seasoned Sellsword",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Sirocco Scorpions",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Swiven Scout",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Tvinnax Berserker",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Vile Imp",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Wayfaring Pilgrim",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Wills-o'-the-Wisp",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Backstab",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Blaze",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Boil",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Cone of Flame",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Critical Strike",
+      "rarity": "Ordinary",
+      "product": "Booster",
+      "productLabel": "Booster",
+      "slug": "alp-critical_strike-b-s"
+    },
+    {
+      "cardName": "Critical Strike",
+      "rarity": "Ordinary",
+      "product": "Box_Topper",
+      "productLabel": "Box Topper",
+      "slug": "alp-critical_strike-bt-s"
+    },
+    {
+      "cardName": "Disintegrate",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Fireball",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Firebolts",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Flame Wave",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Heat Ray",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Immolation",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Incinerate",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Infiltrate",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Leap Attack",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Mad Dash",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Major Explosion",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Meteor Shower",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Minor Explosion",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Pact with the Devil",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Poison Nova",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Scorched Earth",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Spin Attack",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Warp Spasm",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Drought",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Jihad",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Sandstorm",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Wall of Fire",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Wildfire",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Accursed Albatross",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Adept Illusionist",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Anui Undine",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Bridge Troll",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Brobdingnag Bullfrog",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Captain Baldassare",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Coral-Reef Kelpie",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Court Jester",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Deep-Sea Mermaids",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Diluvian Kraken",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Felbog Frog Men",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Fenvale Muse",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Fey Changeling",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Ghost Ship",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Giant Shark",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Great Old One",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Guile Sirens",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Lord of Unland",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Megamoeba",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Mother Nature",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Muck Lampreys",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Old Salt Anchorman",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Ormund Harpooneers",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Pirate Ship",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Polar Bears",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Polar Explorers",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Porcupine Pufferfish",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Ruler of Thul",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Sea Raider",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Sea Serpent",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Sedge Crabs",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Seirawan Hydra",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Selfsame Simulacrum",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Sneak Thief",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Swamp Buffalo",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Swan Maidens",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Tide Naiads",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Tringh Constrictor",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Tufted Turtles",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Unland Angler",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Unland Eel",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Yokai Kappas",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Dodge Roll",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Drown",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Extinguish",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Fire Harpoons!",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Font of Life",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Frost Nova",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Geyser",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Ice Lance",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Marine Voyage",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Plague of Frogs",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Pollimorph",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Replication",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Riptide",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Shrink",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Sleep",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Stormy Seas",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Twist of Fate",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Upwelling",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Wrath of the Sea",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Abundance",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Atlantean Fate",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Blizzard",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Flood",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Mariner's Curse",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Silence",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Wall of Ice",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "All-terrain Vestments",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Amethyst Core",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Angel's Egg",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Aquamarine Core",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Battering Ram",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Belfry",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Black Obelisk",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Blasted Oak",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Buried Treasure",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Chains of Prometheus",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Crave Golem",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Crown of the Victor",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Devil's Egg",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Doomsday Device",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Drums of Doom",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Erik's Curiosa",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Flaming Sword",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Gilded Aegis",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Iron Shackles",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Kythera Mechanism",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Land Deed",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Lucky Charm",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Maddening Bells",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Magellan Globe",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Magnetic Muzzle",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Mask of Mayhem",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Mix Aer",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Mix Aqua",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Mix Ignis",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Mix Terra",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Onyx Core",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Orb of Ba'al Berith",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Payload Trebuchet",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Pendulum of Peril",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Philosopher's Stone",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Pnakotic Manuscript",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Poisonous Dagger",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Purge Juggernaut",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Rolling Boulder",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Ruby Core",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Scarecrow",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Screaming Skull",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Seven-League Boots",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Siege Ballista",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Spear of Destiny",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Sunken Treasure",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "The Immortal Throne",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Torshammar Trinket",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Truesight Crossbow",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Undertaker Engine",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Wicker Manikin",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Wings of Invention",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Cloud City",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Dark Tower",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Gothic Tower",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Lone Tower",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Mountain Pass",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Observatory",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Updraft Ridge",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Watchtower",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Bedrock",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Gnome Hollows",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Holy Ground",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Humble Village",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Kingdom of Agartha",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Pillar of Zeiros",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Quagmire",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Rift Valley",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Rustic Village",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Secret Tunnel",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Simple Village",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Vantage Hills",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Arid Desert",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Dwarven Forge",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Mirage",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Red Desert",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Remote Desert",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "River of Flame",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Shifting Sands",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Smokestacks of Gnaak",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Vesuvius",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Autumn River",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Floodplain",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Iceberg",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Island Leviathan",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Maelström",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Spring River",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Summer River",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Tadpole Pool",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Undertow",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Aqueduct",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Lighthouse",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Oasis",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Pristine Paradise",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Ruins",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Steppe",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "The Colour Out of Space",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Windmill",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Astral Alcazar",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Battlefield",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Boneyard",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Bottomless Pit",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Cornerstone",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Crossroads",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Dome of Osiros",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Donnybrook Inn",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Edge of the World",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Free City",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Great Wall",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Imperial Road",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Mirror Realm",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Mudflow",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Planar Gate",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Primordial Spring",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Roots of Yggdrasil",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Sinkhole",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Standing Stones",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "The Geistwood",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Vaults of Zul",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Avatar of Air",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Avatar of Earth",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Avatar of Fire",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Avatar of Water",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Battlemage",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Deathspeaker",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Elementalist",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Enchantress",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Pathfinder",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Seer",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Sorcerer",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Winter River",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Foot Soldier 1",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Foot Soldier 2",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Foot Soldier 3",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Rubble",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Frog (Blue)",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Frog (Green)",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Frog (Red)",
+      "rarity": "Ordinary"
+    }
+  ],
+  "Beta": [
+    {
+      "cardName": "Apprentice Wizard",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Blood Ravens",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Candlemas Monks",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Cloud Spirit",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Daperyll Vampire",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Dead of Night Demon",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "East-West Dragon",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Grandmaster Wizard",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Grim Reaper",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Gyre Hippogriffs",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Haast Eagle",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Headless Haunt",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Highland Clansmen",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Highland Falconer",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Highland Princess",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Hounds of Ondaros",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Kite Archer",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Lord of the Void",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Men of Leng",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Midnight Rogue",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Moon Clan Werewolf",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Nightmare",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Nimbus Jinn",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Palliburrie Bats",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Peregrine Apparition",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Phantasmal Shade",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Phantom Steed",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Phase Assassin",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Plumed Pegasus",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Puppet Master",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Recurring Specter",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Riddle Sphinx",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Roaming Monster",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Skirmishers of Mu",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Sky Baron",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Sling Pixies",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Snow Leopard",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Spectral Stalker",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Spire Lich",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Ultimate Horror",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Vril Revenant",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Wind Sylph",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Witherwing Hero",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Zephyranne Airship",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Blink",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Browse",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Chain Lightning",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Chaos Twister",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Disenchant",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Dream-Quest",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Fade",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Flanking Maneuver",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Grapple Shot",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Lightning Bolt",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Mortality",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Occult Ritual",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Psionic Blast",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Rain of Arrows",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Raise Dead",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Recall",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Telekinesis",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Teleport",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Unlikely Alliance",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Waypoint Portal",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Whirling Blades",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Windblast",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Evil Presence",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Summoning Sphere",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Thunderstorm",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Wall of Air",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Albespine Pikemen",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Älvalinne Dryads",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Amazon Warriors",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Atlas Wanderers",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Autumn Unicorn",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Belmotte Longbowmen",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Bone Rabble",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Bosk Troll",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Cave Trolls",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Conqueror Worm",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Crown Prince",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Dalcean Phalanx",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Dwarven Digging Team",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Frontier Settlers",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Gneissgnath Gnomes",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Grey Wolves",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "House Arn Bannerman",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "King of the Realm",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Land Surveyor",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Mage Slayer",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Master Tracker",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Midland Army",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Miracle Workers",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Monastery Gargoyle",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Monster Hunter",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Mordric Druids",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Mountain Giant",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Pudge Butcher",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Queen of Midland",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Root Spider",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Royal Bodyguard",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Scent Hounds",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Scourge Zombies",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Shield Maidens",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Silver Valkyries",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Sirian Templar",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Sisters of Silence",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Slumbering Giantess",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Squirming Mass",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Stone-gaze Gorgons",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Tragedy Worrywart",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Vanguard Knights",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Wicked Witch",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Wild Boars",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Wraetannis Titan",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Yourke Crossbowmen",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Assorted Animals",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Border Militia",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Bury",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Call to War",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Cave-In",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Common Sense",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Craterize",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Dispel",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Divine Healing",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Earthquake",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Exorcism",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Gigantism",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Minecart Madness",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Overpower",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Shield Wall",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Star-seeds of Uhr",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Unravel",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Crusade",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Entangle Terrain",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Rest in Peace",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Ancient Dragon",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Aramos Mercenaries",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Askelon Phoenix",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Awakened Mummies",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Azuridge Caravan",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Bane Widow",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Beast of Burden",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Bull Demons of Adum",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Cauldron Crones",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Cerberus in Chains",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Clamor of Harpies",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Colicky Dragonettes",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Courtesan Thaïs",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Death Dealer",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Doomsday Prophet",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Escyllion Cyclops",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Far East Assassin",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Grösse Poltergeist",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Hillock Basilisk",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Infernal Legion",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Karkemish Chimera",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Lava Salamander",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Maze Minotaur",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Ogre Goons",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Outback Strider",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Panorama Manticore",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Petrosian Cavalry",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Pit Vipers",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Quarrelsome Kobolds",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Raal Dromedary",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Rimland Nomads",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Sacred Scarabs",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Sand Worm",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Scavenging Fiend",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Seasoned Sellsword",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Sirocco Scorpions",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Swiven Scout",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Tvinnax Berserker",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Vile Imp",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Wayfaring Pilgrim",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Wills-o'-the-Wisp",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Backstab",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Blaze",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Boil",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Cone of Flame",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Critical Strike",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Disintegrate",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Fireball",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Firebolts",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Flame Wave",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Heat Ray",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Immolation",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Incinerate",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Infiltrate",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Leap Attack",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Mad Dash",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Major Explosion",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Meteor Shower",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Minor Explosion",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Pact with the Devil",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Poison Nova",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Scorched Earth",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Spin Attack",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Warp Spasm",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Drought",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Jihad",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Sandstorm",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Wall of Fire",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Wildfire",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Accursed Albatross",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Adept Illusionist",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Anui Undine",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Bridge Troll",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Brobdingnag Bullfrog",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Captain Baldassare",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Coral-Reef Kelpie",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Court Jester",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Deep-Sea Mermaids",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Diluvian Kraken",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Felbog Frog Men",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Fenvale Muse",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Fey Changeling",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Ghost Ship",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Giant Shark",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Great Old One",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Guile Sirens",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Lord of Unland",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Megamoeba",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Mother Nature",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Muck Lampreys",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Old Salt Anchorman",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Ormund Harpooneers",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Pirate Ship",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Polar Bears",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Polar Explorers",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Porcupine Pufferfish",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Ruler of Thul",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Sea Raider",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Sea Serpent",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Sedge Crabs",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Seirawan Hydra",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Selfsame Simulacrum",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Sneak Thief",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Swamp Buffalo",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Swan Maidens",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Tide Naiads",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Tringh Constrictor",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Tufted Turtles",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Unland Angler",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Unland Eel",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Yokai Kappas",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Dodge Roll",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Drown",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Extinguish",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Fire Harpoons!",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Font of Life",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Frost Nova",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Geyser",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Ice Lance",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Marine Voyage",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Plague of Frogs",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Pollimorph",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Replication",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Riptide",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Shrink",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Sleep",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Stormy Seas",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Twist of Fate",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Upwelling",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Wrath of the Sea",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Abundance",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Atlantean Fate",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Blizzard",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Flood",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Mariner's Curse",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Silence",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Wall of Ice",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "All-terrain Vestments",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Amethyst Core",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Angel's Egg",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Aquamarine Core",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Battering Ram",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Belfry",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Black Obelisk",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Blasted Oak",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Buried Treasure",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Chains of Prometheus",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Crave Golem",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Crown of the Victor",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Devil's Egg",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Doomsday Device",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Drums of Doom",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Flaming Sword",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Gilded Aegis",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Iron Shackles",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Kythera Mechanism",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Land Deed",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Lucky Charm",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Maddening Bells",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Magellan Globe",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Magnetic Muzzle",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Mask of Mayhem",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Mix Aer",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Mix Aqua",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Mix Ignis",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Mix Terra",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Onyx Core",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Orb of Ba'al Berith",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Payload Trebuchet",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Pendulum of Peril",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Philosopher's Stone",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Pnakotic Manuscript",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Poisonous Dagger",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Purge Juggernaut",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Rolling Boulder",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Ruby Core",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Scarecrow",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Screaming Skull",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Seven-League Boots",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Siege Ballista",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Spear of Destiny",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Sunken Treasure",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "The Immortal Throne",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Torshammar Trinket",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Truesight Crossbow",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Undertaker Engine",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Wicker Manikin",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Wings of Invention",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Cloud City",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Dark Tower",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Gothic Tower",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Lone Tower",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Mountain Pass",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Observatory",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Updraft Ridge",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Watchtower",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Bedrock",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Gnome Hollows",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Holy Ground",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Humble Village",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Kingdom of Agartha",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Pillar of Zeiros",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Quagmire",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Rift Valley",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Rustic Village",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Secret Tunnel",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Simple Village",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Vantage Hills",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Arid Desert",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Dwarven Forge",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Mirage",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Red Desert",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Remote Desert",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "River of Flame",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Shifting Sands",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Smokestacks of Gnaak",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Vesuvius",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Autumn River",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Floodplain",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Iceberg",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Island Leviathan",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Maelström",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Spring River",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Summer River",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Tadpole Pool",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Undertow",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Aqueduct",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Lighthouse",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Oasis",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Pristine Paradise",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Ruins",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Steppe",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "The Colour Out of Space",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Windmill",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Astral Alcazar",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Battlefield",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Boneyard",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Bottomless Pit",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Cornerstone",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Crossroads",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Dome of Osiros",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Donnybrook Inn",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Edge of the World",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Free City",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Great Wall",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Imperial Road",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Mirror Realm",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Mudflow",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Planar Gate",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Primordial Spring",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Roots of Yggdrasil",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Sinkhole",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Standing Stones",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "The Geistwood",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Vaults of Zul",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Battlemage",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Deathspeaker",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Elementalist",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Enchantress",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Pathfinder",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Seer",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Sorcerer",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Sparkmage",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Geomancer",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Flamecaller",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Waveshaper",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Foot Soldier 1",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Foot Soldier 2",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Foot Soldier 3",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Rubble",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Frog (Blue)",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Frog (Green)",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Frog (Red)",
+      "rarity": "Ordinary"
+    }
+  ],
+  "Promotional": [
+    {
+      "cardName": "Apprentice Wizard",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Grandmaster Wizard",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Headless Haunt",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Witherwing Hero",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Lightning Bolt",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Occult Ritual",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Waypoint Portal",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Amazon Warriors",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Bone Rabble",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Pudge Butcher",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Dispel",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Guile Sirens",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Cloud City",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Dark Tower",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Gothic Tower",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Lone Tower",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "The Colour Out of Space",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Avatar of Air",
+      "rarity": ""
+    },
+    {
+      "cardName": "Avatar of Earth",
+      "rarity": ""
+    },
+    {
+      "cardName": "Avatar of Fire",
+      "rarity": ""
+    },
+    {
+      "cardName": "Avatar of Water",
+      "rarity": ""
+    },
+    {
+      "cardName": "Battlemage",
+      "rarity": ""
+    },
+    {
+      "cardName": "Deathspeaker",
+      "rarity": ""
+    },
+    {
+      "cardName": "Elementalist",
+      "rarity": ""
+    },
+    {
+      "cardName": "Enchantress",
+      "rarity": ""
+    },
+    {
+      "cardName": "Pathfinder",
+      "rarity": ""
+    },
+    {
+      "cardName": "Seer",
+      "rarity": ""
+    },
+    {
+      "cardName": "Sorcerer",
+      "rarity": ""
+    },
+    {
+      "cardName": "Relentless Crowd",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Sparkmage",
+      "rarity": ""
+    },
+    {
+      "cardName": "Geomancer",
+      "rarity": ""
+    },
+    {
+      "cardName": "Flamecaller",
+      "rarity": ""
+    },
+    {
+      "cardName": "Waveshaper",
+      "rarity": ""
+    },
+    {
+      "cardName": "Spellslinger",
+      "rarity": ""
+    },
+    {
+      "cardName": "Spire",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Stream",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Valley",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Wasteland",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Archimago",
+      "rarity": ""
+    },
+    {
+      "cardName": "Briar Patch",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Camelot",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Druid",
+      "rarity": ""
+    },
+    {
+      "cardName": "King Arthur",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Sir Lancelot",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Templar",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "War Horse",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Witch",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Dragonlord",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Foot Soldier 1",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Foot Soldier 2",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Foot Soldier 3",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Rubble",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Bruin",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Tawny",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Day of Judgment",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Swap",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "River of Blood",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Haystack",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Fields of Phyxis",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "City of Glass",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Skeleton",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Foot Soldier (English)",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Foot Soldier (Saracen)",
+      "rarity": "Ordinary"
+    }
+  ],
+  "Gothic": [
+    {
+      "cardName": "Spire",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Stream",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Valley",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Wasteland",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Rubble",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Day of Judgment",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Swap",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "River of Blood",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Haystack",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Fields of Phyxis",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Aaj-kegon Ghost Crabs",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Abaddon Succubus",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Abyssal Assault",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Accursed Desert",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Accursed Tower",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Accusation",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Acid Rain",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Active Volcano",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Aethermoeba",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Aino",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Alabaster Box",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Algae Bloom",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Algor Omphalos",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "All Mortals Gone",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Altar of Malachai",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Angel Ascendant",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Angry Mob",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Animist",
+      "rarity": ""
+    },
+    {
+      "cardName": "Apostles of Thamariel",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Apply Alkahest",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Arcade of Bones",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Archangel Gabriel",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Archangel Michael",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Archangel Raphael",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Archangel Samael",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Arjaro Exorcist",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Armageddon",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Army of the Dead",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Asmodeus",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Assimilator Snail",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Autumn Bloom",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Avenging Angel",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Baba Yaga's Hut",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Balor of the Evil Eye",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Bane of Aventis",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Baptize",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Barging Barghest",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Barrow Wight",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Begone!",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Betrayal",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Bind Evil",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Bitten",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Bitter Departed",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Black Cat",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Black Mass",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Bladderblimp",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Bladedancer",
+      "rarity": ""
+    },
+    {
+      "cardName": "Blade of Thorns",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Blasphemy",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Blaze of Glory",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Bleeding Skull",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Bless",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Blessed Village",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Blessed Well",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Blightstone",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Blood Mana",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Bodach Bogeyman",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Bone Jumble",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Bone Spear",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Book Burners",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Book of Blessings",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Book of the Dead",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Boulevard of Bones",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Bound Spirit",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Broomstick Witch",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Bull Whip",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Bureau of Occult Control",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Buried Alive",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Cage of Sidrak",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Call of the Sea",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Carrion Beetles",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Carrionette",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Cemetery Rats",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Chaoswish",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Char Omphalos",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Cherubim",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Chorus of Condemnation",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "City of Glass",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "City of Plenty",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "City of Souls",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "City of Traitors",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Clairvoyant",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Clay Golem",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Consecrate",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Consecrated Ground",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Corpse Catapult",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Corpse Explosion",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Corruptor",
+      "rarity": ""
+    },
+    {
+      "cardName": "Corruptor Freak",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Cranky Overseer",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Crawler",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Crawling Congregation",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Croaking Swamp",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Croll Morlocks",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Crucifix",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Cursed Iron",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Dank Omphalos",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Dark Alley",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Darkest Dungeon",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Death Knight",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Deathwish",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Deep Sea",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Defiler Spire",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Deliverance",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Demon Hunter",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Demonic Contract",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Den of Evil",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Desecrate",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Desecrated Ground",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Desecrator Kite",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Desert Bloom",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Detonate",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "De Vermis Mysteriis",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Dhol Chants",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Displace",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Divine Intervention",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Divine Lance",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Doctor Demetrius",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Doomsday Cult",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Dormant Monstrosity",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Draconian Bonekite",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Dread Thicket",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Dreadwing",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Dredge",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Driftwood Marrows",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Drowned",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Duplicator",
+      "rarity": ""
+    },
+    {
+      "cardName": "Earl of the Ivory Towers",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Eclipse",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Eerie Coral",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Elder Ruins",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Eltham Townsfolk",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Endless Fence",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Enduring Faith",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Enraged Familiar",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Entombed",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Ersatz Platz",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Estranged Loner",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Ether Core",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Evil Twin",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Exhume",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Failed Mutation",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Faith Incarnate",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Fallen Angel",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Falling Star",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "False Idol",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Fatality",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Feign Death",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Ferryman's Coin",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Fertile Earth",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Flagellant",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Flame of the First Ones",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Flame Strike",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Flaming Skull",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Flayer",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Forgotten Tomb",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Forlorn Keep",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Forsaken",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Forsaken Crypt",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Four Fat Frogs",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Fowl Bones",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Freeze",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Frozen Horror",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Garden of Eden",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Gargantula",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Ghostfire",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Ghost Town",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Ghoul",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Gibbous Nightgaunts",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Gift of the Frog",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Gift of the Raven",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Gift of the Serpent",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Gift of the Wolf",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Gilman House",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Gloam Toads",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Gnarled Wendigo",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Goat for Azazel",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Golden Dawn",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Golgor",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Gossamer Ghost",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Granary Rats",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Grasping Ground",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Gravedigger",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Greater Blood Demon",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Grief Larvae",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Grigori Rasputin",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Guardian Angel",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Hand of Glory",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Harbinger",
+      "rarity": "",
+      "product": "Booster",
+      "productLabel": "Booster",
+      "slug": "got-harbinger-b-s"
+    },
+    {
+      "cardName": "Harbinger",
+      "rarity": "",
+      "product": "Preconstructed_Deck",
+      "productLabel": "Precon",
+      "slug": "got-harbinger-pd-s"
+    },
+    {
+      "cardName": "Harpyon Urge",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Harvest Festival",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Hauntless Head",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Hearkening Kraken",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Heirloom Lost",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Hellfire",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Hellhounds",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Hellmouth",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Hellstar",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Hemogoblet",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Hemogoblin",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Hemogolem",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Heretics of Seth",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Hillside Chapel",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Hollow One",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Holy Nova",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Holy Warrior",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Holy Water",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Homecoming",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Horns of Behemoth",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Horrible Hybrids",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Hotwheel",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Howl from Beyond",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Hyperparasite",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "I Am Colossus!",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Ice Shards",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Ignited",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Imposter",
+      "rarity": ""
+    },
+    {
+      "cardName": "Infusion Factory",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Innsmouth Dock",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Instigator Imp",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Interrogator",
+      "rarity": ""
+    },
+    {
+      "cardName": "Into the Abyss",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Intrepid Hero",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Invigorate",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Ironclad",
+      "rarity": ""
+    },
+    {
+      "cardName": "Iron Maiden",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Jack the Ripper",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Key to the City",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Khamaseen Mummy",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Kissers of Wounds",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Kiss of Death",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Kiss of Judas",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Kor Crematory",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Koschei's Egg",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Lacuna Entity",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Landmass",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Lash",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Leadworks",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Legion of Gall",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Lesser Blood Demon",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Lifewish",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Lilith",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Locusts of Illyria",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Lord of Destruction",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Lord of Fear",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Lord of Greed",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Lord of Lies",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Lucid Dreamers",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Lure",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Magician",
+      "rarity": ""
+    },
+    {
+      "cardName": "Maiden, Mother, Crone",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Makeshift Barricade",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Malakhim",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Mandrake Jars",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Martyrs of Tomorrow",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Master Necromancer",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Mayor of Milborne",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Màzuj Ifrit",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Meat Hook",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Megalurker",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Mephistopheles",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Mesmer Demon",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Mimic",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Mismanaged Mortuary",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Molten Maar",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Monks of Kobalsa",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Monstermorphosis",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Mortal Soil",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Moss Troll",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Mountain Peaks",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Mount Ussar Sanctuary",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Mover of Mountains",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Muddy Pigs",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Mudslide",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Murder of Crows",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Myrrh's Trophy Room",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Nadir Seed",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Necromancer",
+      "rarity": "",
+      "product": "Booster",
+      "productLabel": "Booster",
+      "slug": "got-necromancer-b-s"
+    },
+    {
+      "cardName": "Necromancer",
+      "rarity": "",
+      "product": "Preconstructed_Deck",
+      "productLabel": "Precon",
+      "slug": "got-necromancer-pd-s"
+    },
+    {
+      "cardName": "Necronomiconcert",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Necropotence",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Nightwatchmen",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Noisome Twosome",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "No Man's Land",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Nommo Monitor",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Nosferatu",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Novice Necromancer",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Noxious Corpse",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Old Mortimer's Den",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "One-shot Wizard",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Onslaught",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Open Grave",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Open Mausoleum",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Ophanim",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Order of the Pale Worm",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Order of the Sacred Oak",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Order of the White Wing",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Orm Infestor",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Orpheus' Crossing",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Overflow",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Paladins of Bazia",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Panpipes of Pnom",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Peacemaker Arbalest",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Peace Offering",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Peculiar Port",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Penitent Knight",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Persecutor",
+      "rarity": "",
+      "product": "Booster",
+      "productLabel": "Booster",
+      "slug": "got-persecutor-b-s"
+    },
+    {
+      "cardName": "Persecutor",
+      "rarity": "",
+      "product": "Preconstructed_Deck",
+      "productLabel": "Precon",
+      "slug": "got-persecutor-pd-s"
+    },
+    {
+      "cardName": "Pied Piper of Hameln",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Pile of Skulls",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Pilgrim's Shrine",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Pith Imp",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Plague Pits",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Plague Rat",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Plate of the Whale",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Powerwish",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Profane Revenant",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Purgatory",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Putrid Presence",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Raise Militia",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Rat King",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Ravenous Werewolf",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Raze",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Realm-Eater",
+      "rarity": ""
+    },
+    {
+      "cardName": "Redmane Hyena",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Red Rock of Ravannis",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Regurgitator",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Release the Hounds",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Renatus Trueblood",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Returned King",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Return to Nature",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Revered Revenant",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "River Rapids",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Road to Perdition",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Rowdy Boys",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Sacred Stag",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Saint of Redemption",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Saintweald",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Salt the Earth",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Satanic Panic",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Savior",
+      "rarity": "",
+      "product": "Booster",
+      "productLabel": "Booster",
+      "slug": "got-savior-b-s"
+    },
+    {
+      "cardName": "Savior",
+      "rarity": "",
+      "product": "Preconstructed_Deck",
+      "productLabel": "Precon",
+      "slug": "got-savior-pd-s"
+    },
+    {
+      "cardName": "Sawbones",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Scatter",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Screamer",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Sea of Ash",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Search Party",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Searing Truth",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Sea Witch",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Second Wind",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Sensu of the Fang",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Sentinel Trap",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Seraphim",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Serava Townsfolk",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Sewer Rats",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Shackled Demon",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Shallow Grave",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Shoggoth",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Shrike Orchard",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Silent Hills",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Silver Bullet",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Sinister Pond",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Sinterfee",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Sister Stefánia",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Sjaelström",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Skeleton Mage",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Slimy Mutants",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Slobbermaw",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Smite",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Snallygaster",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Sold-out Cemetery",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Sow the Earth",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Sphere of Animosity",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Sphinx Sarcophagus",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Spore Spouts",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Stagecoach",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Stargazer",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Static Servant",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Stinging Kelp",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Stitched Abomination",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Sturmgeist",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Stygian Archers",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Survivors of Serava",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Symmetric Suffering",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Tabula Rasa",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Temple of Moloch",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Ten-tonne Slug",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "The Apex of Babel",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "The Base of Babel",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "The Doom of Dilmun",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "The Empyrean",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "The Flood",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "The Hexham Haunts",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "The Inquisition",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "The Malleus Maleficarum",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "The Manor at Daperyll Hill",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "The Pallid Bust",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "The Rack",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "The Void",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Thing in the Ice",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Thin Ice",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Those Who Linger",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Thumb Screws",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Tombstone Wardens",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Toolbox",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Torch and Pitchfork",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Torrid Omphalos",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Town Priest",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Trade Encampment",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Trial by Fire",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Trial by Water",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Troubled Town",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Twilight Bloom",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Undead Ambush",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Undesirables",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Vampire Bats",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Vandal Imp",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Varistus the Evictor",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Vast Desert",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Vesper Swarm",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Vindictive Nation",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Virgin in Prayer",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Watery Grave",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Wave of Eviction",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Weathered Trunks",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Wiccan Tools",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Wild Fanatic",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Willing Tribute",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Winter Nymph",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Witching Hour",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Wreathed in Righteousness",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Wuthering Heights",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Yog-Sothoth",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Young Master Damion",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Zap!",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Zeppelin of Zealots",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Zombie Bruiser",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Zombie Horde",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Skeleton",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Frog",
+      "rarity": "Ordinary"
+    }
+  ],
+  "Arthurian Legends": [
+    {
+      "cardName": "13 Treasures of Britain",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "A Midsummer Night's Dream",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Amulet of Niniane",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Annual Fair",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Arcane Barrage",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Archimago",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Arc Lightning",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Attack by Night",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Avalon",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Babbling Brook",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Bailey",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Ball Lightning",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Band of Thieves",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Beacon",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Black Knight",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Blacksmith Family",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Bluecap Knockers",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Blue Knight",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Blunderbore",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Bog",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Bonfire",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Boudicca",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Bower of Bliss",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Briar Patch",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Brocéliande",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Brother Knight",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Brown Bears",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Burning Hands",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Caerleon-Upon-Usk",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Camelot",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Cast into Exile",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Castle Haunt",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Castle's Ablaze!",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Castle Servants",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Charge",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Cold Iron Rod",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Common Cottagers",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Common Village",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Coy Nixie",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Cursed Land",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Dame Britomart",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Degradation",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Dirium Fomorians",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Dozmary Pool",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Druid",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Duel",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Excalibur",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Fae City",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Fail-not Bow",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Feast for Crows",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Field Laborers",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Fields of Camlann",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Fine Courser",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Finwife",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Firebreathing",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Fisherman's Family",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Forge",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Fourberie Knot",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Four Waters of Paradise",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Frisky Red Squirrel",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Funeral Pyre",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Giant Killer",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Glastonbury Tor",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Golden Harp",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Goswhit Helmet",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Grain Sparrow",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Grand Old Boar",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Grievous Insult",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Grim Guisarme",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Guards!",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Hamlet",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Hamlet's Ablaze!",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Harassing Ruffians",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Helpful Hob",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Horn of Caerleon",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Hunter's Lodge",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Hunting Party",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Hyter Sprites",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Impenetrable Copse",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Invasion",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Iron Man Talus",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Joust!",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Joyous Garde",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Just a Rock",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Keening Banshee",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Kelp Cavern",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Kettletop Leprechaun",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "King Arthur",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "King's Council",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Kingswood Poachers",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Knighthood",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Lady Iseult",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Lake Afanc",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Lava Flow",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Led Astray",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Leyline Henge",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Lookout",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Love Potion",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Lugbog Cat",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Lumbering Giant",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Magic Missiles",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Major City",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Merlin",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Merlin's Staff",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Merlin's Tower",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Mesmerism",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Mester Stoor Worm",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Monstrous Lion",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Morgana le Fay",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Muirid Fomorians",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Nelly Longarms",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Ominous Owl",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Overbearing Bailiff",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Peasant Revolt",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Pebbled Paths",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Pendragon Banner",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Pendragon Legacy",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Perilous Bridge",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Pigs of the Sounder",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Poisoned Well",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Pond",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Pookas",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Postern Gate",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Power of Flight",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Purple Knight",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Queen Guinevere",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Questing Beast",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Rebecks",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Reckless Squire",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Redbreast Robin",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Redcap Powries",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Rescue",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Rhitta Gawr of Snowdonia",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Rhongomyniad",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Ribble Boggart",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Ring of Morrigan",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Salmon of Knowledge",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Saracen Raiders",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Saracen Scout",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Seelie Court",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Shameless Squire",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Shapeshift",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Shatter Strike",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Shellycoat",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Sherwood Huntress",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Siege Giant",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Sir Agravaine",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Sir Balin",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Sir Bedivere",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Sir Bors the Younger",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Sir Gaheris",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Sir Galahad",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Sir Gareth",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Sir Gawain",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Sir Ironside",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Sir Kay",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Sir Lamorak",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Sir Lancelot",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Sir Mordred",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Sir Morien",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Sir Pelleas",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Sir Pellinore",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Sir Perceval",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Sir Priamus",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Sir Tom Thumb",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Sir Tristan",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Sir Yvain",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Sisters of Avalon",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Sly Fox",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Snowball",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Spearmarshal",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Squeakers",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Stone Rain",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Sugarplum Pixies",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Swindler Troupe",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Sword and Shield",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Sylvan Splendor",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Tactical Move",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Tax Collector",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Templar",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Thankless Squire",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "The Black Plague",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "The Faerie Queene",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "The Great Drowning of Men",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "The Great Famine",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "The Green Knight",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "The Lady of the Lake",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "The Ninth Legion",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "The Round Table",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "The Wild Hunt",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Thieving Magpie",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Thundering Giant",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Tintagel",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Tithe",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Tooth Faeries",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Tournament Grounds",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Town",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Treetop Hideout",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Troll Bridge",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Unseelie Court",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Valley of Delight",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Valor",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Vanishment",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Varmint Warrens",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Vengeful Heir",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Verdant Knight",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Vikings",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Vivien the Enchantress",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Wall of Brambles",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "War Horse",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Wedding Hall",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Weightless Squire",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Whirlwind",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "White Hart",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "White Knight",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Witch",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Wizard's Den",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Wolpertinger",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Wormelow Tump",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Wyvern",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Year of the Blaze",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Yellow Knight",
+      "rarity": "Exceptional"
+    },
+    {
+      "cardName": "Rubble",
+      "rarity": "Ordinary"
+    },
+    {
+      "cardName": "Bruin",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Tawny",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Lance",
+      "rarity": ""
+    },
+    {
+      "cardName": "Foot Soldiers",
+      "rarity": "Ordinary"
+    }
+  ],
+  "Dragonlord": [
+    {
+      "cardName": "Dragonlord",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Kairos the Archivist",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Caelestis",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Xeraphine Konrul",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Draco Corvus",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Moonsong Talagelum",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Adtonitum",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Talamh Dreig",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Ignis Rex",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Vatn Draconis",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Cradle of Etherrum",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Shrine of the Dragonlord",
+      "rarity": "Unique"
+    },
+    {
+      "cardName": "Dragonlord's Lair",
+      "rarity": "Unique"
+    }
+  ]
+}

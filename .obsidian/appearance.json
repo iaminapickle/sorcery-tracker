@@ -1,0 +1,12 @@
+{
+  "cssTheme": "Minimal",
+  "theme": "obsidian",
+  "accentColor": "#f8c8dc",
+  "enabledCssSnippets": [
+    "dataview",
+    "sorcery",
+    "nav"
+  ],
+  "showRibbon": false,
+  "showViewHeader": true
+}

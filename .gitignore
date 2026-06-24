@@ -1,0 +1,11 @@
+# Claude Code session/project data
+.claude/
+
+# Obsidian transient UI state
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# Generated reports / logs
+data/sync-report.md
+data/import-not-found.md
+data/logs.md

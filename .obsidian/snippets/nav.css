@@ -1,0 +1,16 @@
+/* Apply ONLY on mobile */
+.is-mobile {
+    /* Increase tappable height of file + folder items */
+    .nav-file,
+    .nav-folder {
+        min-height: 50px !important; /* adjust to taste */
+        padding-top: 2px !important;
+        padding-bottom: 2px !important;
+    }
+
+    /* Keep icons centered */
+    .nav-file .nav-file-icon,
+    .nav-folder .nav-folder-icon {
+        align-self: center !important;
+    }
+}
