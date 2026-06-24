@@ -1,0 +1,52 @@
+.table-view-table > tbody > tr > td {
+	text-align: center;
+}
+
+.table-view-table > tbody > tr > td > span > label {
+	color: #a8a58e;
+	font-size: 14px;
+}
+
+progress[value] {
+	--w: 80%; /* the width*/
+	--color: /* the progress color */ linear-gradient(
+		90deg,
+		hsl(305deg 100% 35%) 0%,
+		hsl(311deg 85% 40%) 12%,
+		hsl(316deg 72% 44%) 20%,
+		hsl(322deg 61% 49%) 28%,
+		hsl(327deg 61% 54%) 36%,
+		hsl(333deg 63% 60%) 44%,
+		hsl(338deg 66% 65%) 52%,
+		hsl(344deg 69% 71%) 61%,
+		hsl(349deg 74% 77%) 71%,
+		hsl(355deg 82% 83%) 82%,
+		hsl(0deg 100% 90%) 100%
+	);
+	--background: #696666; /* the background color */
+
+	width: var(--w);
+	padding-left: 12px;
+}
+
+progress[value]::-webkit-progress-value {
+	border-radius: 10em;
+	background: var(--color);
+}
+
+.markdown-rendered progress[value]::-webkit-progress-bar,
+.markdown-source-view.is-live-preview progress[value]::-webkit-progress-bar,
+.markdown-preview-view progress[value]::-webkit-progress-bar {
+	height: 100%;
+	background: var(--background);
+}
+
+.theme-dark .markdown-preview-view img {
+	opacity: 0.85;
+}
+
+.centered-note {
+	text-align: center;
+	--p-spacing: 0rem; /* default is 1em */
+	--heading-spacing: calc(var(--p-spacing) * 2.5);
+}

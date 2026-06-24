@@ -1,0 +1,26 @@
+{
+  "customOrder": {
+    "/": {
+      "children": [
+        "cards",
+        "Artists.md",
+        "Decks.md",
+        "Storage.md",
+        "Collection.md",
+        "Codex.md",
+        "artists",
+        "sets",
+        "data",
+        "assets",
+        "scripts",
+        "codex",
+        "README.md",
+        "LICENSE"
+      ],
+      "sortOrder": "custom"
+    }
+  },
+  "sortOrder": "custom",
+  "debugMode": false,
+  "newItemPlacement": "bottom"
+}

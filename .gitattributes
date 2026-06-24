@@ -1,0 +1,10 @@
+*.jpg filter=lfs diff=lfs merge=lfs -text
+*.png filter=lfs diff=lfs merge=lfs -text
+*.webp filter=lfs diff=lfs merge=lfs -text
+
+# Track only the root "/" order of the manual-sorting plugin's data.json.
+# A local clean filter strips the per-folder card/artist/codex orderings
+# before git sees the file, so re-sorts and plugin churn never produce diffs.
+# Requires a one-time local config:
+#   git config filter.sortorder.clean "python3 scripts/filter-sort-order.py"
+.obsidian/plugins/manual-sorting/data.json filter=sortorder

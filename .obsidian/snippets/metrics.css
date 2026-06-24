@@ -1,0 +1,40 @@
+/* Minimal: widen ONLY notes with cssclasses: metrics-wide */
+.metrics-wide {
+  /* Minimal uses one of these depending on version/settings */
+  --file-line-width: 1200px;
+  --file-line-max-width: 1200px;
+
+  --line-width: 1200px;
+  --max-width: 1200px;
+}
+
+/* Force the preview/editor sizer to respect it */
+.metrics-wide.markdown-reading-view .markdown-preview-sizer,
+.metrics-wide .markdown-preview-sizer,
+.metrics-wide.markdown-source-view.mod-cm6 .cm-sizer,
+.metrics-wide .cm-sizer {
+  max-width: 1200px !important;
+  width: 100% !important;
+}
+
+/* Optional padding tweak */
+.metrics-wide.markdown-reading-view .markdown-preview-sizer {
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+}
+
+/* Hide embed header + left quote bar for embeds that use |no-title */
+.markdown-embed[alt="no-title"] .markdown-embed-title,
+.markdown-embed[alt="no-title"] .markdown-embed-link {
+  display: none !important;
+}
+
+.markdown-embed[alt="no-title"] {
+  border-left: none !important;
+  padding-left: 0 !important;
+}
+
+.markdown-embed[alt="no-title"] .markdown-embed-content {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}

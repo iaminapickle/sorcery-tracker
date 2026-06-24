@@ -1,0 +1,105 @@
+{
+  "vaultRoot": "",
+  "assetsDir": "assets",
+  "dataDir": "data",
+  "cardsDir": "cards",
+  "bindersDir": "storage",
+  "decksDir": "decks",
+  "setOrder": [
+    "Alpha",
+    "Beta",
+    "Promotional",
+    "Arthurian Legends",
+    "Dragonlord",
+    "Gothic"
+  ],
+  "costOrder": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "rarityTargets": {
+    "Unique": 1,
+    "Elite": 2,
+    "Exceptional": 3,
+    "Ordinary": 4
+  },
+  "sortOrder": [
+    "avatar",
+    "other",
+    "type",
+    "rarity",
+    "name",
+    "set",
+    "finish"
+  ],
+  "typeOrder": [
+    "Artifact",
+    "Aura",
+    "Minion",
+    "Magic",
+    "Site"
+  ],
+  "rarityOrder": [
+    "Unique",
+    "Elite",
+    "Exceptional",
+    "Ordinary"
+  ],
+  "iconMap": {
+    "Air": "wind.png",
+    "Fire": "fire.png",
+    "Water": "water.png",
+    "Earth": "earth.png"
+  },
+  "setImages": {
+    "Alpha": "assets/sets/Alpha.png",
+    "Beta": "assets/sets/Beta.png",
+    "Promotional": "assets/sets/Promotional.png",
+    "Arthurian Legends": "assets/sets/Arthurian Legends.png",
+    "Dragonlord": "assets/sets/Dragonlord.png",
+    "Gothic": "assets/sets/Gothic.png"
+  },
+  "manifestFile": "set-manifests.json",
+  "apiFile": "sorcery-api.json",
+  "cardGroups": [
+    {
+      "anchor": "Druid",
+      "members": [
+        "Bruin",
+        "Tawny"
+      ]
+    }
+  ],
+  "otherCards": [
+    "Rubble",
+    "Foot Soldier 1",
+    "Foot Soldier 2",
+    "Foot Soldier 3",
+    "Foot Soldiers",
+    "Frog",
+    "Frog (Blue)",
+    "Frog (Green)",
+    "Frog (Red)",
+    "Lance"
+  ],
+  "tokenCards": [
+    "Foot Soldier 1",
+    "Foot Soldier 2",
+    "Foot Soldier 3",
+    "Foot Soldiers",
+    "Frog",
+    "Frog (Blue)",
+    "Frog (Green)",
+    "Frog (Red)",
+    "Lance"
+  ]
+}

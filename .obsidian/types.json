@@ -1,0 +1,19 @@
+{
+  "types": {
+    "aliases": "aliases",
+    "cssclasses": "multitext",
+    "tags": "tags",
+    "Title": "text",
+    "Runtime": "number",
+    "Release Year": "number",
+    "Language": "multitext",
+    "Rating": "number",
+    "Status": "multitext",
+    "Poster": "text",
+    "Watched": "checkbox",
+    "Runtime (minutes)": "number",
+    "Date Watched": "date",
+    "Director": "multitext",
+    "Other Names": "multitext"
+  }
+}

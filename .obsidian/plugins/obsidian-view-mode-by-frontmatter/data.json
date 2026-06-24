@@ -1,0 +1,49 @@
+{
+  "debounceTimeout": 300,
+  "ignoreOpenFiles": false,
+  "ignoreForceViewAll": false,
+  "folders": [
+    {
+      "folder": "artists",
+      "viewMode": "obsidianUIMode: preview"
+    },
+    {
+      "folder": "storage",
+      "viewMode": "obsidianUIMode: preview"
+    },
+    {
+      "folder": "cards",
+      "viewMode": "obsidianUIMode: preview"
+    },
+    {
+      "folder": "sets",
+      "viewMode": "obsidianUIMode: preview"
+    },
+    {
+      "folder": "decks",
+      "viewMode": "obsidianUIMode: preview"
+    },
+    {
+      "folder": "data",
+      "viewMode": "obsidianUIMode: preview"
+    }
+  ],
+  "files": [
+    {
+      "filePattern": "Collection",
+      "viewMode": "obsidianUIMode: preview"
+    },
+    {
+      "filePattern": "Decks",
+      "viewMode": "obsidianUIMode: preview"
+    },
+    {
+      "filePattern": "Storage",
+      "viewMode": "obsidianUIMode: preview"
+    },
+    {
+      "filePattern": "Artists",
+      "viewMode": "obsidianUIMode: preview"
+    }
+  ]
+}

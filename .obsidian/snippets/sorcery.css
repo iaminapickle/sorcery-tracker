@@ -1,0 +1,2204 @@
+/* Sorcery Tracker dashboard styles */
+
+/* Hide the right sidebar drawer on mobile (backlinks, etc.) */
+.is-mobile .workspace-drawer.mod-right {
+	display: none !important;
+}
+
+.markdown-preview-view a,
+.markdown-source-view a,
+.markdown-rendered a,
+.internal-link,
+.external-link,
+.cm-link {
+	text-decoration: none !important;
+}
+.sorcery-dashboard {
+	max-width: 100%;
+}
+.sorcery-controls {
+	position: relative;
+	z-index: 20;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	gap: 0.5rem;
+	margin: 0 0 1rem;
+	overflow: visible;
+	flex-wrap: wrap;
+}
+.sorcery-search-widget {
+	flex: 0 0 16rem;
+}
+.sorcery-controls input,
+.sorcery-controls button {
+	width: 100%;
+}
+.sorcery-owned-toggle {
+	width: 2rem !important;
+	height: 2rem;
+	padding: 0;
+	border-radius: 999px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex: 0 0 auto;
+	color: var(--text-normal);
+}
+.sorcery-owned-toggle svg {
+	width: 1rem;
+	height: 1rem;
+	display: block;
+}
+.sorcery-dropdown {
+	position: relative;
+	display: inline-block;
+	width: max-content;
+	max-width: 100%;
+	overflow: visible;
+	flex: 0 0 auto;
+}
+.sorcery-dropdown-button {
+	position: relative;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	min-width: 7rem;
+	height: 2rem;
+	padding: 0.35rem 1.4rem 0.35rem 0.85rem;
+	background: var(--background-modifier-form-field);
+	color: var(--text-normal);
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 4px;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	cursor: pointer;
+	font: inherit;
+	line-height: 1;
+	text-align: center;
+	white-space: nowrap;
+	color-scheme: dark;
+}
+.sorcery-dropdown-label {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.35rem;
+	line-height: 1;
+}
+.sorcery-dropdown-icon {
+	width: 0.95rem;
+	height: 0.95rem;
+	object-fit: contain;
+	flex: 0 0 auto;
+}
+.sorcery-dropdown-button:focus,
+.sorcery-dropdown-button:focus-visible,
+.sorcery-dropdown-button:active {
+	outline: none;
+	box-shadow: none;
+}
+.sorcery-dropdown-button::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	right: 0.75rem;
+	width: 0;
+	height: 0;
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+	border-top: 5px solid var(--text-muted);
+	transform: translateY(-30%);
+	pointer-events: none;
+}
+.sorcery-dropdown-menu {
+	display: none;
+	position: fixed;
+	z-index: 10000;
+	max-height: 50vh;
+	overflow: auto;
+	padding: 0;
+	background: var(--background-primary);
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 4px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.24);
+}
+.sorcery-dropdown-menu.is-open {
+	display: block;
+}
+.sorcery-dropdown-option {
+	box-sizing: border-box;
+	display: grid;
+	grid-template-columns: 1rem 1fr 1rem;
+	align-items: center;
+	width: 100%;
+	padding: 0.35rem 0.75rem;
+	background: transparent;
+	color: var(--text-normal);
+	border: 0;
+	cursor: pointer;
+	font: inherit;
+	line-height: 1.2;
+	text-align: center;
+	white-space: nowrap;
+	border-radius: 0;
+}
+.sorcery-dropdown-option .sorcery-dropdown-icon {
+	grid-column: 1;
+	justify-self: center;
+}
+.sorcery-dropdown-option-label {
+	grid-column: 2;
+	justify-self: center;
+}
+.sorcery-dropdown-option:first-child {
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+}
+.sorcery-dropdown-option:last-child {
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+.sorcery-dropdown-option:hover,
+.sorcery-dropdown-option:focus-visible {
+	background: var(--background-modifier-hover);
+	outline: none;
+}
+.sorcery-dropdown-option.is-selected {
+	background: var(--background-modifier-active-hover);
+	color: var(--text-normal);
+}
+.sorcery-checkbox-clear {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	padding: 0.3rem 0.75rem;
+	border: 0;
+	border-bottom: 1px solid var(--background-modifier-border);
+	border-radius: 0;
+	background: transparent;
+	color: var(--text-muted);
+	font: inherit;
+	font-size: 0.85em;
+	cursor: pointer;
+	box-sizing: border-box;
+}
+.sorcery-checkbox-clear:hover {
+	background: var(--background-modifier-hover);
+	color: var(--text-normal);
+}
+.sorcery-checkbox-mode {
+	display: flex;
+	gap: 0.25rem;
+	padding: 0.35rem 0.5rem;
+	border-bottom: 1px solid var(--background-modifier-border);
+}
+.sorcery-checkbox-mode-btn {
+	flex: 1;
+	padding: 0.2rem 0.4rem;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: var(--radius-s);
+	background: transparent;
+	color: var(--text-muted);
+	font: inherit;
+	font-size: 0.8em;
+	cursor: pointer;
+	box-sizing: border-box;
+}
+.sorcery-checkbox-mode-btn:hover {
+	background: var(--background-modifier-hover);
+	color: var(--text-normal);
+}
+.sorcery-checkbox-mode-btn.is-active {
+	background: var(--interactive-accent);
+	border-color: var(--interactive-accent);
+	color: var(--text-on-accent);
+}
+.sorcery-checkbox-option {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	width: 100%;
+	padding: 0.35rem 0.75rem;
+	cursor: pointer;
+	white-space: nowrap;
+	user-select: none;
+	box-sizing: border-box;
+	color: var(--text-normal);
+	font: inherit;
+	line-height: 1.2;
+}
+.sorcery-checkbox-option span {
+	flex: 1;
+	text-align: center;
+}
+.sorcery-checkbox-option:hover {
+	background: var(--background-modifier-hover);
+}
+.sorcery-checkbox-option.is-checked {
+	color: var(--interactive-accent);
+}
+.sorcery-checkbox-option input[type="checkbox"] {
+	display: none;
+}
+.sorcery-checkbox-option::before {
+	content: "";
+	display: block;
+	width: 13px;
+	min-width: 13px;
+	height: 13px;
+	border: 1.5px solid var(--text-muted);
+	border-radius: 50%;
+	background: transparent;
+	transition: background 0.1s, border-color 0.1s;
+}
+.sorcery-checkbox-option.is-checked::before {
+	background: var(--interactive-accent);
+	border-color: var(--interactive-accent);
+}
+.suggestion-container .suggestion-item,
+.suggestion-container .suggestion-item * {
+	font-family: var(--font-monospace);
+}
+.suggestion-container .suggestion-item {
+	white-space: pre;
+}
+/* Widen FuzzySuggestModals to fit their (monospace, non-wrapping) content */
+.prompt {
+	width: fit-content;
+	max-width: 90vw;
+	min-width: var(--prompt-width, 700px);
+}
+.prompt .suggestion-container {
+	width: auto;
+}
+.sorcery-artist-controls {
+	margin: 0 0 1rem;
+}
+.sorcery-search-widget input {
+	display: block;
+	width: 100%;
+	height: 2rem;
+	box-sizing: border-box;
+	padding: 0 0.75rem;
+	background: var(--background-modifier-form-field);
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 4px;
+	color: var(--text-normal);
+	font: inherit;
+	-webkit-appearance: none;
+	appearance: none;
+}
+.sorcery-search-widget input:focus,
+.sorcery-search-widget input:focus-visible,
+.sorcery-search-widget input:active {
+	outline: none;
+	box-shadow: none;
+}
+.sorcery-view-toggle {
+	width: 2rem !important;
+	height: 2rem;
+	padding: 0;
+	border-radius: 999px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex: 0 0 auto;
+}
+.sorcery-view-toggle span {
+	font-size: 1rem;
+	line-height: 1;
+}
+/* Keep the card/list view toggle off the right edge of the controls row. */
+.sorcery-view-toggle:not(.sorcery-owned-toggle) {
+	margin-right: 0.5rem;
+}
+.sorcery-element-list {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: 0.35rem;
+	justify-content: center;
+}
+.sorcery-element-token {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.25rem;
+	white-space: nowrap;
+}
+.sorcery-output {
+	display: flex;
+	justify-content: center;
+	overflow-x: clip;
+	width: 100%;
+}
+.sorcery-collection-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(var(--collection-column-width, 16rem), 1fr));
+	gap: 0.65rem 0.75rem;
+	width: 100%;
+	padding-bottom: 2px;
+}
+.sorcery-collection-item {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) auto;
+	align-items: center;
+	gap: 0.65rem;
+	padding: 0.45rem 0.7rem;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 999px;
+	background: var(--background-primary);
+}
+.sorcery-collection-item-body {
+	display: flex;
+	flex-direction: column;
+	gap: 0.15rem;
+	align-items: center;
+	min-width: 0;
+}
+.sorcery-collection-item-body .internal-link {
+	display: inline-block;
+	max-width: 100%;
+	white-space: nowrap;
+	overflow-wrap: normal;
+	text-decoration: none;
+}
+.sorcery-collection-item-subtitle {
+	color: var(--text-muted);
+	font-size: 0.9rem;
+	line-height: 1.1;
+	max-width: 100%;
+	overflow: clip;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.sorcery-collection-count {
+	display: inline-grid;
+	place-items: center;
+	min-width: 1.55rem;
+	min-height: 1.55rem;
+	padding: 0.08rem 0.55rem;
+	border-radius: 999px;
+	background: rgba(142, 79, 35, 0.42);
+	border: 1px solid rgba(190, 190, 190, 0.45);
+	color: #f0c2d6;
+	font-weight: 700;
+	font-size: 0.82rem;
+	line-height: 1;
+	font-variant-numeric: tabular-nums;
+	box-sizing: border-box;
+}
+.sorcery-rarity-grid {
+	display: flex;
+	flex-direction: column;
+	gap: 0.85rem;
+	align-items: stretch;
+	width: 100%;
+	max-width: 100%;
+	margin: 0;
+}
+.sorcery-rarity-grid--single {
+	width: max-content;
+	max-width: none;
+	margin: 0 auto;
+}
+.sorcery-rarity-row {
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	gap: 0.45rem;
+	width: 100%;
+}
+.sorcery-rarity-side {
+	display: flex;
+	gap: 0.45rem;
+	flex: 1 1 0;
+	min-width: 0;
+	align-items: flex-start;
+}
+.sorcery-rarity-side--left {
+	justify-content: flex-end;
+}
+.sorcery-rarity-side--right {
+	justify-content: flex-start;
+}
+.sorcery-rarity-center {
+	display: flex;
+	justify-content: center;
+	flex: 0 0 auto;
+}
+.sorcery-checklist-group {
+	margin: 0;
+	padding: 0.75rem;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 12px;
+	background: var(--background-primary);
+	width: max-content;
+	max-width: none;
+	align-self: flex-start;
+}
+.sorcery-checklist-type {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+	margin-top: 0.5rem;
+}
+.sorcery-checklist-type:first-child {
+	margin-top: 0;
+}
+.sorcery-checklist-type-heading {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	width: 100%;
+	font-size: 0.8rem;
+	font-weight: 800;
+	color: var(--text-normal);
+	white-space: nowrap;
+	letter-spacing: 0.02em;
+	margin: 0.15rem 0 0;
+}
+.sorcery-checklist-type-heading::before,
+.sorcery-checklist-type-heading::after {
+	content: "";
+	flex: 1 1 auto;
+	border-top: 2px solid var(--background-modifier-border);
+	opacity: 0.95;
+}
+.sorcery-checklist-heading {
+	font-weight: 700;
+	margin-bottom: 0.35rem;
+	text-align: center;
+	white-space: nowrap;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.3rem;
+	width: 100%;
+}
+.sorcery-rarity-progress {
+	width: 7rem !important;
+	max-width: 7rem !important;
+	padding-left: 0 !important;
+	display: block;
+	margin: 0.1rem auto 0.55rem !important;
+}
+.sorcery-checklist {
+	display: grid;
+	gap: 0.35rem;
+	width: 100%;
+}
+.sorcery-checklist-item {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) auto;
+	gap: 0.75rem;
+	align-items: center;
+	padding: 0.25rem 0;
+	width: 100%;
+}
+.sorcery-checklist-label {
+	text-align: center;
+	justify-self: center;
+	white-space: nowrap;
+	min-width: 0;
+}
+.sorcery-play-count-bubble {
+	display: inline-grid;
+	place-items: center;
+	justify-self: end;
+	min-width: 3.1rem;
+	padding: 0.14rem 0.55rem;
+	border-radius: 999px;
+	background: rgba(142, 79, 35, 0.42);
+	border: 1px solid rgba(190, 190, 190, 0.45);
+	color: #f0c2d6;
+	font-size: 0.82rem;
+	font-weight: 700;
+	line-height: 1;
+	font-variant-numeric: tabular-nums;
+	white-space: nowrap;
+}
+.sorcery-play-count-bubble.is-complete {
+	background: rgba(78, 150, 92, 0.45);
+	border-color: rgba(144, 209, 156, 0.6);
+	color: #e8ffe9;
+}
+.sorcery-play-count-bubble.is-overcomplete {
+	background: rgba(78, 150, 92, 0.45);
+	border-color: rgba(144, 209, 156, 0.6);
+	color: #e8ffe9;
+}
+.sorcery-base-owned-bubble {
+	display: inline-grid;
+	place-items: center;
+	justify-self: end;
+	min-width: 1.15rem;
+	min-height: 1.15rem;
+	padding: 0.01rem 0.28rem;
+	border-radius: 999px;
+	background: rgba(78, 150, 92, 0.45);
+	border: 1px solid rgba(144, 209, 156, 0.6);
+	color: #e8ffe9;
+	font-size: 0.72rem;
+	font-weight: 700;
+	line-height: 1;
+	font-variant-numeric: tabular-nums;
+	white-space: nowrap;
+}
+.markdown-preview-view.sorcery-flat-meta .metadata-container,
+.markdown-source-view.mod-cm6.sorcery-flat-meta .metadata-container,
+.markdown-preview-view.sorcery-flat-meta .metadata-property,
+.markdown-source-view.mod-cm6.sorcery-flat-meta .metadata-property,
+.markdown-preview-view.sorcery-flat-meta .metadata-properties,
+.markdown-source-view.mod-cm6.sorcery-flat-meta .metadata-properties,
+.markdown-preview-view.sorcery-flat-meta .metadata-property-icon,
+.markdown-source-view.mod-cm6.sorcery-flat-meta .metadata-property-icon,
+.markdown-preview-view.sorcery-flat-meta .metadata-properties-title,
+.markdown-source-view.mod-cm6.sorcery-flat-meta .metadata-properties-title,
+.markdown-preview-view.sorcery-flat-meta .metadata-add-property-button,
+.markdown-source-view.mod-cm6.sorcery-flat-meta .metadata-add-property-button,
+.markdown-preview-view.sorcery-flat-meta .dataview.table-view-table,
+.markdown-source-view.mod-cm6.sorcery-flat-meta .dataview.table-view-table,
+.markdown-preview-view.sorcery-flat-meta .inline-title,
+.markdown-source-view.mod-cm6.sorcery-flat-meta .inline-title {
+	display: none !important;
+}
+.sorcery-meta {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+	margin: 0 0 1rem;
+}
+.sorcery-title {
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+.sorcery-stats {
+	color: var(--text-muted);
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.25rem;
+	margin: 0 0 0.75rem;
+}
+.sorcery-binder-header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 0.2rem;
+	margin: 0 0 0.9rem;
+	text-align: center;
+}
+.sorcery-binder-title {
+	margin: 0;
+}
+.sorcery-binder-slots {
+	color: var(--text-muted);
+	font-size: 0.95rem;
+	font-weight: 600;
+}
+.sorcery-binder-list {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: 0.35rem 0.75rem;
+	justify-content: flex-start;
+	align-items: center;
+}
+.sorcery-binder-entry {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.3rem;
+	white-space: nowrap;
+}
+.sorcery-binder-count {
+	color: var(--text-muted);
+	font-variant-numeric: tabular-nums;
+}
+.sorcery-binder-table-wrap {
+	margin: 0.85rem auto 0;
+	width: 100%;
+	max-width: 100%;
+	text-align: center;
+}
+.sorcery-binder-table {
+	border-collapse: collapse;
+	display: inline-table;
+	width: auto;
+	max-width: 100%;
+	margin: 0 auto;
+	font-size: inherit;
+}
+.sorcery-binder-table th,
+.sorcery-binder-table td {
+	border-bottom: 1px solid var(--background-modifier-border);
+	padding: 0.35rem 0.6rem;
+	text-align: center !important;
+	font-size: inherit;
+}
+.sorcery-binder-table th {
+	font-weight: 700;
+}
+.sorcery-binder-table td {
+	white-space: nowrap;
+}
+.sorcery-summary-binder-row td {
+	font-size: 0.9em;
+}
+.sorcery-summary-binder-row td:not(:last-child) {
+	padding-top: 0.15rem;
+	padding-bottom: 0.15rem;
+}
+.sorcery-summary-binder-row + .sorcery-summary-binder-row td {
+	border-top: hidden;
+}
+.sorcery-set-stats {
+	font-size: 1rem;
+	font-weight: 600;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.35rem;
+}
+.sorcery-completion-star {
+	color: #f0c84b;
+	text-shadow: 0 0 4px rgba(240, 200, 75, 0.35);
+	font-size: 1.05em;
+	line-height: 1;
+}
+.sorcery-set-progress {
+	width: 12rem !important;
+	max-width: 12rem !important;
+	padding-left: 0 !important;
+	margin: 0 auto !important;
+	display: block;
+}
+.sorcery-table {
+	width: 100%;
+	border-collapse: collapse;
+}
+.sorcery-table th,
+.sorcery-table td {
+	border-bottom: 1px solid var(--background-modifier-border);
+	padding: 0.45rem 0.5rem;
+	vertical-align: top;
+	text-align: center;
+}
+.sorcery-variant-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 0.75rem 0;
+}
+.sorcery-list-table {
+	width: max-content;
+	max-width: 100%;
+	margin: 0.75rem auto;
+}
+.sorcery-variant-table th,
+.sorcery-variant-table td {
+	border-bottom: 1px solid var(--background-modifier-border);
+	padding: 0.45rem 0.5rem;
+	vertical-align: top;
+	text-align: center;
+}
+.sorcery-card-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+	gap: 0.75rem;
+	width: 100%;
+	max-width: 100%;
+	padding-bottom: 2px;
+}
+.sorcery-card {
+	border: 1.25px solid rgba(255, 255, 255, 0.12);
+	border-radius: 12px;
+	overflow: clip;
+	background: var(--background-primary);
+	display: flex;
+	flex-direction: column;
+}
+.sorcery-card-image-wrap {
+	position: relative;
+	width: 100%;
+}
+.sorcery-card-image {
+	width: 100%;
+	height: auto;
+	display: block;
+	background: var(--background-secondary);
+	transition: none !important;
+	filter: none !important;
+	will-change: auto;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+}
+.sorcery-card-image--placeholder {
+	display: grid;
+	place-items: center;
+	color: var(--text-muted);
+	font-size: 0.9rem;
+}
+.sorcery-foil-corner {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 1.7rem;
+	height: 1.7rem;
+	background: linear-gradient(
+		135deg,
+		#ffffff 0%,
+		#f7f9fc 12%,
+		#d8deea 32%,
+		#8f9ab0 68%,
+		#4e5d77 100%
+	);
+	clip-path: polygon(100% 0, 0 0, 100% 100%);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.24);
+	pointer-events: none;
+	z-index: 2;
+}
+.sorcery-card-body {
+	padding: 0.35rem 0.5rem 0.45rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.15rem;
+	align-items: center;
+}
+.sorcery-card-title {
+	font-weight: 700;
+	width: 100%;
+	text-align: center;
+}
+.sorcery-card-meta-row {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) auto;
+	align-items: center;
+	gap: 0.45rem;
+	width: 100%;
+	min-height: 1.4rem;
+}
+.sorcery-card-subtitle,
+.sorcery-card-meta {
+	color: var(--text-muted);
+	font-size: 0.9rem;
+}
+.sorcery-card-subtitle {
+	display: block;
+	max-width: 100%;
+	text-align: center;
+	overflow: clip;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.sorcery-card-meta-row .sorcery-collection-count {
+	justify-self: end;
+	align-self: center;
+	position: static;
+	transform: none;
+	margin-right: 0.5rem;
+}
+
+/* Key/value blocks */
+.sorcery-kv,
+.sorcery-variant-grid,
+.sorcery-variant-card {
+	width: 100%;
+}
+.sorcery-variant-count {
+	margin: 0.1rem 0 0.5rem;
+	text-align: center;
+	font-weight: 700;
+	font-size: 1rem;
+}
+.sorcery-variant-actions {
+	display: flex;
+	justify-content: center;
+	margin: 0 0 0.75rem;
+}
+.sorcery-card-page-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.35rem 0.8rem;
+	border: 2px solid var(--background-modifier-border);
+	border-radius: 999px;
+	background: var(--background-primary);
+	color: var(--text-normal);
+	font-size: 0.9rem;
+	font-weight: 600;
+	text-decoration: none !important;
+}
+.sorcery-card-page-button:hover,
+.sorcery-card-page-button:focus-visible {
+	background: var(--background-modifier-hover);
+	color: var(--text-normal);
+}
+.sorcery-reverse-label {
+	text-align: center;
+	color: var(--text-muted);
+	font-size: 0.8rem;
+	font-weight: 600;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	margin: 0.5rem 0 0.1rem;
+}
+.sorcery-variant-image {
+	position: relative;
+	width: fit-content;
+	max-width: 100%;
+	margin: 0.2rem auto 0.7rem;
+	display: block;
+}
+.sorcery-variant-image img {
+	display: block;
+	width: min(70vw, 396px) !important;
+	max-width: min(70vw, 396px) !important;
+	aspect-ratio: 2 / 3;
+	object-fit: cover;
+	border-radius: 14px;
+	border: 1.25px solid rgba(255, 255, 255, 0.12);
+	background: var(--background-secondary);
+	transition: none !important;
+	filter: none !important;
+	will-change: auto;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+}
+.sorcery-variant-image--site {
+	position: relative;
+	width: min(95vw, 742.5px);
+	max-width: 100%;
+	aspect-ratio: 3 / 2;
+	overflow: clip;
+	margin: 0.2rem auto 0.7rem;
+}
+.sorcery-variant-image--site img {
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	max-width: none;
+	object-fit: cover;
+	transform: none;
+	transform-origin: center;
+	transition: none !important;
+	filter: none !important;
+	will-change: auto;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+}
+
+.sorcery-kv {
+	display: grid;
+	gap: 0.15rem;
+	margin: 0.6rem auto;
+	width: fit-content;
+	max-width: 100%;
+}
+.sorcery-kv-row {
+	display: grid;
+	grid-template-columns: minmax(6rem, 9rem) max-content;
+	gap: 0;
+	align-items: center;
+	padding: 0.15rem 0;
+	border-bottom: 1px solid var(--background-modifier-border);
+	text-align: left;
+}
+.sorcery-kv-label,
+.sorcery-kv-value {
+	min-width: 0;
+}
+.sorcery-kv-label {
+	text-align: right;
+	justify-self: end;
+	padding: 0 0.5rem 0 0.25rem;
+	border-right: 1px solid var(--background-modifier-border);
+}
+.sorcery-kv-value {
+	text-align: left;
+	justify-self: stretch;
+	padding: 0 0.25rem 0 0.5rem;
+}
+.sorcery-kv-label {
+	font-weight: 700;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.35rem;
+}
+.sorcery-element-icon {
+	width: 1rem;
+	height: 1rem;
+	object-fit: contain;
+	vertical-align: middle;
+	pointer-events: none;
+	cursor: default;
+}
+.sorcery-variant-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+	gap: 0.75rem;
+	margin-top: 0.75rem;
+}
+.sorcery-variant-card {
+	border: 1.25px solid rgba(255, 255, 255, 0.12);
+	border-radius: 12px;
+	padding: 0.75rem;
+	background: var(--background-primary);
+}
+.sorcery-variant-title {
+	font-weight: 700;
+	margin-bottom: 0.5rem;
+	text-align: center;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+.sorcery-variant-title .internal-link {
+	display: block;
+	text-align: center;
+	width: 100%;
+}
+.sorcery-variant-link {
+	display: inline-block;
+}
+.sorcery-variant-card .sorcery-kv {
+	margin: 0.4rem 0;
+}
+.sorcery-variant-card .sorcery-kv-row {
+	grid-template-columns: 7rem 1fr;
+}
+
+/* Stronger Dataview table normalization if any remain */
+.markdown-preview-view .table-view-table,
+.markdown-source-view .table-view-table {
+	width: 100% !important;
+	table-layout: fixed !important;
+}
+.markdown-preview-view .table-view-table th,
+.markdown-preview-view .table-view-table td,
+.markdown-source-view .table-view-table th,
+.markdown-source-view .table-view-table td {
+	text-align: center !important;
+	vertical-align: top !important;
+	overflow-wrap: anywhere;
+	word-break: break-word;
+}
+
+/* Make search highlights visible everywhere including DataviewJS content */
+mark,
+.cm-searchMatch,
+.cm-searchMatch.cm-searchMatch-selected {
+	background: rgba(255, 214, 102, 0.85) !important;
+	color: #111 !important;
+}
+::search-text {
+	background-color: rgba(255, 214, 102, 0.85) !important;
+	color: #111 !important;
+}
+::search-text:current {
+	background-color: rgba(255, 140, 0, 0.95) !important;
+	color: #000 !important;
+}
+
+.is-mobile .sorcery-rarity-row {
+	flex-direction: column;
+	align-items: center;
+}
+.is-mobile .sorcery-rarity-side,
+.is-mobile .sorcery-rarity-center {
+	flex: none;
+	width: auto;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+}
+.is-mobile .sorcery-checklist-group {
+	align-self: center;
+	width: max-content;
+	max-width: none;
+	box-sizing: border-box;
+}
+
+/* ---- Deck page ---- */
+.sorcery-deck-header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.3rem;
+	margin: 0 0 1rem;
+	text-align: center;
+}
+.sorcery-deck-descriptor {
+	color: var(--text-muted);
+	font-size: 1.1rem;
+	font-weight: 600;
+}
+.sorcery-deck-elements {
+	display: flex;
+	gap: 0.5rem;
+	justify-content: center;
+}
+.sorcery-deck-element-icon {
+	width: 1.4rem !important;
+	height: 1.4rem !important;
+}
+.sorcery-deck-validity {
+	display: flex;
+	flex-direction: column;
+	gap: 0.3rem;
+	margin: 0 auto 0.75rem;
+	width: fit-content;
+	background: var(--background-primary);
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 8px;
+	padding: 0.6rem 1rem;
+}
+.sorcery-deck-validity-row {
+	display: flex;
+	gap: 1rem;
+	align-items: flex-start;
+	font-size: 0.9rem;
+}
+.sorcery-deck-validity-row.is-invalid .sorcery-deck-validity-value {
+	color: #ff8080;
+}
+.sorcery-deck-validity-label {
+	font-weight: 700;
+	min-width: 6rem;
+	text-align: right;
+	flex: 0 0 auto;
+}
+.sorcery-deck-validity-value {
+	font-variant-numeric: tabular-nums;
+}
+.sorcery-deck-copy-violations {
+	display: flex;
+	flex-direction: column;
+	gap: 0.1rem;
+}
+.sorcery-deck-copy-violation {
+	font-size: 0.85rem;
+}
+.sorcery-deck-badge-row {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.75rem;
+	margin: 0 0 1.1rem;
+}
+.sorcery-deck-validity-badge {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.2rem 0.75rem;
+	border-radius: 999px;
+	font-size: 0.8rem;
+	font-weight: 700;
+	letter-spacing: 0.03em;
+}
+.sorcery-deck-validity-badge.is-valid {
+	background: rgba(78, 150, 92, 0.3);
+	border: 1px solid rgba(144, 209, 156, 0.5);
+	color: #c8ffd4;
+}
+.sorcery-deck-validity-badge.is-invalid {
+	background: rgba(180, 60, 60, 0.3);
+	border: 1px solid rgba(220, 100, 100, 0.5);
+	color: #ffd4d4;
+}
+.sorcery-deck-owned-toggle {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.2rem 0.75rem;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 999px;
+	background: var(--background-primary);
+	color: var(--text-muted);
+	font: inherit;
+	font-size: 0.8rem;
+	font-weight: 600;
+	cursor: pointer;
+}
+.sorcery-deck-owned-toggle.is-active {
+	background: var(--interactive-accent);
+	color: var(--text-on-accent);
+	border-color: var(--interactive-accent);
+}
+.sorcery-deck-top-row {
+	display: flex;
+	gap: 2.5rem;
+	align-items: stretch;
+	flex-wrap: wrap;
+	margin-bottom: 1.5rem;
+}
+.sorcery-deck-top-row > .sorcery-deck-zone {
+	flex: 0 0 auto;
+	min-width: 180px;
+}
+.sorcery-deck-zone {
+	display: flex;
+	flex-direction: column;
+	margin: 0 0 1.25rem;
+	border-radius: 10px;
+	padding: 0.75rem 1rem 0.5rem;
+}
+.sorcery-deck-zone--spellbook {
+}
+.sorcery-deck-zone--atlas {
+}
+.sorcery-deck-zone--atlas .sorcery-deck-spell-column {
+	background: rgba(170, 85, 200, 0.1);
+	border-color: rgba(170, 85, 200, 0.25);
+}
+.sorcery-deck-zone--collection {
+}
+.sorcery-deck-zone--collection .sorcery-deck-spell-column {
+	background: rgba(200, 145, 45, 0.1);
+	border-color: rgba(200, 145, 45, 0.28);
+}
+.sorcery-deck-zone-title {
+	font-size: 1rem;
+	font-weight: 700;
+	margin-bottom: 0.5rem;
+	padding-bottom: 0.3rem;
+	border-bottom: 2px solid var(--background-modifier-border);
+}
+.sorcery-deck-spell-columns {
+	display: flex;
+	align-items: stretch;
+	gap: 1.25rem;
+	flex: 1;
+}
+.sorcery-deck-zone > .sorcery-deck-spell-column {
+	flex: 1;
+}
+.sorcery-deck-spell-column {
+	flex: 0 0 auto;
+	min-width: 160px;
+	background: rgba(55, 155, 130, 0.1);
+	border: 1px solid rgba(55, 155, 130, 0.28);
+	border-radius: 8px;
+	padding: 0.5rem 0.65rem;
+}
+.sorcery-deck-type-heading {
+	font-size: 0.78rem;
+	font-weight: 800;
+	color: var(--text-muted);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	margin-bottom: 0.3rem;
+	text-align: center;
+	border-bottom: 1px solid var(--background-modifier-border);
+	padding-bottom: 0.2rem;
+}
+.sorcery-deck-entry {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.5rem;
+	padding: 0.18rem 0.2rem;
+	border-bottom: 1px solid var(--background-modifier-border);
+}
+.sorcery-deck-entry:last-child {
+	border-bottom: none;
+}
+.sorcery-deck-entry--maybe {
+	border-left: 3px solid rgba(200, 160, 60, 0.4);
+	padding-left: 0.6rem;
+}
+.sorcery-deck-maybe-separator {
+	margin-top: 0.5rem;
+	padding: 0.35rem 0 0.15rem;
+	border-top: 1px dashed var(--background-modifier-border);
+	font-size: 0.72rem;
+	font-weight: 700;
+	color: rgba(200, 160, 60, 0.85);
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	text-align: center;
+}
+.sorcery-deck-entry-name {
+	flex: 1;
+	min-width: 0;
+	overflow: clip;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	cursor: default;
+}
+.sorcery-deck-threshold-icons {
+	display: flex;
+	align-items: center;
+	gap: 2px;
+	flex-shrink: 0;
+}
+.sorcery-deck-art-hover {
+	position: fixed;
+	z-index: 9999;
+	display: none;
+	pointer-events: none;
+	border-radius: 8px;
+	overflow: clip;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+}
+.sorcery-deck-art-hover img {
+	display: block;
+}
+/* Count bubbles */
+.sorcery-deck-count-bubble {
+	display: inline-grid;
+	place-items: center;
+	min-width: 1.8rem;
+	min-height: 1.5rem;
+	padding: 0.06rem 0.45rem;
+	border-radius: 999px;
+	background: rgba(142, 79, 35, 0.42);
+	border: 1px solid rgba(190, 190, 190, 0.45);
+	color: #f0c2d6;
+	font-weight: 700;
+	font-size: 0.8rem;
+	line-height: 1;
+	font-variant-numeric: tabular-nums;
+	white-space: nowrap;
+	flex: 0 0 auto;
+}
+.sorcery-deck-count-bubble.is-over-limit {
+	background: rgba(180, 50, 50, 0.45);
+	border-color: rgba(220, 100, 100, 0.6);
+	color: #ffd4d4;
+}
+.sorcery-deck-count-bubble.is-owned-mode.is-shortage {
+	background: rgba(180, 50, 50, 0.45);
+	border-color: rgba(220, 100, 100, 0.6);
+	color: #ffd4d4;
+}
+.sorcery-deck-count-bubble.is-owned-mode.is-sufficient {
+	background: rgba(78, 150, 92, 0.45);
+	border-color: rgba(144, 209, 156, 0.6);
+	color: #e8ffe9;
+}
+/* Cost bubble */
+.sorcery-deck-cost-bubble {
+	display: inline-grid;
+	place-items: center;
+	min-width: 1.5rem;
+	min-height: 1.5rem;
+	padding: 0.06rem 0.4rem;
+	border-radius: 999px;
+	background: rgba(35, 100, 175, 0.38);
+	border: 1px solid rgba(100, 170, 240, 0.45);
+	color: #aad4f5;
+	font-weight: 700;
+	font-size: 0.8rem;
+	line-height: 1;
+	font-variant-numeric: tabular-nums;
+	white-space: nowrap;
+	flex: 0 0 auto;
+}
+/* Stats */
+.sorcery-deck-stats {
+	border-top: 2px solid var(--background-modifier-border);
+	padding-top: 1rem;
+}
+.sorcery-deck-stats-title-row {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	margin-bottom: 1rem;
+}
+.sorcery-deck-stats-title {
+	font-size: 1.05rem;
+	font-weight: 700;
+}
+.sorcery-deck-stat-section {
+	margin: 0 0 1.5rem;
+}
+.sorcery-deck-stat-heading {
+	font-size: 0.82rem;
+	font-weight: 700;
+	color: var(--text-muted);
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	margin-bottom: 0.5rem;
+}
+/* Cost curve filter buttons */
+.sorcery-deck-curve-filters {
+	display: flex;
+	flex-direction: column;
+	gap: 0.4rem;
+	margin-bottom: 0.6rem;
+}
+.sorcery-deck-curve-filter-row {
+	display: flex;
+	gap: 0.35rem;
+	align-items: center;
+	margin-bottom: 0;
+}
+.sorcery-deck-filter-btn {
+	padding: 0.18rem 0.6rem;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 999px;
+	background: var(--background-primary);
+	color: var(--text-muted);
+	font: inherit;
+	font-size: 0.8rem;
+	cursor: pointer;
+}
+.sorcery-deck-filter-btn.is-active {
+	background: rgba(190, 80, 120, 0.45);
+	color: var(--text-normal);
+	border-color: rgba(190, 80, 120, 0.75);
+}
+/* Bar chart */
+.sorcery-deck-cost-chart {
+	display: flex;
+	align-items: flex-end;
+	gap: 5px;
+	width: 100%;
+	max-width: 340px;
+}
+.sorcery-deck-cost-chart--small {
+	max-width: 200px;
+}
+.sorcery-deck-cost-chart--threshold {
+	max-width: 100%;
+}
+.sorcery-deck-cost-chart--threshold .sorcery-deck-cost-bar-fill {
+	width: 85%;
+}
+.sorcery-deck-cost-bar {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 3px;
+	min-width: 0;
+}
+.sorcery-deck-cost-bar-slot {
+	width: 100%;
+	height: 80px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
+	gap: 2px;
+}
+.sorcery-deck-cost-chart--small .sorcery-deck-cost-bar-slot {
+	height: 48px;
+}
+.sorcery-deck-cost-chart--threshold .sorcery-deck-cost-bar-slot {
+	height: 80px;
+}
+.sorcery-deck-cost-bar-fill {
+	width: 72%;
+	min-height: 0;
+	background: rgba(99, 130, 210, 0.65);
+	border-radius: 3px 3px 0 0;
+}
+.sorcery-deck-cost-bar-count {
+	font-size: 0.6rem;
+	color: var(--text-muted);
+	line-height: 1;
+}
+.sorcery-deck-cost-bar-label {
+	font-size: 0.68rem;
+	color: var(--text-muted);
+	line-height: 1;
+	text-align: center;
+}
+.sorcery-deck-site-total {
+	font-size: 0.9rem;
+	color: var(--text-muted);
+	margin-bottom: 0.5rem;
+}
+/* Element breakdown table */
+.sorcery-deck-elem-table {
+	border-collapse: collapse;
+	font-size: 0.9rem;
+}
+.sorcery-deck-elem-table th,
+.sorcery-deck-elem-table td {
+	padding: 0.25rem 0.75rem;
+	border-bottom: 1px solid var(--background-modifier-border);
+	text-align: center;
+}
+.sorcery-deck-elem-table th {
+	font-weight: 700;
+	color: var(--text-muted);
+	font-size: 0.78rem;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+}
+.sorcery-deck-elem-table td:first-child {
+	text-align: left;
+}
+.sorcery-deck-elem-table th:nth-child(2),
+.sorcery-deck-elem-table td:nth-child(2),
+.sorcery-deck-elem-table th:nth-child(4),
+.sorcery-deck-elem-table td:nth-child(4) {
+	box-shadow: inset 3px 0 0 var(--background-modifier-border);
+	padding-left: 1rem;
+}
+.is-mobile .sorcery-deck-elem-table td {
+	box-shadow: none;
+	text-align: center;
+}
+.is-mobile .sorcery-deck-elem-table td:first-child {
+	text-align: center;
+}
+.is-mobile .sorcery-deck-elem-table .sorcery-elem-label-row td:not([rowspan]) {
+	font-weight: 700;
+	color: var(--text-muted);
+	font-size: 0.78rem;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	text-align: center !important;
+}
+.is-mobile .sorcery-deck-elem-table .sorcery-elem-site-row td,
+.is-mobile .sorcery-deck-elem-table .sorcery-elem-sub-row td {
+	text-align: center !important;
+}
+.is-mobile .sorcery-deck-elem-table .sorcery-elem-site-row td {
+	border-bottom: 3px solid var(--background-modifier-border);
+}
+.is-mobile .sorcery-deck-elem-table .sorcery-elem-provided-label td {
+	padding-top: 0.35rem;
+}
+.is-mobile .sorcery-deck-elem-table td[rowspan] {
+	width: 2rem;
+	text-align: center;
+	vertical-align: middle;
+}
+/* Threshold histogram */
+.sorcery-deck-threshold-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 238px);
+	gap: 1rem 1.5rem;
+}
+.sorcery-deck-curve-wrap {
+	max-width: 340px;
+	background: rgba(120, 120, 130, 0.1);
+	border: 1px solid rgba(120, 120, 130, 0.25);
+	border-radius: 10px;
+	padding: 0.75rem 1rem 0.5rem;
+}
+.sorcery-deck-chart-total {
+	font-size: 0.72rem;
+	font-weight: 600;
+	color: var(--text-muted);
+	text-align: center;
+	margin-bottom: 0.75rem;
+}
+.sorcery-deck-threshold-chart {
+	display: flex;
+	flex-direction: column;
+	gap: 0.35rem;
+	background: rgba(120, 120, 130, 0.1);
+	border: 1px solid rgba(120, 120, 130, 0.25);
+	border-radius: 10px;
+	padding: 0.75rem 1rem 0.5rem;
+}
+.sorcery-deck-threshold-title {
+	font-size: 0.82rem;
+	text-align: center;
+}
+.sorcery-thresh-icon {
+	display: inline-block;
+	width: 1.2rem;
+	height: 1.2rem;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	vertical-align: middle;
+}
+.sorcery-deck-threshold-count {
+	vertical-align: middle;
+}
+
+.is-mobile .sorcery-deck-top-row > .sorcery-deck-zone {
+	width: 100%;
+	min-width: 0;
+}
+.is-mobile .sorcery-deck-spell-columns {
+	flex-direction: column;
+}
+.is-mobile .sorcery-deck-spell-column {
+	min-width: 0;
+}
+.is-mobile .sorcery-deck-threshold-grid {
+	grid-template-columns: 1fr;
+}
+
+/* ---- Deck divider ---- */
+.sorcery-deck-divider {
+	border: none;
+	border-top: 1px solid var(--background-modifier-border);
+	margin: 0.5rem 0;
+}
+
+/* ---- Action button ---- */
+.sorcery-decks-topbar {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	gap: 0.4rem;
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+	padding-right: 0.5rem;
+}
+.sorcery-deck-actions {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	gap: 0.4rem;
+	margin-top: 0.5rem;
+	margin-bottom: 1rem;
+	padding-right: 0.5rem;
+}
+.sorcery-action-btn {
+	padding: 0.25rem 0.75rem;
+	border-radius: 6px;
+	border: 1px solid var(--background-modifier-border);
+	background: var(--background-secondary);
+	color: var(--text-normal);
+	font-size: 0.85rem;
+	cursor: pointer;
+	white-space: nowrap;
+}
+.sorcery-action-btn:hover {
+	background: var(--background-modifier-hover);
+}
+.sorcery-action-btn.is-danger {
+	color: #ff8080;
+	border-color: rgba(180, 60, 60, 0.4);
+}
+.sorcery-action-btn.is-danger:hover {
+	background: rgba(180, 60, 60, 0.15);
+	border-color: rgba(180, 60, 60, 0.6);
+}
+
+/* ---- Decks overview page ---- */
+.sorcery-deck-overview-list {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	width: fit-content;
+}
+.sorcery-deck-overview-item {
+	display: flex;
+	flex-direction: column;
+	gap: 0.15rem;
+	padding: 0.6rem 0.9rem;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 8px;
+	background: var(--background-primary);
+	min-width: max-content;
+}
+.sorcery-deck-overview-name {
+	font-weight: 700;
+	white-space: nowrap;
+}
+.sorcery-deck-overview-subtitle-row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.75rem;
+}
+.sorcery-deck-overview-descriptor {
+	color: var(--text-muted);
+	font-size: 0.88rem;
+	white-space: nowrap;
+}
+.sorcery-deck-overview-icons {
+	display: flex;
+	gap: 0.3rem;
+	align-items: center;
+	margin-left: auto;
+}
+.sorcery-deck-empty {
+	color: var(--text-muted);
+	text-align: center;
+	padding: 2rem 0;
+}
+
+/* ---- Storage overview page ---- */
+.sorcery-artist-grid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	justify-content: center;
+	margin-top: 1rem;
+}
+.sorcery-artist-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.4rem;
+	width: 110px;
+	cursor: pointer;
+	border-radius: 8px;
+	padding: 0.4rem;
+	transition: background 0.15s;
+}
+.sorcery-artist-card:hover {
+	background: var(--background-modifier-hover);
+}
+.sorcery-artist-card-image {
+	width: 100px;
+	height: 130px;
+	border-radius: 6px;
+	background: var(--background-modifier-border);
+	overflow: clip;
+}
+.sorcery-artist-card-name {
+	font-size: 0.78rem;
+	text-align: center;
+	color: var(--text-normal);
+}
+
+.sorcery-set-cards-section {
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 10px;
+	padding: 1rem 1.25rem 1.25rem;
+	margin: 0 auto 2rem;
+	width: fit-content;
+	box-sizing: border-box;
+}
+.sorcery-set-cards-section .sorcery-storage-section-heading {
+	margin-bottom: 0.85rem;
+}
+.sorcery-set-cards {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.85rem;
+	justify-content: center;
+}
+.sorcery-set-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.45rem;
+	width: 140px;
+	cursor: pointer;
+	border-radius: 8px;
+	padding: 0.5rem;
+	transition: background 0.15s;
+}
+.sorcery-set-card:hover {
+	background: var(--background-modifier-hover);
+}
+.sorcery-set-card-image {
+	width: 120px;
+	height: 120px;
+	border-radius: 6px;
+	background: var(--background-modifier-border);
+	overflow: clip;
+}
+.sorcery-set-card-name {
+	font-size: 0.82rem;
+	font-weight: 600;
+	text-align: center;
+	color: var(--text-normal);
+}
+
+.sorcery-storage-overview {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 3rem;
+}
+.sorcery-storage-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.sorcery-storage-section-heading {
+	font-size: 0.75rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.07em;
+	color: var(--text-muted);
+	margin-bottom: 0.6rem;
+	text-align: center;
+}
+.sorcery-storage-overview .sorcery-deck-overview-item {
+	text-align: center;
+}
+
+.hide-inline-title .inline-title {
+	display: none;
+}
+
+.sorcery-binder-order table th {
+	font-family: var(--font-monospace);
+}
+.sorcery-binder-order td .sorcery-binder-cell {
+	display: flex;
+	align-items: baseline;
+	gap: 0.4em;
+	white-space: nowrap;
+}
+.sorcery-binder-order .sorcery-rarity-prefix {
+	font-family: var(--font-monospace);
+	min-width: 7.5em;
+	flex-shrink: 0;
+	text-align: right;
+}
+.sorcery-binder-order .sorcery-rarity-prefix--empty {
+	min-width: 7.5em;
+}
+.sorcery-binder-order td.is-owned {
+	background: rgba(80, 160, 80, 0.12) !important;
+}
+.sorcery-binder-order td.is-unbindered {
+	background: rgba(180, 130, 30, 0.18) !important;
+}
+.sorcery-binder-order .sorcery-rarity-prefix--unique     { color: #c9a84c; }
+.sorcery-binder-order .sorcery-rarity-prefix--elite       { color: #6898be; }
+.sorcery-binder-order .sorcery-rarity-prefix--exceptional { color: #68a868; }
+.sorcery-binder-order .sorcery-rarity-prefix--ordinary    { color: #7e8e9e; }
+
+/* ---- Set page tabs ---- */
+.sorcery-set-tabs {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.25rem;
+	margin: 0.75rem 0 2.25rem;
+	padding-bottom: 0.75rem;
+	border-bottom: 2px solid var(--background-modifier-border);
+}
+.sorcery-tab-btn {
+	padding: 0.6rem 1.5rem;
+	background: transparent;
+	border: none;
+	border-bottom: 2px solid transparent;
+	margin-bottom: -2px;
+	color: var(--text-muted);
+	cursor: pointer;
+	font: inherit;
+	font-size: 0.95rem;
+	white-space: nowrap;
+	letter-spacing: 0.01em;
+}
+.sorcery-tab-btn:hover {
+	color: var(--text-normal);
+	background: var(--background-modifier-hover);
+}
+.sorcery-tab-btn.is-active {
+	color: var(--text-normal);
+	border-bottom-color: var(--interactive-accent);
+	font-weight: 600;
+}
+
+
+/* ---- Binder chip selector ---- */
+.sorcery-binder-chips {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.35rem;
+	align-items: center;
+	justify-content: center;
+	margin: 0 0 0.75rem;
+}
+.sorcery-binder-chip {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.3rem;
+	padding: 0.15rem 0.45rem 0.15rem 0.7rem;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 999px;
+	background: var(--background-secondary);
+	font-size: 0.85rem;
+	color: var(--text-normal);
+}
+.sorcery-binder-chip-remove {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 1.1rem;
+	height: 1.1rem;
+	padding: 0;
+	background: none;
+	border: none;
+	cursor: pointer;
+	color: var(--text-muted);
+	border-radius: 999px;
+	font-size: 0.95rem;
+	line-height: 1;
+}
+.sorcery-binder-chip-remove:hover {
+	color: var(--text-normal);
+	background: var(--background-modifier-hover);
+}
+.sorcery-binder-add-btn {
+	padding: 0.15rem 0.6rem;
+	border: 1px dashed var(--background-modifier-border);
+	border-radius: 999px;
+	background: transparent;
+	color: var(--text-muted);
+	cursor: pointer;
+	font: inherit;
+	font-size: 0.85rem;
+}
+.sorcery-binder-add-btn:hover {
+	color: var(--text-normal);
+	border-color: var(--text-muted);
+}
+.sorcery-binder-remove-btn {
+	color: var(--color-red);
+	border-color: rgba(var(--color-red-rgb), 0.4);
+}
+.sorcery-binder-remove-btn:hover {
+	color: var(--color-red);
+	border-color: var(--color-red);
+}
+
+/* ---- Unbindered (owned but not placed) state ---- */
+.sorcery-play-count-bubble.is-unbindered {
+	background: rgba(180, 130, 30, 0.4);
+	border-color: rgba(220, 175, 80, 0.65);
+	color: #fff3cc;
+}
+.sorcery-base-owned-bubble.is-unbindered {
+	background: rgba(180, 130, 30, 0.4);
+	border-color: rgba(220, 175, 80, 0.65);
+	color: #fff3cc;
+}
+
+/* ---- Rows mode settings panel ---- */
+.sorcery-rows-settings {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.6rem 1.5rem;
+	align-items: center;
+	justify-content: center;
+	margin: 0 0 1rem;
+	padding: 0.5rem 1rem;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 8px;
+	background: var(--background-secondary);
+}
+.sorcery-rows-setting {
+	display: flex;
+	align-items: center;
+	gap: 0.4rem;
+	font-size: 0.9rem;
+	color: var(--text-normal);
+}
+.sorcery-rows-setting label {
+	font-weight: 600;
+	white-space: nowrap;
+}
+.sorcery-rows-setting input[type="number"] {
+	width: 4rem;
+	padding: 0.2rem 0.4rem;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 4px;
+	background: var(--background-modifier-form-field);
+	color: var(--text-normal);
+	font: inherit;
+	text-align: center;
+}
+.sorcery-rows-setting input[type="number"]:focus,
+.sorcery-rows-setting input[type="number"]:focus-visible {
+	outline: none;
+	box-shadow: none;
+}
+.sorcery-rows-setting input[type="checkbox"] {
+	width: 1rem;
+	height: 1rem;
+	cursor: pointer;
+}
+.sorcery-rows-align-select {
+	padding: 0.2rem 0.4rem;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 4px;
+	background: var(--background-modifier-form-field);
+	color: var(--text-normal);
+	font: inherit;
+	cursor: pointer;
+}
+.sorcery-rows-align-select:focus,
+.sorcery-rows-align-select:focus-visible {
+	outline: none;
+	box-shadow: none;
+}
+/* Card summary variant picker — top-right, matching the action button rows. */
+.sorcery-printing-picker {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 0.4rem;
+	margin-top: 0.5rem;
+	margin-bottom: 1rem;
+	padding-right: 0.5rem;
+}
+.sorcery-printing-label {
+	color: var(--text-muted);
+	font-size: 0.85rem;
+}
+.sorcery-printing-select {
+	padding: 0.25rem 0.5rem;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 6px;
+	background: var(--background-secondary);
+	color: var(--text-normal);
+	font: inherit;
+	font-size: 0.85rem;
+	cursor: pointer;
+}
+.sorcery-printing-select:focus,
+.sorcery-printing-select:focus-visible {
+	outline: none;
+	box-shadow: none;
+}
+.sorcery-rows-table-wrap {
+	overflow-x: auto;
+}
+.is-mobile .sorcery-rows-table-wrap {
+	overflow-x: hidden;
+}
+.is-mobile .sorcery-rows-table-wrap .sorcery-binder-table {
+	display: block;
+	width: 100%;
+}
+.is-mobile .sorcery-rows-table-wrap .sorcery-binder-table thead {
+	display: none;
+}
+.is-mobile .sorcery-rows-table-wrap .sorcery-binder-table tbody,
+.is-mobile .sorcery-rows-table-wrap .sorcery-binder-table tr {
+	display: block;
+	width: 100%;
+}
+.is-mobile .sorcery-rows-table-wrap .sorcery-binder-table td {
+	display: block;
+	text-align: left !important;
+	width: 100%;
+	box-sizing: border-box;
+	border-bottom: none;
+}
+.is-mobile .sorcery-rows-table-wrap .sorcery-binder-table tr {
+	border-bottom: 1px solid var(--background-modifier-border);
+}
+.is-mobile .sorcery-rows-table-wrap .sorcery-binder-table td:first-child {
+	font-weight: 700;
+	background: var(--background-secondary);
+	color: var(--text-muted);
+	font-size: 0.8em;
+	padding: 0.2rem 0.6rem;
+}
+.is-mobile .sorcery-rows-table-wrap .sorcery-rows-page-sep {
+	display: none;
+}
+.sorcery-rows-stats {
+	text-align: center;
+	color: var(--text-muted);
+	font-size: 0.85em;
+	margin-bottom: 0.6rem;
+}
+.sorcery-rows-page-sep td {
+	padding: 0.35rem 0.6rem;
+	border: none !important;
+	background: transparent !important;
+}
+.sorcery-rows-page-sep td::before {
+	content: '\00A0';
+}
+
+/* ---- Image lightbox ---- */
+.sorcery-lightbox-trigger {
+	cursor: zoom-in;
+}
+.sorcery-lightbox {
+	position: fixed;
+	inset: 0;
+	z-index: 9999;
+	background: rgba(0, 0, 0, 0.88);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: zoom-out;
+}
+.sorcery-lightbox-img {
+	max-width: 90vw;
+	max-height: 90vh;
+	object-fit: contain;
+	border-radius: 6px;
+	box-shadow: 0 8px 40px rgba(0, 0, 0, 0.8);
+	pointer-events: none;
+}
+.sorcery-lightbox-img--rotated {
+	transform: rotate(90deg);
+	/* swap constraints so portrait image fits landscape after rotation */
+	max-width: 90vh;
+	max-height: 90vw;
+}
+
+/* Card rulings / FAQ */
+/* ---- Codex page ---- */
+.sorcery-codex-count {
+	font-size: 0.8rem;
+	color: var(--text-muted);
+	white-space: nowrap;
+}
+.sorcery-codex-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem 1.75rem;
+	align-items: flex-start;
+	padding-top: 0.5rem;
+}
+.sorcery-codex-list--flat {
+	gap: 0.4rem;
+}
+.sorcery-codex-column {
+	display: flex;
+	flex-direction: column;
+	gap: 0.3rem;
+}
+.sorcery-codex-letter {
+	font-size: 0.75rem;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--text-muted);
+	padding-bottom: 0.2rem;
+	border-bottom: 1px solid var(--text-faint);
+	margin-bottom: 0.1rem;
+}
+.sorcery-codex-bubble {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 0.2rem 0.65rem;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 999px;
+	background: var(--background-secondary);
+	color: var(--text-normal);
+	font-size: 0.85rem;
+	cursor: pointer;
+	white-space: nowrap;
+	text-decoration: none !important;
+}
+.sorcery-codex-bubble:hover {
+	background: var(--background-modifier-hover);
+	border-color: var(--text-faint);
+}
+.sorcery-codex-empty {
+	color: var(--text-muted);
+	padding: 1rem 0.25rem;
+	width: 100%;
+}
+.sorcery-codex-list--search {
+	justify-content: center;
+}
+.sorcery-codex-list--search .sorcery-codex-column {
+	min-width: 200px;
+}
+.sorcery-codex-bubble--dim {
+	opacity: 0.45;
+}
+.sorcery-codex-result-divider {
+	height: 1px;
+	background: var(--background-modifier-border);
+	margin: 0.3rem 0;
+}
+
+/* ---- Codex entry pages ---- */
+table.sorcery-codex-grid {
+	border-collapse: collapse;
+	margin: 0.5rem 0;
+}
+table.sorcery-codex-grid td {
+	width: 2rem;
+	height: 2rem;
+	border: 1px solid var(--background-modifier-border);
+	text-align: center;
+	vertical-align: middle;
+	font-size: 0.8rem;
+	font-weight: 600;
+	color: var(--text-normal);
+	background: var(--background-secondary);
+}
+table.sorcery-codex-grid td:empty {
+	background: var(--background-primary);
+}
+
+/* ---- Codex entry page heading ---- */
+.sorcery-codex .inline-title {
+	border-left: 4px solid #c9a84c;
+	padding-left: 0.85rem;
+	background: linear-gradient(to right, rgba(201, 168, 76, 0.18) 0%, transparent 70%);
+	padding-top: 0.3rem;
+	padding-bottom: 0.3rem;
+	border-radius: 0 4px 4px 0;
+}
+.sorcery-codex h2 {
+	border-left: 3px solid #6a9fb5;
+	padding-left: 0.65rem;
+	margin-top: 2rem;
+	color: var(--text-normal);
+	font-size: 1rem;
+	font-weight: 600;
+	background: linear-gradient(to right, rgba(106, 159, 181, 0.15) 0%, transparent 60%);
+	padding-top: 0.2rem;
+	padding-bottom: 0.2rem;
+	border-radius: 0 4px 4px 0;
+}
+.sorcery-codex ol ol {
+	list-style-type: lower-alpha;
+}
+.sorcery-codex .cm-preview-code-block img,
+.sorcery-codex img[src*="earth.png"],
+.sorcery-codex img[src*="wind.png"],
+.sorcery-codex img[src*="fire.png"],
+.sorcery-codex img[src*="water.png"] {
+	display: inline;
+	vertical-align: middle;
+	width: 16px;
+	height: 16px;
+	margin: 0 1px;
+}
+.sorcery-codex ol li::marker {
+	color: var(--text-normal);
+	font-weight: 600;
+}
+
+/* ---- FAQ section on card pages ---- */
+.sorcery-faq-heading {
+	font-size: 1.1rem;
+	font-weight: 700;
+	margin: 3rem 0 0.6rem;
+}
+.sorcery-faq-list {
+	margin: 0 0 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.6rem;
+	width: fit-content;
+	max-width: 100%;
+}
+.sorcery-faq-entry {
+	padding: 0.55rem 0.75rem;
+	border: 1px solid var(--background-modifier-border);
+	background: var(--background-secondary);
+	border-radius: 6px;
+}
+.sorcery-faq-q {
+	font-weight: 600;
+	margin-bottom: 0.3rem;
+}
+.sorcery-faq-a {
+	color: var(--text-muted);
+	font-size: 0.9rem;
+	white-space: pre-wrap;
+}

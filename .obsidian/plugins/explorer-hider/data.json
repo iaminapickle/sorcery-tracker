@@ -1,0 +1,64 @@
+{
+  "useSnippets": false,
+  "compatSpf": false,
+  "showAll": false,
+  "snippets": [
+    {
+      "path": "scripts",
+      "type": "folder",
+      "hiddenInNav": true,
+      "hiddenInBookmarks": false
+    },
+    {
+      "path": "data",
+      "type": "folder",
+      "hiddenInNav": true,
+      "hiddenInBookmarks": false
+    },
+    {
+      "path": "storage",
+      "type": "folder",
+      "hiddenInNav": true,
+      "hiddenInBookmarks": false
+    },
+    {
+      "path": "decks",
+      "type": "folder",
+      "hiddenInNav": true,
+      "hiddenInBookmarks": false
+    },
+    {
+      "path": "sets",
+      "type": "folder",
+      "hiddenInNav": true,
+      "hiddenInBookmarks": false
+    },
+    {
+      "path": "cards",
+      "type": "folder",
+      "hiddenInNav": true,
+      "hiddenInBookmarks": false
+    },
+    {
+      "path": "artists",
+      "type": "folder",
+      "hiddenInNav": true,
+      "hiddenInBookmarks": false
+    },
+    {
+      "path": "assets",
+      "type": "folder",
+      "hiddenInNav": true,
+      "hiddenInBookmarks": false
+    },
+    {
+      "path": "codex",
+      "type": "folder",
+      "hiddenInNav": true,
+      "hiddenInBookmarks": false
+    }
+  ],
+  "alwaysHideInBookmarks": false,
+  "buttonInContextBookmark": false,
+  "obsidianExclude": false
+}
