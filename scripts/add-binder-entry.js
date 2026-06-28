@@ -25,7 +25,7 @@ async function start(params) {
 	S = await loadShared();
 	QuickAdd = params;
 	const config = await S.loadConfig();
-	const binderName = await QuickAdd.quickAddApi.inputPrompt("Storage name:");
+	let binderName = await QuickAdd.quickAddApi.inputPrompt("Storage name:");
 	if (!binderName) return;
 
 	const storageTypeChoice = await QuickAdd.quickAddApi.suggester(
@@ -50,17 +50,16 @@ async function start(params) {
 				1,
 				Number((await QuickAdd.quickAddApi.inputPrompt("Pages:", "1")) || "1"),
 			);
+	// Resolve name collisions: if a storage with this name already exists, use
+	// the next available name (e.g. "Alpha" → "Alpha1") instead of bailing.
+	const requested = String(binderName);
+	const finalName = S.nextAvailableStorageName(config, requested);
+	if (finalName !== requested)
+		new Notice(`"${requested}" already exists — creating "${finalName}" instead.`, 5000);
+	binderName = finalName;
 	const safeName =
-		String(binderName)
-			.replace(/[\\/:*?"<>|]+/g, " - ")
-			.trim() || binderName;
+		finalName.replace(/[\\/:*?"<>|]+/g, " - ").trim() || finalName;
 	const filePath = S.vaultPath(config, `${config.bindersDir}/${safeName}.md`);
-	const existing = app.vault.getAbstractFileByPath(filePath);
-	if (existing) {
-		await app.workspace.getLeaf(false).openFile(existing);
-		new Notice(`Already exists: ${binderName}`, 4000);
-		return existing;
-	}
 
 	const totalSlots = isBox ? null : slots * pages;
 	const frontmatter = [

@@ -5127,6 +5127,30 @@ const SorceryTrackerShared = (() => {
 		}
 	}
 
+	// First free storage name: "<base>", then "<base>1", "<base>2", … that is
+	// neither claimed by another storage's effective name (binderName, falling
+	// back to file basename) nor an occupied file path. `excludePath` lets the
+	// note being renamed ignore its own current name/path.
+	function nextAvailableStorageName(config, baseName, excludePath = "") {
+		const prefix = `${vaultPath(config, config.bindersDir)}/`;
+		const taken = new Set();
+		for (const file of app.vault.getMarkdownFiles()) {
+			if (!file.path.startsWith(prefix)) continue;
+			if (excludePath && file.path === excludePath) continue;
+			const fm = app.metadataCache.getFileCache(file)?.frontmatter || {};
+			if (fm.kind === "sorcery-storage") taken.add(String(fm.binderName || file.basename));
+		}
+		let name = baseName;
+		let n = 1;
+		while (true) {
+			const safe = name.replace(/[\\/:*?"<>|]+/g, " - ").trim();
+			const at = app.vault.getAbstractFileByPath(vaultPath(config, `${config.bindersDir}/${safe}.md`));
+			const pathFree = !at || at.path === excludePath;
+			if (!taken.has(name) && pathFree) return name;
+			name = `${baseName}${n++}`;
+		}
+	}
+
 	return {
 		DEFAULT_CONFIG,
 		loadConfig,
@@ -5164,6 +5188,7 @@ const SorceryTrackerShared = (() => {
 		findVariant,
 		ensureStorageBox,
 		nextAvailableNoteName,
+		nextAvailableStorageName,
 		renderSummary,
 		renderCollection,
 		renderSet,

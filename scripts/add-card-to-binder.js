@@ -516,17 +516,28 @@ async function handleEdit(config) {
 	if (!binder) return;
 	const fm = app.metadataCache.getFileCache(binder.file)?.frontmatter || {};
 	const isBox = String(fm.storageType || "binder") === "box";
+	const oldName = String(fm.binderName || binder.file.basename);
 
 	const newName = await QuickAdd.quickAddApi.inputPrompt(
 		"Storage name:",
 		"",
-		String(fm.binderName || binder.file.basename),
+		oldName,
 	);
 	if (newName === null || newName === undefined) return;
 
+	// Resolve name collisions: if another storage already uses the requested
+	// name, fall through to the next available one (e.g. "Alpha" → "Alpha1").
+	const requested = newName.trim();
+	let finalName = requested;
+	if (requested && requested !== oldName) {
+		finalName = S.nextAvailableStorageName(config, requested, binder.file.path);
+		if (finalName !== requested)
+			new Notice(`"${requested}" already exists — using "${finalName}" instead.`, 5000);
+	}
+
 	if (isBox) {
 		await app.fileManager.processFrontMatter(binder.file, (fm) => {
-			if (newName.trim()) fm.binderName = newName.trim();
+			if (finalName) fm.binderName = finalName;
 		});
 	} else {
 		const newColour = await QuickAdd.quickAddApi.inputPrompt(
@@ -553,14 +564,35 @@ async function handleEdit(config) {
 		const pages = Math.max(1, Number(pagesStr) || 1);
 
 		await app.fileManager.processFrontMatter(binder.file, (fm) => {
-			if (newName.trim()) fm.binderName = newName.trim();
+			if (finalName) fm.binderName = finalName;
 			fm.colour = newColour.trim();
 			fm.slotsPerPage = slotsPerPage;
 			fm.pages = pages;
 			fm.totalSlots = slotsPerPage * pages;
 		});
 	}
-	new Notice(`Updated "${newName.trim() || binder.name}"`, 4000);
+
+	// Renaming the storage note alone would orphan every card: placements are
+	// keyed by binder name in each summary note's ownership, so reassign them.
+	let movedCards = 0;
+	if (finalName && finalName !== oldName) {
+		for (const { file, fm: noteFm } of summaryNotes(config)) {
+			if (!ownershipHasBinder(noteFm, oldName)) continue;
+			await app.fileManager.processFrontMatter(file, (f) => {
+				if (moveBinderInOwnership(f, oldName, finalName) > 0) movedCards++;
+			});
+		}
+
+		// Keep the file name in sync with the storage name. renameFile updates
+		// any open tab and existing links automatically — no manual reopen.
+		const safeName = finalName.replace(/[\\/:*?"<>|]+/g, " - ").trim() || finalName;
+		const newPath = `${binderFolder(config)}/${safeName}.md`;
+		if (newPath !== binder.file.path)
+			await app.fileManager.renameFile(binder.file, newPath);
+	}
+
+	new Notice(`Updated "${finalName || binder.name}"`, 4000);
+	if (movedCards > 0) refreshDataview();
 }
 
 async function handleDelete(config) {
