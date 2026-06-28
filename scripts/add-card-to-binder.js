@@ -540,13 +540,6 @@ async function handleEdit(config) {
 			if (finalName) fm.binderName = finalName;
 		});
 	} else {
-		const newColour = await QuickAdd.quickAddApi.inputPrompt(
-			"Colour:",
-			"",
-			String(fm.colour || ""),
-		);
-		if (newColour === null || newColour === undefined) return;
-
 		const slotsStr = await QuickAdd.quickAddApi.inputPrompt(
 			"Slots per page:",
 			"",
@@ -565,7 +558,6 @@ async function handleEdit(config) {
 
 		await app.fileManager.processFrontMatter(binder.file, (fm) => {
 			if (finalName) fm.binderName = finalName;
-			fm.colour = newColour.trim();
 			fm.slotsPerPage = slotsPerPage;
 			fm.pages = pages;
 			fm.totalSlots = slotsPerPage * pages;

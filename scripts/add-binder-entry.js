@@ -71,7 +71,6 @@ async function start(params) {
 		`storageType: ${storageTypeChoice}`,
 	];
 	if (!isBox) {
-		frontmatter.push('colour: ""');
 		frontmatter.push(`slotsPerPage: ${slots}`);
 		frontmatter.push(`pages: ${pages}`);
 		frontmatter.push(`totalSlots: ${totalSlots}`);
