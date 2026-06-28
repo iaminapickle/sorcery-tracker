@@ -1,7 +1,7 @@
 ---
 kind: sorcery-dashboard
 setName: Gothic
-setMode: play
+setMode: play-rows
 playRowsAlign: normal
 cssclasses:
   - sorcery-dashboard

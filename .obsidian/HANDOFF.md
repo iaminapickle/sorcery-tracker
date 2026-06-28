@@ -288,7 +288,6 @@ kind: sorcery-storage
 cssclasses: [sorcery-flat-meta]
 binderName: "Arthurian Legends 1"
 storageType: binder
-colour: ""
 slotsPerPage: 12
 pages: 48
 totalSlots: 576
@@ -377,7 +376,7 @@ When triggered from a storage-page button, `globalThis.__sorceryStoragePreselect
 - **Add:** `S.chooseVariant()` → choose storage → qty → `S.addPlacementToOwnership` on the summary note's `ownership[slug]` (increments counts).
 - **Remove:** choose storage → placement (cardName | setName | type | finish | product | xN columns) → qty → decrements.
 - **Move / Move All:** source → (placement →) target → qty → removes from source, adds to target.
-- **Edit:** prompts binderName (pre-filled); binders also prompt colour/slotsPerPage/pages (recalcs `totalSlots`); boxes skip capacity fields.
+- **Edit:** prompts binderName (pre-filled); binders also prompt slotsPerPage/pages (recalcs `totalSlots`); boxes skip capacity fields.
 - **Clear:** type `"clear"` to confirm → removes all placements for that storage from every variant note, decrements counts.
 - **Delete:** type `"delete"` to confirm → clears placements then `app.vault.delete()`; detaches any open leaves showing the file.
 
