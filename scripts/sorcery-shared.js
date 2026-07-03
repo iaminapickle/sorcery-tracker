@@ -373,16 +373,59 @@ const SorceryTrackerShared = (() => {
 		return { cards, storages, sets, decks };
 	}
 
+	// The element that actually scrolls for a markdown leaf: the preview container
+	// in reading mode, or the CodeMirror scroller in edit/live-preview mode.
+	function previewScrollEl(view) {
+		const root = view?.contentEl || view?.containerEl;
+		if (!root) return null;
+		return (
+			root.querySelector(".markdown-preview-view") ||
+			root.querySelector(".cm-scroller") ||
+			null
+		);
+	}
+
+	// rerender(true) rebuilds the block's DOM, resetting scrollTop to 0. Our renders
+	// are async and chunked (e.g. Collection appends rows over successive rAF ticks),
+	// so the target height isn't present when rerender() returns. Re-pin the saved
+	// scrollTop each time the DOM grows, for a bounded window, then stop so the user
+	// keeps control. Observing DOM mutations (not element resize) is what catches the
+	// chunked appends, since the scroller's own box size never changes.
+	function restoreScroll(el, target) {
+		if (!el || !(target > 0)) return;
+		el.scrollTop = target;
+		let done = false;
+		const apply = () => {
+			if (!done) el.scrollTop = target;
+		};
+		let mo = null;
+		try {
+			mo = new MutationObserver(apply);
+			mo.observe(el, { childList: true, subtree: true });
+		} catch (_) {}
+		setTimeout(() => {
+			done = true;
+			if (mo) mo.disconnect();
+			el.scrollTop = target;
+		}, 1500);
+	}
+
 	// Force-rerender open Dataview leaves. With a `hint`, only leaves whose note is
 	// affected are re-rendered; without one, every open leaf is refreshed (legacy).
+	// Each rerendered leaf's scroll position is captured and restored so the page
+	// stays where the user was, despite the DOM being rebuilt from scratch.
 	function refreshDataview(hint) {
 		app.workspace.iterateAllLeaves((leaf) => {
 			const view = leaf.view;
 			if (!view) return;
 			if (hint && !leafIsRelevant(view, hint)) return;
+			const before = previewScrollEl(view);
+			const saved = before ? before.scrollTop : 0;
 			view.previewMode?.rerender?.(true);
 			if (view.currentMode && view.currentMode !== view.previewMode)
 				view.currentMode.rerender?.(true);
+			// Re-query in case rerender swapped the scroller element out.
+			restoreScroll(previewScrollEl(view) || before, saved);
 		});
 	}
 
