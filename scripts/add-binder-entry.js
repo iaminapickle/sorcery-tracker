@@ -95,7 +95,7 @@ async function start(params) {
 
 	const file = await app.vault.create(filePath, content);
 	await app.workspace.getLeaf(false).openFile(file);
-	S.refreshDataview();
+	S.refreshDataview(await S.buildRefreshHint(config, { storages: [binderName] }));
 	const details = isBox ? "box" : `binder (${slots} slots × ${pages} pages = ${totalSlots} total)`;
 	await logAction(config, `Storage "${binderName}": created as ${details}`);
 	new Notice(`Created ${storageTypeChoice}: ${binderName}`, 4000);

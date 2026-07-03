@@ -20,7 +20,8 @@ module.exports = {
 let QuickAdd;
 
 const logAction = (config, message) => S.logAction(config, message);
-const refreshDataview = () => S.refreshDataview();
+const refreshDataview = (hint) => S.refreshDataview(hint);
+const buildRefreshHint = (config, opts) => S.buildRefreshHint(config, opts);
 
 async function start(params) {
 	S = await loadShared();
@@ -61,6 +62,7 @@ async function start(params) {
 
 	const fileUpdates = new Map();
 	const notFound = [];
+	const touchedCards = new Set();
 
 	for (const row of rows) {
 		const match = S.findVariant(index, row);
@@ -75,6 +77,7 @@ async function start(params) {
 			foil: row.finish.toLowerCase() === "foil",
 			quantity: row.quantity,
 		});
+		touchedCards.add(row.cardName);
 	}
 
 	let added = 0;
@@ -87,7 +90,7 @@ async function start(params) {
 		added += updates.length;
 	}
 
-	refreshDataview();
+	refreshDataview(await buildRefreshHint(config, { cards: [...touchedCards], storages: [trimmedBox] }));
 
 	const summary = `Imported ${added} card type${added !== 1 ? "s" : ""} into "${trimmedBox}"` +
 		(notFound.length ? ` · ${notFound.length} not found` : "");

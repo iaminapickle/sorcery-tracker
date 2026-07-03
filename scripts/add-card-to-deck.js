@@ -20,7 +20,8 @@ module.exports = {
 let QuickAdd;
 
 const logAction = (config, message) => S.logAction(config, message);
-const refreshDataview = () => S.refreshDataview();
+const refreshDataview = (hint) => S.refreshDataview(hint);
+const buildRefreshHint = (config, opts) => S.buildRefreshHint(config, opts);
 
 // Deck zones. Maybeboard mirrors the main zones under deckMaybe* keys.
 const ZONE_LABELS = { deckSpells: "Spellbook", deckSites: "Atlas", deckCollection: "Collection" };
@@ -142,7 +143,7 @@ async function handleAdd(config) {
 	new Notice(`Added ${count}× ${cardName} to ${ZONE_LABELS[zone]}`, 3000);
 	await cacheReady;
 	await logAction(config, `Deck "${deckName}": added ${count}× ${cardName} to ${ZONE_LABELS[zone]}`);
-	refreshDataview();
+	refreshDataview(await buildRefreshHint(config, { decks: [deckName] }));
 }
 
 async function handleMaybeAdd(config) {
@@ -179,7 +180,7 @@ async function handleMaybeAdd(config) {
 	new Notice(`Added ${count}× ${cardName} to Maybeboard (${MAYBE_ZONE_LABELS[zone]})`, 3000);
 	await cacheReady;
 	await logAction(config, `Deck "${deckName}": added ${count}× ${cardName} to Maybeboard (${MAYBE_ZONE_LABELS[zone]})`);
-	refreshDataview();
+	refreshDataview(await buildRefreshHint(config, { decks: [deckName] }));
 }
 
 async function handleMaybeRemove(config) {
@@ -222,7 +223,7 @@ async function handleMaybeRemove(config) {
 	new Notice(`Removed ${qty}× ${chosen} from Maybeboard (${MAYBE_ZONE_LABELS[zone]})`, 3000);
 	await cacheReady;
 	await logAction(config, `Deck "${deckName}": removed ${qty}× ${chosen} from Maybeboard (${MAYBE_ZONE_LABELS[zone]})`);
-	refreshDataview();
+	refreshDataview(await buildRefreshHint(config, { decks: [deckName] }));
 }
 
 async function handleRemove(config) {
@@ -265,7 +266,7 @@ async function handleRemove(config) {
 	new Notice(`Removed ${qty}× ${chosen} from ${ZONE_LABELS[zone]}`, 3000);
 	await cacheReady;
 	await logAction(config, `Deck "${deckName}": removed ${qty}× ${chosen} from ${ZONE_LABELS[zone]}`);
-	refreshDataview();
+	refreshDataview(await buildRefreshHint(config, { decks: [deckName] }));
 }
 
 async function handleClear(config) {
@@ -297,7 +298,7 @@ async function handleClear(config) {
 	new Notice(`Cleared all cards from "${deckName}"`, 4000);
 	await cacheReady;
 	await logAction(config, `Deck "${deckName}": cleared all cards`);
-	refreshDataview();
+	refreshDataview(await buildRefreshHint(config, { decks: [deckName] }));
 }
 
 async function handleEdit(config) {
@@ -356,7 +357,7 @@ async function handleEdit(config) {
 	if (finalName !== oldName) editParts.push(`renamed to "${finalName}"`);
 	if (avatar !== currentAvatar) editParts.push(`avatar → ${avatar || "none"}`);
 	if (editParts.length) await logAction(config, `Deck "${oldName}": ${editParts.join(", ")}`);
-	refreshDataview();
+	refreshDataview(await buildRefreshHint(config, { decks: [oldName, finalName] }));
 }
 
 async function handleDelete(config) {
@@ -384,5 +385,5 @@ async function handleDelete(config) {
 	await logAction(config, `Deck "${deckName}": deleted`);
 	await app.vault.delete(deckFile);
 	new Notice(`Deleted deck "${deckName}"`, 4000);
-	refreshDataview();
+	refreshDataview(await buildRefreshHint(config, { decks: [deckName] }));
 }

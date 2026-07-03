@@ -224,7 +224,8 @@ const maxStringLength = (values, fallback) => S.maxStringLength(values, fallback
 const displayProduct = (value) => S.displayProduct(value);
 
 const withStyledSuggestions = (labels, fn) => S.withStyledSuggestions(fn, { labels });
-const refreshDataview = () => S.refreshDataview();
+const refreshDataview = (hint) => S.refreshDataview(hint);
+const buildRefreshHint = (config, opts) => S.buildRefreshHint(config, opts);
 const logAction = (config, message) => S.logAction(config, message);
 
 function placementLabel(choice, widths) {
@@ -363,7 +364,7 @@ function moveBinderInOwnership(fm, fromBinder, toBinder) {
 async function handleAdd(config) {
 	const binder = await chooseBinder(config, "Destination storage");
 	if (!binder) return;
-	let added = false;
+	const touchedCards = new Set();
 	while (true) {
 		const card = await chooseVariant(config, "Choose card", "");
 		if (!card) break;
@@ -382,10 +383,11 @@ async function handleAdd(config) {
 			4000,
 		);
 		await logAction(config, `Added ${quantity}x ${card.cardName} - ${foil ? "Foil" : "Standard"} to ${binder.name}`);
-		refreshDataview();
-		added = true;
+		touchedCards.add(card.cardName);
+		refreshDataview(await buildRefreshHint(config, { cards: [card.cardName], storages: [binder.name] }));
 	}
-	if (added) refreshDataview();
+	if (touchedCards.size)
+		refreshDataview(await buildRefreshHint(config, { cards: [...touchedCards], storages: [binder.name] }));
 }
 
 async function handleRemove(config) {
@@ -419,7 +421,7 @@ async function handleRemove(config) {
 		4000,
 	);
 	await logAction(config, `Removed ${removed}x ${placement.cardName} - ${placement.foil ? "Foil" : "Standard"} from ${binder.name}`);
-	refreshDataview();
+	refreshDataview(await buildRefreshHint(config, { cards: [placement.cardName], storages: [binder.name] }));
 }
 
 async function handleMove(config) {
@@ -462,7 +464,7 @@ async function handleMove(config) {
 		4000,
 	);
 	await logAction(config, `Moved ${moved}x ${placement.cardName} - ${placement.foil ? "Foil" : "Standard"} from ${sourceBinder.name} to ${targetBinder.name}`);
-	refreshDataview();
+	refreshDataview(await buildRefreshHint(config, { cards: [placement.cardName], storages: [sourceBinder.name, targetBinder.name] }));
 }
 
 async function handleClear(config) {
@@ -479,15 +481,17 @@ async function handleClear(config) {
 		return;
 	}
 	let totalRemoved = 0;
+	const touchedCards = new Set();
 	for (const { file, fm } of summaryNotes(config)) {
 		if (!ownershipHasBinder(fm, binder.name)) continue;
 		await app.fileManager.processFrontMatter(file, (f) => {
 			totalRemoved += stripBinderFromOwnership(f, binder.name);
 		});
+		touchedCards.add(fm.cardName || file.basename);
 	}
 	new Notice(`Cleared ${totalRemoved} card${totalRemoved !== 1 ? "s" : ""} from ${binder.name}`, 4000);
 	await logAction(config, `Cleared ${totalRemoved} cards from ${binder.name}`);
-	refreshDataview();
+	refreshDataview(await buildRefreshHint(config, { cards: [...touchedCards], storages: [binder.name] }));
 }
 
 async function handleMoveAll(config) {
@@ -500,15 +504,17 @@ async function handleMoveAll(config) {
 		return;
 	}
 	let totalMoved = 0;
+	const touchedCards = new Set();
 	for (const { file, fm } of summaryNotes(config)) {
 		if (!ownershipHasBinder(fm, sourceBinder.name)) continue;
 		await app.fileManager.processFrontMatter(file, (f) => {
 			totalMoved += moveBinderInOwnership(f, sourceBinder.name, targetBinder.name);
 		});
+		touchedCards.add(fm.cardName || file.basename);
 	}
 	new Notice(`Moved ${totalMoved} card${totalMoved !== 1 ? "s" : ""} from ${sourceBinder.name} to ${targetBinder.name}`, 4000);
 	await logAction(config, `Moved all (${totalMoved}) from ${sourceBinder.name} to ${targetBinder.name}`);
-	refreshDataview();
+	refreshDataview(await buildRefreshHint(config, { cards: [...touchedCards], storages: [sourceBinder.name, targetBinder.name] }));
 }
 
 async function handleEdit(config) {
@@ -567,12 +573,14 @@ async function handleEdit(config) {
 	// Renaming the storage note alone would orphan every card: placements are
 	// keyed by binder name in each summary note's ownership, so reassign them.
 	let movedCards = 0;
+	const touchedCards = new Set();
 	if (finalName && finalName !== oldName) {
 		for (const { file, fm: noteFm } of summaryNotes(config)) {
 			if (!ownershipHasBinder(noteFm, oldName)) continue;
 			await app.fileManager.processFrontMatter(file, (f) => {
 				if (moveBinderInOwnership(f, oldName, finalName) > 0) movedCards++;
 			});
+			touchedCards.add(noteFm.cardName || file.basename);
 		}
 
 		// Keep the file name in sync with the storage name. renameFile updates
@@ -584,7 +592,12 @@ async function handleEdit(config) {
 	}
 
 	new Notice(`Updated "${finalName || binder.name}"`, 4000);
-	if (movedCards > 0) refreshDataview();
+	// Refresh the storage page itself (capacity/name), the storage overview, and any
+	// card/set/collection views that reference cards whose placements were reassigned.
+	refreshDataview(await buildRefreshHint(config, {
+		cards: [...touchedCards],
+		storages: [oldName, finalName].filter(Boolean),
+	}));
 }
 
 async function handleDelete(config) {
@@ -603,11 +616,13 @@ async function handleDelete(config) {
 	}
 
 	let totalRemoved = 0;
+	const touchedCards = new Set();
 	for (const { file, fm } of summaryNotes(config)) {
 		if (!ownershipHasBinder(fm, binder.name)) continue;
 		await app.fileManager.processFrontMatter(file, (f) => {
 			totalRemoved += stripBinderFromOwnership(f, binder.name);
 		});
+		touchedCards.add(fm.cardName || file.basename);
 	}
 
 	const deletedPath = binder.file.path;
@@ -618,5 +633,5 @@ async function handleDelete(config) {
 	});
 
 	new Notice(`Deleted "${binder.name}" (${totalRemoved} card${totalRemoved !== 1 ? "s" : ""} cleared)`, 4000);
-	refreshDataview();
+	refreshDataview(await buildRefreshHint(config, { cards: [...touchedCards], storages: [binder.name] }));
 }

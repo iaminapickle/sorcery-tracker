@@ -79,7 +79,8 @@ function buildDeckContent(deckName, avatar, spells, sites, collection) {
 }
 
 const logAction = (config, message) => S.logAction(config, message);
-const refreshDataview = () => S.refreshDataview();
+const refreshDataview = (hint) => S.refreshDataview(hint);
+const buildRefreshHint = (config, opts) => S.buildRefreshHint(config, opts);
 
 async function start(params) {
 	S = await loadShared();
@@ -123,7 +124,7 @@ async function start(params) {
 	await S.ensureFolder(S.vaultPath(config, decksDir));
 	const file = await app.vault.create(filePath, buildDeckContent(resolvedName, avatar, spells, sites, collection));
 	await app.workspace.getLeaf(false).openFile(file);
-	refreshDataview();
+	refreshDataview(await buildRefreshHint(config, { decks: [resolvedName] }));
 
 	const summary = `${spells.length} spells, ${sites.length} sites, ${collection.length} collection` +
 		(avatar ? `, avatar: ${avatar}` : "");

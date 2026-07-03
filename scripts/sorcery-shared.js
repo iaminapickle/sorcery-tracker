@@ -290,10 +290,96 @@ const SorceryTrackerShared = (() => {
 		await app.vault.adapter.write(logPath, [entry, ...lines].slice(0, 200).join("\n") + "\n");
 	}
 
-	function refreshDataview() {
+	// True if any deck zone (main or maybeboard) contains one of `cardSet` (lowercased names).
+	function deckContainsCard(fm, cardSet) {
+		if (!cardSet.size) return false;
+		const zones = [
+			"deckSpells",
+			"deckSites",
+			"deckCollection",
+			"deckMaybeSpells",
+			"deckMaybeSites",
+			"deckMaybeCollection",
+		];
+		for (const z of zones) {
+			const arr = fm?.[z];
+			if (Array.isArray(arr) && arr.some((e) => cardSet.has(lowerTrim(e?.cardName))))
+				return true;
+		}
+		return false;
+	}
+
+	// Decide whether an open leaf's note needs re-rendering given what changed.
+	// `hint` = { cards, storages, sets, decks } (all Sets of lowercased names).
+	// - cards:    card names whose OWNERSHIP changed
+	// - storages: storage names touched (add/remove/move/clear/rename/create)
+	// - sets:     set names the affected cards belong to (derived from cards)
+	// - decks:    deck names whose CONTENTS changed (add/remove/clear/create)
+	// Unknown note kinds return true so we never miss a page we don't recognise.
+	function leafIsRelevant(view, hint) {
+		const file = view?.file;
+		if (!file) return true;
+		const fm = app.metadataCache.getFileCache(file)?.frontmatter;
+		const kind = fm?.kind;
+		const { cards, storages, sets, decks } = hint;
+		switch (kind) {
+			case "sorcery-codex":
+			case "sorcery-codex-index":
+				return false; // rules glossary — never affected by collection changes
+			case "sorcery-decks-overview":
+				return decks.size > 0; // only when a deck's contents changed
+			case "sorcery-card-summary":
+				return cards.has(lowerTrim(fm.cardName));
+			case "sorcery-storage":
+				return storages.has(lowerTrim(fm.binderName));
+			case "sorcery-storage-overview":
+				return storages.size > 0;
+			case "sorcery-artist":
+			case "sorcery-artist-index":
+				return cards.size > 0; // aggregate ownership by artist
+			case "sorcery-deck":
+				return decks.has(lowerTrim(fm.deckName)) || deckContainsCard(fm, cards);
+			case "sorcery-dashboard":
+				// Collection and set pages share this kind; set pages carry setName.
+				if (fm.setName) return sets.has(lowerTrim(fm.setName));
+				return cards.size > 0; // Collection aggregates ownership
+			default:
+				return true; // foreign/unknown note — refresh to be safe
+		}
+	}
+
+	// Build a refresh hint from what a mutation touched. `sets` is derived from the
+	// affected card names via the API unless passed explicitly. Card/storage/deck
+	// names are normalised (lowercased) for matching in leafIsRelevant.
+	async function buildRefreshHint(config, opts = {}) {
+		const toSet = (arr) =>
+			new Set((Array.isArray(arr) ? arr : []).map(lowerTrim).filter(Boolean));
+		const cards = toSet(opts.cards);
+		const storages = toSet(opts.storages);
+		const decks = toSet(opts.decks);
+		let sets;
+		if (Array.isArray(opts.sets)) {
+			sets = toSet(opts.sets);
+		} else {
+			sets = new Set();
+			if (cards.size) {
+				const api = await loadApiData(config);
+				for (const card of api?.data || []) {
+					if (!cards.has(lowerTrim(card.name))) continue;
+					for (const s of card.sets || []) if (s?.name) sets.add(lowerTrim(s.name));
+				}
+			}
+		}
+		return { cards, storages, sets, decks };
+	}
+
+	// Force-rerender open Dataview leaves. With a `hint`, only leaves whose note is
+	// affected are re-rendered; without one, every open leaf is refreshed (legacy).
+	function refreshDataview(hint) {
 		app.workspace.iterateAllLeaves((leaf) => {
 			const view = leaf.view;
 			if (!view) return;
+			if (hint && !leafIsRelevant(view, hint)) return;
 			view.previewMode?.rerender?.(true);
 			if (view.currentMode && view.currentMode !== view.previewMode)
 				view.currentMode.rerender?.(true);
@@ -5162,6 +5248,7 @@ const SorceryTrackerShared = (() => {
 		ownedFromVariants,
 		logAction,
 		refreshDataview,
+		buildRefreshHint,
 		addPlacementToOwnership,
 		removePlacementFromOwnership,
 		ownershipEntry,

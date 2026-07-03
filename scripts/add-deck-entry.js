@@ -106,7 +106,7 @@ async function start(params) {
 
 	const file = await app.vault.create(filePath, content);
 	await app.workspace.getLeaf(false).openFile(file);
-	S.refreshDataview();
+	S.refreshDataview(await S.buildRefreshHint(config, { decks: [deckName] }));
 	await logAction(config, `Deck "${deckName}": created${avatar ? ` (avatar: ${avatar})` : ""}`);
 	new Notice(`Created deck: ${deckName}`, 4000);
 	return file;
