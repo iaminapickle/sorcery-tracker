@@ -4271,6 +4271,18 @@ const SorceryTrackerShared = (() => {
 		});
 
 		const deckActionsRow = dv.container.createDiv({ cls: "sorcery-deck-actions" });
+		const pullBtn = deckActionsRow.createEl("button", {
+			cls: "sorcery-action-btn",
+			text: "Pull List",
+			attr: { type: "button" },
+		});
+		pullBtn.addEventListener("click", () => {
+			openDeckPullList(dv, config, deckName, [
+				...deckSpells,
+				...deckSites,
+				...deckCollection,
+			]);
+		});
 		[
 			{ label: "Edit Deck",   mode: "edit" },
 		].forEach(({ label, mode }) => {
@@ -4761,6 +4773,233 @@ const SorceryTrackerShared = (() => {
 			renderCostCurve();
 			renderThresholds();
 		});
+	}
+
+	// Physical "pull list" for building a deck out of your binders. For every card
+	// in the deck (main zones only), gather its binder placements across all
+	// printings, allocate the needed copies "fewest binders, standard first",
+	// group by binder, and sort each binder's list with the SAME comparator the
+	// binder page uses (identityPerPrinting) so the list reads in physical
+	// left-to-right walk order. Copies that can't be found in any binder land in a
+	// trailing "Not in any binder" section. Rendered as a dismissible full-screen
+	// modal with tick-off checkboxes (ticks are transient, reset on each open).
+	async function openDeckPullList(dv, config, deckName, deckCards) {
+		const natCmp = (a, b) =>
+			String(a).localeCompare(String(b), undefined, {
+				numeric: true,
+				sensitivity: "base",
+			});
+
+		// Merge needed counts by card name (a card may span several zones).
+		const need = new Map();
+		for (const e of deckCards) {
+			const name = String(e?.cardName ?? "");
+			const count = Number(e?.count ?? 0);
+			if (!name || !(count > 0)) continue;
+			need.set(name, (need.get(name) || 0) + count);
+		}
+
+		const rows = await loadVariantRows(config, dv);
+		const rowsByName = new Map();
+		for (const r of rows) {
+			if (!need.has(r.cardName)) continue;
+			if (!rowsByName.has(r.cardName)) rowsByName.set(r.cardName, []);
+			rowsByName.get(r.cardName).push(r);
+		}
+
+		// binder -> Map<slug, { row, count }>
+		const allocByBinder = new Map();
+		const notInBinder = []; // { cardName, count }
+		const addAlloc = (binder, row, count) => {
+			if (!allocByBinder.has(binder)) allocByBinder.set(binder, new Map());
+			const slots = allocByBinder.get(binder);
+			const prev = slots.get(row.slug);
+			if (prev) prev.count += count;
+			else slots.set(row.slug, { row, count });
+		};
+
+		for (const cardName of [...need.keys()].sort(natCmp)) {
+			let remaining = need.get(cardName);
+			const cardRows = rowsByName.get(cardName) || [];
+			// Placements grouped by binder: binder -> [{ row, count, foil }]
+			const byBinder = new Map();
+			for (const r of cardRows) {
+				for (const bp of Array.isArray(r.binderPlacements) ? r.binderPlacements : []) {
+					const c = Number(bp?.count ?? 0);
+					if (!bp?.binder || !(c > 0)) continue;
+					if (!byBinder.has(bp.binder)) byBinder.set(bp.binder, []);
+					byBinder.get(bp.binder).push({ row: r, count: c, foil: !!bp.foil });
+				}
+			}
+			// Fewest binders: drain the richest binder first; standard before foil
+			// within a binder.
+			const binderTotals = [...byBinder.entries()]
+				.map(([binder, ps]) => ({
+					binder,
+					ps,
+					total: ps.reduce((s, p) => s + p.count, 0),
+				}))
+				.sort((a, b) => b.total - a.total || natCmp(a.binder, b.binder));
+			for (const bt of binderTotals) {
+				if (remaining <= 0) break;
+				const ps = [...bt.ps].sort((a, b) => (a.foil ? 1 : 0) - (b.foil ? 1 : 0));
+				for (const p of ps) {
+					if (remaining <= 0) break;
+					const take = Math.min(remaining, p.count);
+					if (take <= 0) continue;
+					addAlloc(bt.binder, p.row, take);
+					remaining -= take;
+				}
+			}
+			if (remaining > 0) notInBinder.push({ cardName, count: remaining });
+		}
+		notInBinder.sort((a, b) => natCmp(a.cardName, b.cardName));
+
+		// ---- Modal ----
+		document.querySelectorAll(".sorcery-pull-overlay").forEach((el) => el.remove());
+		const overlay = document.createElement("div");
+		overlay.className = "sorcery-pull-overlay";
+		const modal = overlay.createDiv({ cls: "sorcery-pull-modal" });
+
+		const head = modal.createDiv({ cls: "sorcery-pull-head" });
+		head.createDiv({ cls: "sorcery-pull-title", text: `Pull List: ${deckName}` });
+		const totalToPull = [...allocByBinder.values()].reduce(
+			(s, m) => s + [...m.values()].reduce((t, x) => t + x.count, 0),
+			0,
+		);
+		const nBinders = allocByBinder.size;
+		head.createDiv({
+			cls: "sorcery-pull-subtitle",
+			text: `${totalToPull} card${totalToPull === 1 ? "" : "s"} · ${nBinders} binder${nBinders === 1 ? "" : "s"}`,
+		});
+		const closeBtn = head.createEl("button", {
+			cls: "sorcery-pull-close",
+			text: "✕",
+			attr: { type: "button", "aria-label": "Close" },
+		});
+
+		const body = modal.createDiv({ cls: "sorcery-pull-body" });
+
+		const cleanup = () => {
+			overlay.remove();
+			document.removeEventListener("keydown", onKey);
+			obs.disconnect();
+		};
+		const onKey = (e) => {
+			if (e.key === "Escape") {
+				e.preventDefault();
+				cleanup();
+			}
+		};
+		closeBtn.addEventListener("click", cleanup);
+		overlay.addEventListener("mousedown", (e) => {
+			if (e.target === overlay) cleanup();
+		});
+		document.addEventListener("keydown", onKey);
+		// Dismiss if the deck note is navigated away while the modal is open.
+		const obs = new MutationObserver(() => {
+			if (!dv.container.isConnected) cleanup();
+		});
+		obs.observe(document.body, { childList: true, subtree: true });
+
+		const makeRow = (parent, { cardName, slug, meta, count }) => {
+			const r = parent.createDiv({ cls: "sorcery-pull-row" });
+			const cb = r.createEl("input", {
+				cls: "sorcery-pull-check",
+				attr: { type: "checkbox" },
+			});
+			const info = r.createDiv({ cls: "sorcery-pull-info" });
+			const nameWrap = info.createDiv({ cls: "sorcery-pull-name" });
+			const cardPath =
+				cardSummaryPathForName(config, cardName) ||
+				`${config.cardsDir}/${cardName}.md`;
+			nameWrap.appendChild(cardLink(dv, cardPath, cardName, slug));
+			if (meta) info.createDiv({ cls: "sorcery-pull-meta", text: meta });
+			r.createDiv({ cls: "sorcery-pull-qty", text: `×${count}` });
+			const toggle = () => r.classList.toggle("is-done", cb.checked);
+			cb.addEventListener("click", (e) => e.stopPropagation());
+			cb.addEventListener("change", toggle);
+			r.addEventListener("click", (e) => {
+				if (e.target.closest && e.target.closest("a")) return; // let links open
+				if (e.target !== cb) {
+					cb.checked = !cb.checked;
+					toggle();
+				}
+			});
+			return r;
+		};
+
+		const makeSection = (name, extraCls = "") => {
+			const section = body.createDiv({ cls: `sorcery-pull-binder${extraCls}` });
+			const sHead = section.createDiv({ cls: "sorcery-pull-binder-head" });
+			const caret = sHead.createSpan({ cls: "sorcery-pull-caret", text: "▾" });
+			sHead.createSpan({ cls: "sorcery-pull-binder-name", text: name });
+			const countEl = sHead.createSpan({ cls: "sorcery-pull-binder-count" });
+			const list = section.createDiv({ cls: "sorcery-pull-list" });
+			sHead.addEventListener("click", () => {
+				const collapsed = section.classList.toggle("is-collapsed");
+				caret.textContent = collapsed ? "▸" : "▾";
+			});
+			return { list, countEl };
+		};
+
+		if (allocByBinder.size === 0 && notInBinder.length === 0) {
+			body.createDiv({
+				cls: "sorcery-pull-empty",
+				text: "This deck has no cards yet.",
+			});
+		}
+
+		const finishTag = (finish) => {
+			const f = String(finish || "");
+			return f && f !== "Standard" ? f : "";
+		};
+
+		for (const binder of [...allocByBinder.keys()].sort(natCmp)) {
+			const allItems = rows.filter((r) =>
+				(Array.isArray(r.binderPlacements) ? r.binderPlacements : []).some(
+					(bp) => bp.binder === binder,
+				),
+			);
+			const cmp = makeCardComparator(config, {
+				dims: ["avatar", "other", "type", "rarity", "name", "set", "finish"],
+				allItems,
+				identityPerPrinting: true,
+				get: (x) => ({
+					name: x.cardName,
+					type: x.type,
+					rarity: x.rarity,
+					setName: x.setName,
+					finish: x.finish,
+				}),
+			});
+			const entries = [...allocByBinder.get(binder).values()].sort((a, b) =>
+				cmp(a.row, b.row),
+			);
+			const { list, countEl } = makeSection(binder);
+			countEl.textContent = String(entries.reduce((s, e) => s + e.count, 0));
+			for (const e of entries)
+				makeRow(list, {
+					cardName: e.row.cardName,
+					slug: e.row.slug,
+					meta: [e.row.setName, finishTag(e.row.finish)].filter(Boolean).join(" · "),
+					count: e.count,
+				});
+		}
+
+		if (notInBinder.length) {
+			const { list, countEl } = makeSection(
+				"Not in any binder",
+				" sorcery-pull-missing",
+			);
+			countEl.textContent = String(
+				notInBinder.reduce((s, e) => s + e.count, 0),
+			);
+			for (const e of notInBinder)
+				makeRow(list, { cardName: e.cardName, count: e.count });
+		}
+
+		document.body.appendChild(overlay);
 	}
 
 	async function renderDecks(dv) {
