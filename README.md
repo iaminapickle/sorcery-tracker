@@ -136,7 +136,13 @@ When a new set comes out, run the **Sync New Set** macro (`Cmd/Ctrl+P` → `Sync
 
 Each step is independent — if one fails, the rest still run and all errors are reported together at the end.
 
-> **Card art is the only manual step.** From a terminal, run `python3 scripts/download-art.py` to pull new art from the official Google Drive (requires [`gdown`](https://github.com/wkentaro/gdown) and ImageMagick). It skips any art you already have.
+> **Card art is the only manual step.** From a terminal, run `python3 scripts/download-art.py` to pull new art from the official Google Drive (requires [`rclone`](https://rclone.org) and ImageMagick). It skips any art you already have.
+>
+> The first time, configure an rclone remote once (opens a browser to authorise Google Drive — the token is saved and reused, so later runs are hands-off):
+>
+> ```
+> rclone config create sorcerydrive drive scope=drive.readonly
+> ```
 
 If you only need one piece of the above, the individual macros still exist — e.g. **Refresh Sorcery API** (just re-fetch the card data), **Refresh Set Manifests**, **Scrape Curiosa**, or **Generate Missing Sorcery Notes**.
 

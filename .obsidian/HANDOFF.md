@@ -38,7 +38,7 @@ Tech stack: Obsidian + Dataview JS for rendering, QuickAdd plugin for macros, pl
 │   ├── import-curiosa-collection.js      # QuickAdd: Import a Curiosa CSV export into a box
 │   ├── import-deck.js                    # QuickAdd: Import a deck-*.csv export (from Export Collection) into a new deck note
 │   ├── import-storage.js                 # QuickAdd: Import a storage CSV export into a new box
-│   ├── download-art.py                   # Standalone Python CLI (NOT QuickAdd): pull official art from Google Drive via gdown + ImageMagick
+│   ├── download-art.py                   # Standalone Python CLI (NOT QuickAdd): pull official art from Google Drive via rclone + ImageMagick
 │   ├── recompress-art.py                 # Standalone Python CLI: recompress assets/art/*.jpg in-place via ImageMagick mogrify
 │   ├── filter-sort-order.py              # Git clean filter for manual-sorting/data.json (strips all but root "/" order)
 │   ├── scrape-curiosa.js                 # QuickAdd: Scrape FAQs + Codex from curiosa.io → data/faq-scraped.json, data/codex-scraped.json, and codex/*.md notes
@@ -410,7 +410,18 @@ QuickAdd **Import Deck** (`sorcery-import-deck`). The inverse of Export Collecti
 QuickAdd **Import Storage** (`sorcery-import-storage`). The inverse of Export Collection's Storage mode. Picks a CSV (prefers `^(binder|box|storage)-.*-export\.csv$`, else any CSV) → the row tagged `Storage` supplies the storage name → ensures a **box** (`storageType: box`) exists at that name (shared `S.ensureStorageBox` + `S.nextAvailableNoteName` avoid collisions) → matches rows against the shared `S.buildVariantIndex`/`S.findVariant` `cardName|setName|finish` lookup (disambiguating duplicates by product, falling back to the first match) → merges placements with one `processFrontMatter` call per summary note via `S.addPlacementToOwnership` (so it **does** increment ownership counts). Unmatched rows → `data/import-not-found.md`. Logs and refreshes.
 
 ### download-art.py — bulk art fetch (standalone CLI)
-**Not a QuickAdd script** — a plain Python CLI run from a terminal (`python3 scripts/download-art.py`), so the no-`require` rule (which applies only to in-app QuickAdd scripts) is irrelevant. Requires `gdown` (`pip install gdown`) and ImageMagick (`convert`). Downloads the official Sorcery art Google Drive folder to a temp dir, converts PNG→JPG (quality 80, deleting the source PNGs), keeps the `-s` (standard) printing over `-f` per card via `select_files`, then copies into `assets/art/` **skipping files that already exist**. The temp dir is cleaned up in a `finally` block. (Replaces the old `download-art.js` Node CLI.)
+**Not a QuickAdd script** — a plain Python CLI run from a terminal (`python3 scripts/download-art.py`), so the no-`require` rule (which applies only to in-app QuickAdd scripts) is irrelevant. Requires `rclone` (with a configured `sorcerydrive` remote — see below) and ImageMagick (`convert`). Flow: **list the Drive folder first** with `rclone lsf` (`--drive-root-folder-id <folder id> --files-only`), filter in Python (`select_files`: keep the `-s` standard printing over `-f` per card; drop any whose target `.jpg` already exists in `assets/art/`), then `rclone copy … --files-from <list>` fetches **only that subset** to a temp dir. Downloaded PNGs are converted → JPG (quality 80, source PNGs deleted) and copied into `assets/art/`. The temp dir is cleaned up in a `finally` block. (Replaces the earlier `gdown`-based fetch, which hit Google Drive's anonymous "too many accesses" quota partway through large folders and couldn't filter before downloading.)
+
+**Why rclone:** it talks to the Drive API via **user OAuth**, so it gets proper quota + automatic rate-limit backoff (whole folder in one pass). Because the API lets you list cheaply before transferring, the script downloads **only new standards** — skipping foils it would discard (~halves the transfer) and skipping art already on disk (incremental runs pull only genuinely new cards). `check_remote()` verifies the `sorcerydrive:` remote exists and, if not, prints the one-time setup command and exits; if nothing new is found the script prints "Already up to date" and exits 0.
+
+**One-time setup (needs a browser, once):**
+```
+sudo apt install rclone            # or: curl https://rclone.org/install.sh | sudo bash
+rclone config create sorcerydrive drive scope=drive.readonly
+```
+On a headless/WSL box answer **No** to "Use auto config?" and follow the `rclone authorize "drive"` paste-token flow it prints (run that on any machine with a browser, paste the token back). The OAuth refresh token is stored in `~/.config/rclone/rclone.conf` and reused on every future run, so subsequent art syncs are hands-off.
+
+**Art slug naming:** the Drive folder is keyed to the API's numeric slug prefix (`001-…`, `999-…`), matching `sorcery-api.json` variant slugs, so downloaded art resolves directly via `assets/art/[slug].{jpg|png}`. (Older `alp-…`/`pro-…`-prefixed files predate the numeric-slug API refresh and are stale orphans.)
 
 ### recompress-art.py — recompress existing art (standalone CLI)
 **Not a QuickAdd script** — `python3 scripts/recompress-art.py [quality]` (quality 1–100, default 80). Runs ImageMagick `mogrify -quality` over all `assets/art/*.jpg|*.jpeg` **in place** — no renaming, no new files. Requires `mogrify`. (Replaces the old `recompress-art.sh`.)
@@ -529,7 +540,7 @@ Buttons trigger macros via `app.commands.executeCommandById("quickadd:choice:<id
 
 Step errors are non-fatal — the macro reports all failures together at the end rather than aborting.
 
-**Manual (still required):** Run `python3 scripts/download-art.py` from a terminal to pull new card art from Google Drive. Requires `gdown` + ImageMagick. Skips files that already exist.
+**Manual (still required):** Run `python3 scripts/download-art.py` from a terminal to pull new card art from Google Drive. Requires `rclone` (with the one-time `sorcerydrive` OAuth remote configured — see the script's entry under **Scripts**) + ImageMagick. Skips files that already exist.
 
 **If you only need one step:** individual macros still exist — Refresh Sorcery API, Refresh Set Manifests, Scrape Curiosa, Generate Missing Sorcery Notes, Sort Cards and Artists.
 
