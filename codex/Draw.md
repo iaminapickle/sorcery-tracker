@@ -12,3 +12,5 @@ Whenever you are instructed to draw a "card," you may choose to draw a spell fro
 If you are instructed to draw multiple "cards" by a single effect (e.g. [[Pact with the Devil]]), you must declare how many sites and how many spells you intend to draw before drawing any of them.
 
 Whenever you draw multiple cards, sites, or spells, you draw them one at a time and resolve any triggers after each individual card drawn (e.g. [[Chains of Prometheus]]).
+
+If you draw a card but it ends up in a different zone, e.g. [[Morgana le Fay]], Omphalos, etc., it still counts as you (the player) drawing it.

@@ -7,7 +7,7 @@ finder: "step,steps"
 
 Step has two meanings in *Sorcery*!
 
-1. A step is the smallest measure of distance in *Sorcery*, equal to the distance between two adjacent locations in the same region, e.g. "up to 2 steps away" on cards like [[codex/Dispel]].
+1. A step is the smallest measure of distance in *Sorcery*, equal to the distance between two adjacent locations in the same region, e.g. "up to 2 steps away" on cards like [[Dispel]].
 
 1. A step is also the smallest distance a unit can travel when moving, e.g. "take a step" on cards like [[Leap Attack]].
 

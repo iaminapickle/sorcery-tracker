@@ -5,7 +5,7 @@ title: "Lance"
 finder: ""
 ---
 
-**Keyword Ability. **A minion with the Lance keyword enters the realm carrying a [[codex/Lance]] artifact token.
+**Keyword Ability. **A minion with the Lance keyword enters the realm carrying a [[Lance]] artifact token.
 
 A Lance is an Ordinary, Weapon, artifact token with the text:
 

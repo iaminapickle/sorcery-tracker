@@ -22,3 +22,5 @@ If a site is played to a void square occupied by minions or artifacts, the site 
 If a site is played to rubble that is occupied by minions or artifacts, those minions and artifacts will end up in the same relative position they had to the rubble (i.e. occupying the sub-surface or surface).
 
 When cards refer to "adjacent site" or "nearby site," see [[adjacent and nearby]] for clarity on how to resolve it.
+
+Some effects cause sites to move to another square. When this happens, everything of normal size is carried along with the site. Anything that is carried along with the site does not count as [[moving and does not enter]] the site or location. 

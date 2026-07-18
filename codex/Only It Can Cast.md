@@ -5,7 +5,7 @@ title: "Only It Can Cast"
 finder: "only it can cast, only they can cast, only she can cast"
 ---
 
-Some effects allow a non-Avatar to become a special spellcaster, draw a spell, and then only it can cast the spell. For example, [[Char Omphalos]], [[Morgana le Fay]], or [[Archangel Gabriel]].
+Some effects allow a non-Avatar to become a special spellcaster, draw a spell, and then only it can cast the spell. For example, [[Char Omphalos]], [[Morgana Le Fay]], or [[Archangel Gabriel]].
 
 The card counts as drawn by you, but it ends up in a separate zone, not your hand. Ensure it does not get mixed up with your normal hand.
 

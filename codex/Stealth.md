@@ -7,13 +7,13 @@ finder: ""
 
 **Keyword Ability. **Minions with Stealth cannot be targeted by spells or abilities from your opponents (including attacks), their attacks cannot be defended, they cannot be intercepted, and projectiles cannot hit them. Carriable artifacts carried by a Stealthed minion also cannot be targeted.
 
-Stealth is tracked with a stealth token.
+Stealth is tracked with a stealth mark.
 
 Stealth is lost after the minion interacts with the realm.
 
-Non-minions cannot have Stealth. If a minion with Stealth becomes a non-minion, remove the Stealth token and they lose Stealth.
+Non-minions cannot have Stealth. If a minion with Stealth becomes a non-minion, remove the Stealth mark and they lose Stealth.
 
-A minion with the Stealth keyword enters the realm with a Stealth token. If a minion becomes disabled or silenced, it will lose its Stealth token, since Stealth is an ability (similar to Ward).
+A minion with the Stealth keyword enters the realm with a Stealth mark. If a minion becomes disabled or silenced, it will lose its Stealth mark, since Stealth is an ability (similar to Ward).
 
 ## When exactly is "after"?
 

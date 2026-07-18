@@ -33,6 +33,12 @@
       "answer": "Yes. For example, if you have a 5 power Monster, it will deal 1+1+1+1+1, all simultaneously. If you try dealing it to a warded unit, the Ward will prevent all of it. If your opponent has Shield Maidens nearby, each damage will be reduced. If you have Panpipes of Pnom, it will be 2+2+2+2+2 damage instead."
     }
   ],
+  "Accursed Albatross": [
+    {
+      "question": "Does this effect kill minions near the Albatross, or near the killer?",
+      "answer": "The minions near the killer die."
+    }
+  ],
   "Accusation": [
     {
       "question": "What does \"cards or allies\" mean?",
@@ -201,6 +207,10 @@
     {
       "question": "If an effect grants this free movement (e.g. Arcade of Bones), can I spawn infinite Skeleton tokens?",
       "answer": "No. Whenever you declare a movement path, you cannot repeat specific steps. Lets say we have sites arranged like this in a row, with Army of the Dead starting on site A, along with an [[Arcade of Bones]]:\nYou could declare the following movement path for the Army:\n• A to B\n• B to C\n• C to B\n• B to A\nNone of those steps repeat exactly, so it's all perfectly legal, and you would spawn a Skeleton for each of those steps, for a total of 4 Skeletons spawned. You cannot, however, put another A to B step on the path, since that would be a repeat of the first step."
+    },
+    {
+      "question": "Are the skeletons spawned by this ability summoned? Do they enter the location?",
+      "answer": "Yes! They are summoned, and enter the location where they appear."
     }
   ],
   "Askelon Phoenix": [
@@ -217,12 +227,16 @@
   ],
   "Atlantean Fate": [
     {
+      "question": "If one of the sites it occupies is an Ordinary water site, are minions and artifacts there still submerged?",
+      "answer": "Yes. It’s still affected by the aura, but that effect doesn’t do anything to Ordinary sites, other than the Genesis ability."
+    },
+    {
       "question": "Can you play Rift Valley into an area affected by Atlantean Fate?",
       "answer": "Yes, since Atlantean Fate only affects the site once it’s already in play, and Rift Valley modifies how it’s played in the first place."
     },
     {
-      "question": "If one of the sites it occupies is an Ordinary water site, are minions and artifacts there still submerged?",
-      "answer": "Yes. It’s still affected by the aura, but that effect doesn’t do anything to Ordinary sites, other than the Genesis ability."
+      "question": "If my Vindictive Nation is affected by my opponent's Atlantean Fate, do they lose 1 or 2 life?",
+      "answer": "Two life. Vindictive Nation is flooded (which counts as modifying it) and then silenced (which also counts as modifying it)."
     }
   ],
   "Atlas Wanderers": [
@@ -507,6 +521,10 @@
   ],
   "Boulevard of Bones": [
     {
+      "question": "If the adjacent site silences the Boulevard (e.g. Smokestacks of Gnaak, Fields of Phyxis), is a Skeleton token is summoned?",
+      "answer": "No. The passive ability from the played site will silence the Boulevard first, before the trigger from Boulevard is checked."
+    },
+    {
       "question": "If Geomancer creates a Rubble adjacent to Boulevard of Bones, do they create a skeleton?",
       "answer": "No, the rubble is created in place, not played."
     }
@@ -573,6 +591,12 @@
     {
       "question": "How does forced movement affect minions in the Cage?",
       "answer": "Due to the golden rule, only teleportation-based forced movement effects can move minions out of the Cage; non-teleportation, forced movement effects can't move the locked minions away from the Cage. For example, [[Blink]] or [[Swap]] would allow a minion to escape, but [[River Rapids]], [[Riptide]], or [[Scatter]] would not."
+    }
+  ],
+  "Call of the Sea": [
+    {
+      "question": "Will this affect minions in the void or underground?",
+      "answer": "No. Because you are looking for adjacent minions, not an adjacent site, you cannot ignore regional boundaries."
     }
   ],
   "Candlemas Monks": [
@@ -793,6 +817,12 @@
     {
       "question": "Does this ability completely replace their normal type, or simply add a new type?",
       "answer": "It adds an additional type. For example, your Mortals are Undead and Mortals and would still be silenced by Bower of Bliss. As another example, your Beasts are Monsters and Beasts, so you would still get the discount from a Pond."
+    }
+  ],
+  "Court of Equity": [
+    {
+      "question": "For Mock Court, Court of Equity, and Mobbed Court, do these effects stack with themselves if multiple copies are in the realm?",
+      "answer": "Yes."
     }
   ],
   "Courtesan Thaïs": [
@@ -2511,6 +2541,10 @@
   ],
   "Mimic": [
     {
+      "question": "What happens if this is cast from a cemetery by Deathspeaker?",
+      "answer": "You can still use its optional alternate summoning ability to transform an artifact into the Mimic, and then the Mimic will be banished."
+    },
+    {
       "question": "How does this ability work?",
       "answer": "When you summon Mimic, you can choose to summon it normally, or instead you can choose a carriable artifact anywhere in the realm. That artifact is banished, and the Mimic is placed at the artifact's location instead as it transforms. \nYou control the Mimic, and if the artifact did not enter the realm this turn, the Mimic doesn't have Summoning Sickness. It turns out that artifact was a Mimic in disguise all along!"
     }
@@ -2524,7 +2558,7 @@
   "Mirage": [
     {
       "question": "What happens if I try to use Mirage's alternate play text when it's played via Pathfinder?",
-      "answer": "When using the Pathfinder's ability, you reveal the site, then play it in an adjacent Rubble or void (then Pathfinder moves there). Mirage's ability cannot be combined with Pathfinder."
+      "answer": "Assuming you own and control the adjacent site, Mirage's ability can modify the play restrictions on Pathfinder, allowing you to return the site to your hand."
     }
   ],
   "Mirror Realm": [
@@ -2561,6 +2595,22 @@
     {
       "question": "If there are an even number of Mismanaged Mortuaries in play, do they cancel out?",
       "answer": "Yes."
+    }
+  ],
+  "Mobbed Court": [
+    {
+      "question": "For Mock Court, Court of Equity, and Mobbed Court, do these effects stack with themselves if multiple copies are in the realm?",
+      "answer": "Yes."
+    }
+  ],
+  "Mock Court": [
+    {
+      "question": "For Mock Court, Court of Equity, and Mobbed Court, do these effects stack with themselves if multiple copies are in the realm?",
+      "answer": "Yes."
+    },
+    {
+      "question": "For Mock Court, how does this extra cost work?",
+      "answer": "For each ordinary minion that you would summon, you must pay 1 mana at the moment it would be summoned into the realm (for each copy of Mock Court). This is not an additional casting cost; it's a summoning cost. If you can pay it, you must. If you are summoning multiple ordinary minions simultaneously (e.g. Border Militia) and can't afford to pay for all of them, you may choose which ones you pay for. Any that you cannot pay for are not summoned.\nThis effect applies to ordinary token minions (e.g. Skeletons, Frogs, Foot Soldiers) that are summoned without being cast, as well as ordinary minions that you cast normally (e.g. Apprentice Wizard)."
     }
   ],
   "Monstermorphosis": [
@@ -2721,6 +2771,10 @@
   ],
   "Order of the White Wing": [
     {
+      "question": "If Order of the White Wing is summoned along with other minions simultaneously (e.g. Boneyard, Golden Dawn, etc.), what happens?",
+      "answer": "All the simultaneously summoned minions enter the realm successfully. The Order of the White Wing's ability only applies once it's in the realm."
+    },
+    {
       "question": "Does the minion that's being summoned from elsewhere enter the realm for a moment before it's banished?",
       "answer": "No, it doesn't ever enter the realm. For example, it will not trigger a Genesis, it will not get a Lance, it will not trigger a Mariner's Curse, etc. It doesn't actually enter the realm at all, since this is a replacement effect."
     },
@@ -2743,6 +2797,12 @@
     {
       "question": "On my turn when I go to Death's Door, can I still take damage and lose life?",
       "answer": "Yes. You cannot lose the game due to taking damage, but taking damage and losing life will reduce your life total if possible. See \"((Death's Door))\" for more details."
+    }
+  ],
+  "Overflowing Court": [
+    {
+      "question": "Does Overflowing Court disable other Overflowing Courts? Other cards with \"Court\" in the title?",
+      "answer": "Yes. Any card with the exact word \"Court\" in the title will be disabled. For example, Mock Court and Court Jester would be disabled, but Courtesan Thaïs is not."
     }
   ],
   "Pact with the Devil": [
@@ -2776,7 +2836,7 @@
     },
     {
       "question": "What happens if I try to use Mirage's alternate play text when it's played via Pathfinder?",
-      "answer": "When using the Pathfinder's ability, you reveal the site, then play it in an adjacent Rubble or void (then Pathfinder moves there). Mirage's ability cannot be combined with Pathfinder."
+      "answer": "Assuming you own and control the adjacent site, Mirage's ability can modify the play restrictions on Pathfinder, allowing you to return the site to your hand."
     },
     {
       "question": "If I have no sites but it's not the first turn (e.g. Roots of Yggdrasil destroyed everything) and I use the Pathfinder's ability, am I forced to play the site under the Pathfinder's current location, or could I play the site adjacent?",
@@ -2812,7 +2872,7 @@
     },
     {
       "question": "If some effect prevents me from giving the Peace Offering to the other player (i.e. King Arthur), can they attack me on their next turn?",
-      "answer": "No, if the other player does not end up controlling the Peace Offering at least for a moment, you have not successfully given it to them, and they will be free to attack you."
+      "answer": "Yes. If the other player does not end up controlling the Peace Offering after the ability resolves and passives are applied, you have not successfully given it to them, and they will be free to attack you."
     },
     {
       "question": "If Peace Offering leaves the realm, does the truce still apply?",
@@ -2894,7 +2954,7 @@
   "Plague of Frogs": [
     {
       "question": "Where can I summon the frogs?",
-      "answer": "You can summon each of them to whatever locations will cause maximum annoyance."
+      "answer": "You choose one location anywhere in the realm, and then all 7 frogs are summoned to that location."
     }
   ],
   "Polar Explorers": [
@@ -3629,8 +3689,16 @@
   ],
   "The Inquisition": [
     {
+      "question": "What happens if my opponent searches my spellbook but doesn't see this card when searching?",
+      "answer": "If it's in your spellbook and they could see it, The Inquisition will trigger and be summoned! Tell your opponent that the card is in your spellbook and reveal it to them.\nIf your opponent is only searching a limited part of your spellbook (e.g. Haystack), The Inquisition will only trigger if it was in the part of your spellbook that was actually searched. If there's a question, a judge can verify that The Inquisition wasn't there."
+    },
+    {
       "question": "When does this ability trigger?",
       "answer": "If an effect requires you to reveal it from your hand, or from your spellbook, or if your opponent searches your spellbook."
+    },
+    {
+      "question": "What happens if I name this card when playing Feast for Crows?",
+      "answer": "You would complete the search effect and banish The Inquisition before it triggers. Turns out sometimes you do expect them."
     }
   ],
   "The Malleus Maleficarum": [
@@ -3741,6 +3809,12 @@
     {
       "question": "What is a \"lone enemy\"?",
       "answer": "A \"lone enemy\" is an enemy unit that's not entering simultaneously with another enemy unit. Stationary units at the Troll Bridge ignored.\nHere are some examples:\n• If an enemy [[War Horse]] is carrying its Avatar and moves to your Troll Bridge, it will not trigger, since there are two enemies entering simultaneously. \n• If your [[Bodach Bogeyman]] is carrying two enemy minions and moves to your Troll Bridge, it will not trigger. However, if the Bogeyman were carrying just one enemy, the Bridge would trigger.\n• If there is already an enemy occupying the Troll Bridge and another enemy unit enters, it will trigger for the entering enemy."
+    }
+  ],
+  "Troubled Town": [
+    {
+      "question": "In limited play (i.e. Sealed and Draft), may I cast Serava Townsfolk and Eltham Townsfolk from outside my card pool?",
+      "answer": "Yes! Those cards have \"Townsfolk\" in their name, and are thus covered by the \"specifically named card\" rule for limited games. You do not need them in your collection in draft or sealed. You still need to meet the threshold requirement to cast them, though!"
     }
   ],
   "Truesight Crossbow": [
@@ -3860,7 +3934,7 @@
     },
     {
       "question": "If my Vindictive Nation is silenced by my opponent, e.g. Smokestacks of Gnaak, will my opponent lose life?",
-      "answer": "No, because Smokestacks silences them first. Vindictive Nation's ability is effectively a triggered ability, while Smokestacks are a passive ability that generates an ongoing effect. Ongoing effects are applied before triggered abilities can trigger."
+      "answer": "Yes! Silence from Smokestacks is applied as a passive ability, but the act of silencing literally triggers Vindictive Nation's ability. So as Vindictive Nation becomes silenced, its ability triggers. See the ((Triggered Ability)) codex entry for details."
     },
     {
       "question": "Does this effect have time to resolve if the site itself is getting destroyed?",
@@ -3869,6 +3943,10 @@
     {
       "question": "Does \"modifying\" a site include Flooding it?",
       "answer": "Yes, since Flooded is an ability that gets added to the site."
+    },
+    {
+      "question": "If my Vindictive Nation is affected by my opponent's Atlantean Fate, do they lose 1 or 2 life?",
+      "answer": "Two life. Vindictive Nation is flooded (which counts as modifying it) and then silenced (which also counts as modifying it)."
     }
   ],
   "Vivien the Enchantress": [
@@ -3926,7 +4004,7 @@
     },
     {
       "question": "What if this is animated by an Enchantress?",
-      "answer": "It can move, but units are not passing through the Wall of Flame due to its own movement. After moving, its effect will apply between the two squares it occupies."
+      "answer": "It can move, but units are not passing through the Wall of Fire due to its own movement. After moving, its effect will apply between the two squares it occupies."
     },
     {
       "question": "Does this affect subsurface units?",
@@ -4057,6 +4135,12 @@
     {
       "question": "What happens if there's a silence or disable effect somewhere in the realm that affects minions (e.g. Root Spider, Silence aura)?",
       "answer": "Yog-Sothoth will be disabled or silenced by the effect, but will continue to occupy all locations since its size is a characteristic. This usually means Yog-Sothoth will be banished, since it can no longer safely occupy void locations!"
+    }
+  ],
+  "Young Master Damion": [
+    {
+      "question": "What happens if Damion and his Ghouls are all damaged simultaneously by a Poison Nova?",
+      "answer": "Damion dies from the Lethal damage but is still in the realm at the time his Ghouls would be marked for death, so his ability protects them. Each Ghoul will have one damage for the rest of the turn. (Lethal is relevant only while the damage is applied, and is not an ongoing quality of the damage after it is applied.)"
     }
   ],
   "Zephyranne Airship": [

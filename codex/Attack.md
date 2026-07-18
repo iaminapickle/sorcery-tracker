@@ -35,6 +35,6 @@ You may only attack enemy units or the surface of enemy sites that are at your l
 
 1. Resolve the fight.
 
-   1. If there are no other units involved since you're attacking an undefended site, simply strike the site, damaging it and causing the controlling avatar to lose that amount of life.
+   1. If there are no other units involved since you're attacking an undefended site, simply strike the site, damaging it and causing the controlling avatar to lose that amount of life. This strike is referred to as "successfully attacking" the site (even if no damage is dealt due to a zero power strike).
 
 1. The attack is over. Any "after attack" triggers resolve now.

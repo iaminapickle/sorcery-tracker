@@ -425,14 +425,14 @@
       "rarity": "Exceptional",
       "product": "Booster",
       "productLabel": "Booster",
-      "slug": "alp-sirian_templar-b-s"
+      "slug": "001-sirian_templar-b-s"
     },
     {
       "cardName": "Sirian Templar",
       "rarity": "Exceptional",
       "product": "Box_Topper",
       "productLabel": "Box Topper",
-      "slug": "alp-sirian_templar-bt-s"
+      "slug": "001-sirian_templar-bt-s"
     },
     {
       "cardName": "Sisters of Silence",
@@ -739,14 +739,14 @@
       "rarity": "Ordinary",
       "product": "Booster",
       "productLabel": "Booster",
-      "slug": "alp-critical_strike-b-s"
+      "slug": "001-critical_strike-b-s"
     },
     {
       "cardName": "Critical Strike",
       "rarity": "Ordinary",
       "product": "Box_Topper",
       "productLabel": "Box Topper",
-      "slug": "alp-critical_strike-bt-s"
+      "slug": "001-critical_strike-bt-s"
     },
     {
       "cardName": "Disintegrate",
@@ -1637,32 +1637,50 @@
       "rarity": "Ordinary"
     },
     {
-      "cardName": "Foot Soldier 1",
-      "rarity": "Ordinary"
-    },
-    {
-      "cardName": "Foot Soldier 2",
-      "rarity": "Ordinary"
-    },
-    {
-      "cardName": "Foot Soldier 3",
-      "rarity": "Ordinary"
-    },
-    {
       "cardName": "Rubble",
       "rarity": "Ordinary"
     },
     {
-      "cardName": "Frog (Blue)",
-      "rarity": "Ordinary"
+      "cardName": "Foot Soldier",
+      "rarity": "Ordinary",
+      "product": "Box_Topper",
+      "productLabel": "Box Topper",
+      "slug": "001-foot_soldier_1-bt-s"
     },
     {
-      "cardName": "Frog (Green)",
-      "rarity": "Ordinary"
+      "cardName": "Foot Soldier",
+      "rarity": "Ordinary",
+      "product": "Box_Topper",
+      "productLabel": "Box Topper",
+      "slug": "001-foot_soldier_2-bt-s"
     },
     {
-      "cardName": "Frog (Red)",
-      "rarity": "Ordinary"
+      "cardName": "Foot Soldier",
+      "rarity": "Ordinary",
+      "product": "Box_Topper",
+      "productLabel": "Box Topper",
+      "slug": "001-foot_soldier_3-bt-s"
+    },
+    {
+      "cardName": "Frog",
+      "rarity": "Ordinary",
+      "product": "Box_Topper",
+      "productLabel": "Box Topper",
+      "slug": "001-frog_blue-bt-s"
+    },
+    {
+      "cardName": "Frog",
+      "rarity": "Ordinary",
+      "product": "Box_Topper",
+      "productLabel": "Box Topper",
+      "slug": "001-frog_green-bt-s"
+    },
+    {
+      "cardName": "Frog",
+      "rarity": "Ordinary",
+      "product": "Box_Topper",
+      "productLabel": "Box Topper",
+      "slug": "001-frog_red-bt-s"
     }
   ],
   "Beta": [
@@ -3275,32 +3293,50 @@
       "rarity": "Ordinary"
     },
     {
-      "cardName": "Foot Soldier 1",
-      "rarity": "Ordinary"
-    },
-    {
-      "cardName": "Foot Soldier 2",
-      "rarity": "Ordinary"
-    },
-    {
-      "cardName": "Foot Soldier 3",
-      "rarity": "Ordinary"
-    },
-    {
       "cardName": "Rubble",
       "rarity": "Ordinary"
     },
     {
-      "cardName": "Frog (Blue)",
-      "rarity": "Ordinary"
+      "cardName": "Foot Soldier",
+      "rarity": "Ordinary",
+      "product": "Box_Topper",
+      "productLabel": "Box Topper",
+      "slug": "002-foot_soldier_1-bt-s"
     },
     {
-      "cardName": "Frog (Green)",
-      "rarity": "Ordinary"
+      "cardName": "Foot Soldier",
+      "rarity": "Ordinary",
+      "product": "Box_Topper",
+      "productLabel": "Box Topper",
+      "slug": "002-foot_soldier_2-bt-s"
     },
     {
-      "cardName": "Frog (Red)",
-      "rarity": "Ordinary"
+      "cardName": "Foot Soldier",
+      "rarity": "Ordinary",
+      "product": "Box_Topper",
+      "productLabel": "Box Topper",
+      "slug": "002-foot_soldier_3-bt-s"
+    },
+    {
+      "cardName": "Frog",
+      "rarity": "Ordinary",
+      "product": "Box_Topper",
+      "productLabel": "Box Topper",
+      "slug": "002-frog_blue-bt-s"
+    },
+    {
+      "cardName": "Frog",
+      "rarity": "Ordinary",
+      "product": "Box_Topper",
+      "productLabel": "Box Topper",
+      "slug": "002-frog_green-bt-s"
+    },
+    {
+      "cardName": "Frog",
+      "rarity": "Ordinary",
+      "product": "Box_Topper",
+      "productLabel": "Box Topper",
+      "slug": "002-frog_red-bt-s"
     }
   ],
   "Promotional": [
@@ -3497,18 +3533,6 @@
       "rarity": "Unique"
     },
     {
-      "cardName": "Foot Soldier 1",
-      "rarity": "Ordinary"
-    },
-    {
-      "cardName": "Foot Soldier 2",
-      "rarity": "Ordinary"
-    },
-    {
-      "cardName": "Foot Soldier 3",
-      "rarity": "Ordinary"
-    },
-    {
       "cardName": "Rubble",
       "rarity": "Ordinary"
     },
@@ -3545,16 +3569,75 @@
       "rarity": "Unique"
     },
     {
+      "cardName": "Harbinger",
+      "rarity": ""
+    },
+    {
+      "cardName": "Necromancer",
+      "rarity": ""
+    },
+    {
+      "cardName": "Persecutor",
+      "rarity": ""
+    },
+    {
+      "cardName": "Savior",
+      "rarity": ""
+    },
+    {
       "cardName": "Skeleton",
       "rarity": "Ordinary"
     },
     {
-      "cardName": "Foot Soldier (English)",
-      "rarity": "Ordinary"
+      "cardName": "Overflowing Court",
+      "rarity": "Elite"
     },
     {
-      "cardName": "Foot Soldier (Saracen)",
-      "rarity": "Ordinary"
+      "cardName": "Court of Equity",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Mobbed Court",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Mock Court",
+      "rarity": "Elite"
+    },
+    {
+      "cardName": "Foot Soldier",
+      "rarity": "Ordinary",
+      "product": "Dust",
+      "productLabel": "Dust",
+      "slug": "999-foot_soldier_1-d-s"
+    },
+    {
+      "cardName": "Foot Soldier",
+      "rarity": "Ordinary",
+      "product": "Dust",
+      "productLabel": "Dust",
+      "slug": "999-foot_soldier_2-d-s"
+    },
+    {
+      "cardName": "Foot Soldier",
+      "rarity": "Ordinary",
+      "product": "Dust",
+      "productLabel": "Dust",
+      "slug": "999-foot_soldier_3-d-s"
+    },
+    {
+      "cardName": "Foot Soldier",
+      "rarity": "Ordinary",
+      "product": "Dust",
+      "productLabel": "Dust",
+      "slug": "999-foot_soldier_english-d-s"
+    },
+    {
+      "cardName": "Foot Soldier",
+      "rarity": "Ordinary",
+      "product": "Dust",
+      "productLabel": "Dust",
+      "slug": "999-foot_soldier_saracen-d-s"
     }
   ],
   "Gothic": [
@@ -4355,14 +4438,14 @@
       "rarity": "",
       "product": "Booster",
       "productLabel": "Booster",
-      "slug": "got-harbinger-b-s"
+      "slug": "006-harbinger-b-s"
     },
     {
       "cardName": "Harbinger",
       "rarity": "",
       "product": "Preconstructed_Deck",
       "productLabel": "Precon",
-      "slug": "got-harbinger-pd-s"
+      "slug": "006-harbinger-pd-s"
     },
     {
       "cardName": "Harpyon Urge",
@@ -4721,14 +4804,14 @@
       "rarity": "",
       "product": "Booster",
       "productLabel": "Booster",
-      "slug": "got-necromancer-b-s"
+      "slug": "006-necromancer-b-s"
     },
     {
       "cardName": "Necromancer",
       "rarity": "",
       "product": "Preconstructed_Deck",
       "productLabel": "Precon",
-      "slug": "got-necromancer-pd-s"
+      "slug": "006-necromancer-pd-s"
     },
     {
       "cardName": "Necronomiconcert",
@@ -4843,14 +4926,14 @@
       "rarity": "",
       "product": "Booster",
       "productLabel": "Booster",
-      "slug": "got-persecutor-b-s"
+      "slug": "006-persecutor-b-s"
     },
     {
       "cardName": "Persecutor",
       "rarity": "",
       "product": "Preconstructed_Deck",
       "productLabel": "Precon",
-      "slug": "got-persecutor-pd-s"
+      "slug": "006-persecutor-pd-s"
     },
     {
       "cardName": "Pied Piper of Hameln",
@@ -4985,14 +5068,14 @@
       "rarity": "",
       "product": "Booster",
       "productLabel": "Booster",
-      "slug": "got-savior-b-s"
+      "slug": "006-savior-b-s"
     },
     {
       "cardName": "Savior",
       "rarity": "",
       "product": "Preconstructed_Deck",
       "productLabel": "Precon",
-      "slug": "got-savior-pd-s"
+      "slug": "006-savior-pd-s"
     },
     {
       "cardName": "Sawbones",
@@ -6293,7 +6376,7 @@
       "rarity": ""
     },
     {
-      "cardName": "Foot Soldiers",
+      "cardName": "Foot Soldier",
       "rarity": "Ordinary"
     }
   ],

@@ -32,41 +32,11 @@
     "Exceptional": 3,
     "Ordinary": 4
   },
-  "sortOrder": [
-    "avatar",
-    "other",
-    "type",
-    "rarity",
-    "name",
-    "set",
-    "finish"
-  ],
-  "typeOrder": [
-    "Artifact",
-    "Aura",
-    "Minion",
-    "Magic",
-    "Site"
-  ],
-  "rarityOrder": [
-    "Unique",
-    "Elite",
-    "Exceptional",
-    "Ordinary"
-  ],
   "iconMap": {
     "Air": "wind.png",
     "Fire": "fire.png",
     "Water": "water.png",
     "Earth": "earth.png"
-  },
-  "setImages": {
-    "Alpha": "assets/sets/Alpha.png",
-    "Beta": "assets/sets/Beta.png",
-    "Promotional": "assets/sets/Promotional.png",
-    "Arthurian Legends": "assets/sets/Arthurian Legends.png",
-    "Dragonlord": "assets/sets/Dragonlord.png",
-    "Gothic": "assets/sets/Gothic.png"
   },
   "manifestFile": "set-manifests.json",
   "apiFile": "sorcery-api.json",
@@ -103,5 +73,35 @@
     "Frog (Red)",
     "Lance",
     "Skeleton"
-  ]
+  ],
+  "sortOrder": [
+    "avatar",
+    "other",
+    "type",
+    "rarity",
+    "name",
+    "set",
+    "finish"
+  ],
+  "typeOrder": [
+    "Artifact",
+    "Aura",
+    "Minion",
+    "Magic",
+    "Site"
+  ],
+  "rarityOrder": [
+    "Unique",
+    "Elite",
+    "Exceptional",
+    "Ordinary"
+  ],
+  "setImages": {
+    "Alpha": "assets/sets/Alpha.png",
+    "Beta": "assets/sets/Beta.png",
+    "Promotional": "assets/sets/Promotional.png",
+    "Arthurian Legends": "assets/sets/Arthurian Legends.png",
+    "Dragonlord": "assets/sets/Dragonlord.png",
+    "Gothic": "assets/sets/Gothic.png"
+  }
 }

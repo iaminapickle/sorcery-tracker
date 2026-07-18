@@ -7,7 +7,7 @@ finder: "interact,interacts,interacting"
 
 A unit "interacts" with the realm if it does any of the following things:
 
-- Strikes
+- Strikes (even if the strike is replaced with another effect)
 
 - Casts a spell
 
