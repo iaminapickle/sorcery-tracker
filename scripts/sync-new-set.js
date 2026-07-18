@@ -42,6 +42,18 @@ module.exports = {
 
 const API_URL = "https://api.sorcerytcg.com/api/cards";
 
+async function fetchApiCards() {
+	const rq = globalThis.requestUrl || (typeof requestUrl !== "undefined" ? requestUrl : null);
+	if (rq) {
+		const res = await rq({ url: API_URL, throw: false });
+		if (res.status < 200 || res.status >= 300) throw new Error(`HTTP ${res.status}`);
+		return res.json;
+	}
+	const res = await fetch(API_URL);
+	if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
+	return res.json();
+}
+
 function progressBar(done, total, width = 20) {
 	const filled = Math.round((done / total) * width);
 	return "█".repeat(filled) + "░".repeat(width - filled);
@@ -57,9 +69,7 @@ async function start(params) {
 	// ── 1. Refresh API ────────────────────────────────────────────────────────
 	notice.setMessage("(1/5) Fetching Sorcery API…");
 	try {
-		const res = await fetch(API_URL);
-		if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
-		const data = await res.json();
+		const data = await fetchApiCards();
 		if (!Array.isArray(data)) throw new Error("Expected array from API");
 		const outPath = S.vaultPath(config, `${config.dataDir}/${config.apiFile}`);
 		await S.ensureFolder(S.vaultPath(config, config.dataDir));

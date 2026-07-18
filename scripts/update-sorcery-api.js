@@ -19,15 +19,25 @@ module.exports = {
 
 const API_URL = "https://api.sorcerytcg.com/api/cards";
 
+async function fetchApiCards() {
+	const rq = globalThis.requestUrl || (typeof requestUrl !== "undefined" ? requestUrl : null);
+	if (rq) {
+		const res = await rq({ url: API_URL, throw: false });
+		if (res.status < 200 || res.status >= 300) throw new Error(`HTTP ${res.status}`);
+		return res.json;
+	}
+	const res = await fetch(API_URL);
+	if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
+	return res.json();
+}
+
 async function start(_params) {
 	S = await loadShared();
 	const config = await S.loadConfig();
 
 	const notice = new Notice("Fetching from api.sorcerytcg.com…", 0);
 	try {
-		const res = await fetch(API_URL);
-		if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
-		const data = await res.json();
+		const data = await fetchApiCards();
 		if (!Array.isArray(data)) throw new Error("Unexpected response shape — expected a top-level array");
 
 		const outPath = S.vaultPath(config, `${config.dataDir}/${config.apiFile}`);
