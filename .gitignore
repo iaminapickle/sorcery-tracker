@@ -9,3 +9,7 @@
 data/sync-report.md
 data/import-not-found.md
 data/logs.md
+
+# Sick of these changing
+.obsidian/plugins/explorer-hider/data.json
+.obsidian/plugins/manual-sorting/data.json
