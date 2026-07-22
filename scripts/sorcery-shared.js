@@ -2681,6 +2681,10 @@ const SorceryTrackerShared = (() => {
 					typeRank(a) - typeRank(b) || String(a).localeCompare(String(b)),
 			);
 			for (const [typeName, typeItems] of orderedTypes) {
+				typeItems.sort((a, b) =>
+					a.cardName.localeCompare(b.cardName) ||
+					String(a.productLabel || "").localeCompare(String(b.productLabel || "")),
+				);
 				const typeWrap = section.createDiv({ cls: "sorcery-checklist-type" });
 				if (typeName !== "Avatar") {
 					typeWrap.createDiv({
@@ -2976,6 +2980,10 @@ const SorceryTrackerShared = (() => {
 					([a], [b]) => typeRank(a) - typeRank(b) || a.localeCompare(b),
 				);
 				for (const [typeName, typeItems] of orderedTypes) {
+					typeItems.sort((a, b) =>
+						a.cardName.localeCompare(b.cardName) ||
+						String(a.productLabel || "").localeCompare(String(b.productLabel || "")),
+					);
 					const typeWrap = section.createDiv({ cls: "sorcery-checklist-type" });
 					if (typeName !== "Avatar")
 						typeWrap.createDiv({ cls: "sorcery-checklist-type-heading", text: typeName });
