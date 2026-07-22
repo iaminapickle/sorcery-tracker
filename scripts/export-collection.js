@@ -75,20 +75,6 @@ async function buildVariantRows(config) {
 	return rows;
 }
 
-function buildCardLookup(rows) {
-	const map = new Map();
-	for (const r of rows) {
-		const key = String(r.cardName || "").trim().toLowerCase();
-		if (!map.has(key)) {
-			map.set(key, {
-				setName: String(r.setName || "").trim(),
-				product: S.displayProduct(r.product),
-			});
-		}
-	}
-	return map;
-}
-
 async function exportStorage(config) {
 	const binderFolder = S.vaultPath(config, config.bindersDir || "storage");
 	const storages = app.vault.getMarkdownFiles()
@@ -182,39 +168,54 @@ async function exportDeck(config) {
 	}
 	if (!chosen) return;
 
-	const variants = await buildVariantRows(config);
-	const cardLookup = buildCardLookup(variants);
-	const CSV_HEADER = "card name,set,finish,product,quantity,notes";
-	const rows = [];
+	// Guardian lookup (cost/type by card name) so zones can be sorted to match
+	// how renderDeck lays the deck out.
+	const api = await S.loadApiData(config);
+	const guardianByName = new Map();
+	for (const card of api?.data || []) {
+		if (card.name) guardianByName.set(card.name, card.guardian || {});
+	}
+	const SPELL_TYPE_ORDER = ["Minion", "Magic", "Artifact", "Aura"];
+	const costOf = (name) => Number(guardianByName.get(name)?.cost ?? Infinity);
+	const typeRankOf = (name) => {
+		const i = SPELL_TYPE_ORDER.indexOf(String(guardianByName.get(name)?.type || ""));
+		return i === -1 ? 999 : i;
+	};
+	const byCostName = (a, b) =>
+		costOf(a.cardName) - costOf(b.cardName) ||
+		a.cardName.localeCompare(b.cardName, undefined, { sensitivity: "base" });
+	const byTypeCostName = (a, b) =>
+		typeRankOf(a.cardName) - typeRankOf(b.cardName) || byCostName(a, b);
 
-	rows.push(toCsvLine([chosen.name, "", "", "", "", "Deck"]));
+	// A deck is conceptual — set/finish/product don't apply. The first row is the
+	// deck identity (title + avatar), then a blank spacer, then the decklist.
 	const avatar = String(chosen.fm.avatar || "");
-	if (avatar) rows.push(toCsvLine([avatar, "", "", "", "", "Avatar"]));
+	const titleRow = toCsvLine([chosen.name, avatar]);
+	const CSV_HEADER = "card name,quantity,notes";
+	const cardRows = [];
 
-	const ZONE_LABELS = { deckSpells: "Spellbook", deckSites: "Atlas", deckCollection: "Collection" };
+	// Spellbook groups by type (Minion → Magic → Artifact → Aura) then cost → name;
+	// Atlas and Collection sort by cost → name — matching renderDeck.
+	const ZONES = [
+		{ key: "deckSpells", label: "Spellbook", cmp: byTypeCostName },
+		{ key: "deckSites", label: "Atlas", cmp: byCostName },
+		{ key: "deckCollection", label: "Collection", cmp: byCostName },
+	];
 
-	for (const zone of ["deckSpells", "deckSites", "deckCollection"]) {
-		const entries = Array.isArray(chosen.fm[zone]) ? chosen.fm[zone] : [];
-		for (const entry of entries) {
-			const cardName = String(entry?.cardName || "").trim();
-			const count = Number(entry?.count || 0);
-			if (!cardName || count <= 0) continue;
-			const info = cardLookup.get(cardName.toLowerCase()) || { setName: "", product: "" };
-			rows.push(toCsvLine([
-				cardName,
-				info.setName,
-				"Standard",
-				info.product,
-				count,
-				ZONE_LABELS[zone],
-			]));
-		}
+	for (const { key, label, cmp } of ZONES) {
+		const entries = (Array.isArray(chosen.fm[key]) ? chosen.fm[key] : [])
+			.map((e) => ({ cardName: String(e?.cardName || "").trim(), count: Number(e?.count || 0) }))
+			.filter((e) => e.cardName && e.count > 0)
+			.sort(cmp);
+		for (const e of entries) cardRows.push(toCsvLine([e.cardName, e.count, label]));
 	}
 
 	const filename = `deck-${slugify(chosen.name)}-export.csv`;
-	await writeCsvToVault(config, filename, CSV_HEADER, rows);
-	new Notice(`Exported ${rows.length} rows to ${filename}`, 5000);
-	await logAction(config, `Exported deck "${chosen.name}" to ${filename} (${rows.length} rows)`);
+	const outPath = S.vaultPath(config, filename);
+	const lines = [titleRow, "", CSV_HEADER, ...cardRows].join("\n") + "\n";
+	await app.vault.adapter.write(outPath, lines);
+	new Notice(`Exported ${cardRows.length} cards to ${filename}`, 5000);
+	await logAction(config, `Exported deck "${chosen.name}" to ${filename} (${cardRows.length} cards)`);
 }
 
 async function exportAllStorage(config) {

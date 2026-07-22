@@ -22,17 +22,19 @@ let QuickAdd;
 function parseCsv(content) {
 	const lines = content.split(/\r?\n/).map(l => l.trim()).filter(Boolean);
 	if (lines.length < 2) return null;
-	let deckName = "", avatar = "";
+	// Row 0 is the deck identity (title, avatar); row 1 is the "card name,..." column
+	// header; card rows follow.
+	const titleCols = S.splitCsvLine(lines[0]);
+	const deckName = titleCols[0]?.trim() || "";
+	const avatar   = titleCols[1]?.trim() || "";
 	const spells = [], sites = [], collection = [];
-	for (let i = 1; i < lines.length; i++) {
+	const startIdx = /^card name\b/i.test(lines[1] || "") ? 2 : 1;
+	for (let i = startIdx; i < lines.length; i++) {
 		const cols = S.splitCsvLine(lines[i]);
 		const cardName = cols[0]?.trim();
-		const count    = parseInt(cols[4], 10);
-		const notes    = cols[5]?.trim();
-		if (!cardName) continue;
-		if (notes === "Deck")   { deckName = cardName; continue; }
-		if (notes === "Avatar") { avatar = cardName; continue; }
-		if (!Number.isInteger(count) || count <= 0) continue;
+		const count    = parseInt(cols[1], 10);
+		const notes    = cols[2]?.trim();
+		if (!cardName || !Number.isInteger(count) || count <= 0) continue;
 		const entry = { cardName, count };
 		if (notes === "Spellbook")       spells.push(entry);
 		else if (notes === "Atlas")      sites.push(entry);
