@@ -71,6 +71,7 @@ async function start(_params) {
 			JSON.stringify({ ...config, setOrder, costOrder }, null, 2) + "\n",
 		);
 		S.invalidateConfigCache?.();
+		globalThis.__sorceryManifests = null;
 		new Notice(
 			`Generated set manifests for ${Object.keys(manifests).length} sets`,
 			4000,

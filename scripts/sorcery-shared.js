@@ -233,6 +233,7 @@ const SorceryTrackerShared = (() => {
 	}
 
 	async function loadConfig() {
+		if (configCache) return configCache;
 		for (const candidate of CONFIG_PATHS) {
 			try {
 				const raw = await app.vault.adapter.read(candidate);
@@ -246,6 +247,18 @@ const SorceryTrackerShared = (() => {
 
 	function invalidateConfigCache() {
 		configCache = null;
+	}
+
+	// Clears every derived data cache. Call from scripts that regenerate the
+	// underlying JSON files (config.json, set-manifests.json, sorcery-api.json)
+	// so the next render reloads fresh. The variant-rows and standard-art-slug
+	// caches also auto-invalidate when the API array reference changes, but
+	// config/manifest caches must be dropped explicitly.
+	function invalidateDataCaches() {
+		configCache = null;
+		globalThis.__sorceryManifests = null;
+		globalThis.__sorceryVariantRows = null;
+		globalThis.__sorceryStandardArtSlugMap = null;
 	}
 
 	function resolvePath(config, relPaths) {
@@ -524,17 +537,25 @@ const SorceryTrackerShared = (() => {
 			.filter(Boolean);
 	}
 
+	// Precompiled once at module scope — extractKeywordsFromRules runs thousands
+	// of times per collection build, so the word-boundary regexes must not be
+	// recompiled per call/line.
+	const KW_STATIC = [
+		"Airborne", "Burrowing", "Charge", "Deathrite", "Genesis",
+		"Immobile", "Lance", "Lethal", "Ranged", "Stealth",
+		"Submerge", "Voidwalk", "Ward", "Waterbound",
+	];
+	const KW_STATIC_SET = new Set(KW_STATIC);
+	// Matches "Spellcaster", "Air Spellcaster", "Non-fire Spellcaster", etc.
+	// One optional word (possibly hyphenated) before "Spellcaster".
+	const KW_SPELLCASTER_RE = /^(?:[A-Za-z]+(?:-[A-Za-z]+)?\s+)?Spellcaster$/;
+	const KW_STATIC_WORD_RES = KW_STATIC.map((kw) => ({
+		kw,
+		re: new RegExp(`\\b${kw}\\b`),
+	}));
+
 	function extractKeywordsFromRules(rulesText) {
 		if (!rulesText) return [];
-		const STATIC = [
-			"Airborne", "Burrowing", "Charge", "Deathrite", "Genesis",
-			"Immobile", "Lance", "Lethal", "Ranged", "Stealth",
-			"Submerge", "Voidwalk", "Ward", "Waterbound",
-		];
-		const STATIC_SET = new Set(STATIC);
-		// Matches "Spellcaster", "Air Spellcaster", "Non-fire Spellcaster", etc.
-		// One optional word (possibly hyphenated) before "Spellcaster".
-		const SPELLCASTER_RE = /^(?:[A-Za-z]+(?:-[A-Za-z]+)?\s+)?Spellcaster$/;
 		const found = new Set();
 		const lines = String(rulesText).split(/[\r\n]+/).map((l) => l.trim()).filter(Boolean);
 		for (const line of lines) {
@@ -548,16 +569,17 @@ const SorceryTrackerShared = (() => {
 					found.add(`${compound[1]} Spellcaster`);
 					found.add(`${compound[2]} Spellcaster`);
 				} else {
-					if (SPELLCASTER_RE.test(part)) found.add(part);
-					if (STATIC_SET.has(part)) found.add(part);
+					if (KW_SPELLCASTER_RE.test(part)) found.add(part);
+					if (KW_STATIC_SET.has(part)) found.add(part);
 					if (part.includes("&")) {
 						for (const sub of part.split(/\s*&\s*/))
-							if (STATIC_SET.has(sub.trim())) found.add(sub.trim());
+							if (KW_STATIC_SET.has(sub.trim())) found.add(sub.trim());
 					}
 				}
 			}
 			// Also catch static keywords mentioned inline in rules text
-			for (const kw of STATIC) if (new RegExp(`\\b${kw}\\b`).test(line)) found.add(kw);
+			for (const { kw, re } of KW_STATIC_WORD_RES)
+				if (re.test(line)) found.add(kw);
 		}
 		return [...found];
 	}
@@ -587,22 +609,37 @@ const SorceryTrackerShared = (() => {
 		if (!cardName || !setName || !product) return null;
 		const cards = globalThis.__sorceryApiData;
 		if (!Array.isArray(cards)) return null;
-		const matches = [];
-		for (const card of cards) {
-			if (lowerTrim(card.name) !== cardName) continue;
-			for (const set of card.sets || []) {
-				if (lowerTrim(set.name) !== setName) continue;
-				for (const v of set.variants || []) {
-					if (lowerTrim(v.product) !== product) continue;
-					if (lowerTrim(v.finish) !== "standard") continue;
-					matches.push(String(v.slug));
+		// Build a cardName|setName|product → standard slug map once, keyed on the
+		// API array identity (rebuilds automatically when the API is refreshed).
+		// Avoids an O(cards) rescan per foil card rendered.
+		let cache = globalThis.__sorceryStandardArtSlugMap;
+		if (!cache || cache.source !== cards) {
+			const map = new Map();
+			for (const card of cards) {
+				const cn = lowerTrim(card.name);
+				for (const set of card.sets || []) {
+					const sn = lowerTrim(set.name);
+					for (const v of set.variants || []) {
+						if (lowerTrim(v.finish) !== "standard") continue;
+						const key = `${cn}|${sn}|${lowerTrim(v.product)}`;
+						const slug = String(v.slug);
+						const existing = map.get(key);
+						// Keep the lexicographically smallest slug (matches the
+						// old sort-then-first behaviour).
+						if (
+							existing == null ||
+							slug.localeCompare(existing, undefined, {
+								sensitivity: "base",
+							}) < 0
+						)
+							map.set(key, slug);
+					}
 				}
 			}
+			cache = { source: cards, map };
+			globalThis.__sorceryStandardArtSlugMap = cache;
 		}
-		matches.sort((a, b) =>
-			a.localeCompare(b, undefined, { sensitivity: "base" }),
-		);
-		return matches[0] || null;
+		return cache.map.get(`${cardName}|${setName}|${product}`) || null;
 	}
 
 	function artPathForVariant(config, p) {
@@ -675,7 +712,7 @@ const SorceryTrackerShared = (() => {
 					attr: {
 						src: resourceSrc,
 						alt: String(alt || ""),
-						loading: "eager",
+						loading: "lazy",
 						style: "pointer-events:none;",
 					},
 				})
@@ -807,6 +844,20 @@ const SorceryTrackerShared = (() => {
 			vaultPath(config, `${config.dataDir}/faq-scraped.json`),
 		]);
 		if (result?.data) globalThis.__sorceryFaqData = result.data;
+		return result?.data ?? null;
+	}
+
+	// Cached set-manifests.json (120 KB). Re-parsing it on every set-page/FAQ
+	// render was pure waste — it only changes via Refresh Set Manifests, which
+	// clears globalThis.__sorceryManifests. Returns null if the file is missing.
+	async function loadManifests(config) {
+		if (globalThis.__sorceryManifests) return globalThis.__sorceryManifests;
+		const result = await readJsonByCandidates([
+			`${config.dataDir}/${config.manifestFile}`,
+			`data/${config.manifestFile}`,
+			vaultPath(config, `${config.dataDir}/${config.manifestFile}`),
+		]);
+		if (result?.data) globalThis.__sorceryManifests = result.data;
 		return result?.data ?? null;
 	}
 
@@ -993,8 +1044,33 @@ const SorceryTrackerShared = (() => {
 	async function loadVariantRows(config, dv) {
 		const apiSource = await loadApiData(config);
 		const cards = apiSource?.data || [];
+		// Memoized: rebuilding all ~3k rows (with per-set keyword extraction and
+		// a metadata-cache lookup per note) on every render is the main mobile
+		// cost. Cache keyed on the API array identity; a metadataCache "changed"
+		// listener (registered at module load) clears it whenever any note's
+		// frontmatter — i.e. ownership — changes.
+		const cache = globalThis.__sorceryVariantRows;
+		if (cache && cache.source === cards) return cache.rows;
 		const cardsRoot = vaultPath(config, config.cardsDir);
-		const pages = dv.pages(`"${cardsRoot}"`).array();
+		// On mobile the first render can beat Dataview's own index, so
+		// dv.pages() returns nothing and every card reads as 0-owned. Wait once
+		// for the index to finish (or a short timeout) and re-read, so we build
+		// correct rows on the FIRST render instead of rendering 0-owned and then
+		// re-rendering the whole grid — the double render was the slow cold load.
+		let pages = dv.pages(`"${cardsRoot}"`).array();
+		if (!pages.length) {
+			await new Promise((resolve) => {
+				const ref = app.metadataCache.on("dataview:index-ready", () => {
+					app.metadataCache.offref(ref);
+					resolve();
+				});
+				setTimeout(() => {
+					app.metadataCache.offref(ref);
+					resolve();
+				}, 4000);
+			});
+			pages = dv.pages(`"${cardsRoot}"`).array();
+		}
 
 		// Summary ownership, read from raw frontmatter (avoids Dataview nested proxies).
 		const summaryByCard = new Map();
@@ -1021,6 +1097,15 @@ const SorceryTrackerShared = (() => {
 			const summaryName = summary?.name || `${card.name}.md`;
 			const elements = splitElements(card.elements);
 			const subTypes = splitElements(card.subTypes || "");
+			// X-cost: null cost on a non-Site/Avatar card that has a Booster
+			// printing. Precomputed here so render paths need not rescan the API.
+			const hasBooster = (card.sets || []).some((s) =>
+				(s.variants || []).some((v) => v.product === "Booster"),
+			);
+			const costIsX =
+				guardian.cost === null &&
+				!["Site", "Avatar"].includes(guardian.type || "") &&
+				hasBooster;
 			for (const set of card.sets || []) {
 				const meta = set.metadata || {};
 				const rulesText = meta.rulesText ?? guardian.rulesText ?? "";
@@ -1045,6 +1130,7 @@ const SorceryTrackerShared = (() => {
 						typeText: variant.typeText || meta.typeText,
 						flavorText: variant.flavorText || meta.flavorText,
 						cost: guardian.cost,
+						costIsX,
 						normalCount: Number(own.normalCount) || 0,
 						foilCount: Number(own.foilCount) || 0,
 						binderPlacements: Array.isArray(own.binderPlacements)
@@ -1055,6 +1141,12 @@ const SorceryTrackerShared = (() => {
 				}
 			}
 		}
+		// Only cache once Dataview's index has actually produced the summary
+		// notes. On mobile the first render can fire before dv.pages() is
+		// populated — caching that build would freeze every card at 0-owned.
+		// The next render (after the index settles) rebuilds and caches correctly.
+		if (summaryByCard.size > 0)
+			globalThis.__sorceryVariantRows = { source: cards, rows };
 		return rows;
 	}
 
@@ -1892,40 +1984,14 @@ const SorceryTrackerShared = (() => {
 		const apiSource = await loadApiData(config);
 		if (!isActive()) return;
 		const apiCards = apiSource?.data || [];
-		const metaByVariant = new Map();
-		for (const card of apiCards) {
-			const guardian = card.guardian || {};
-			const hasBooster = (card.sets || []).some((s) => (s.variants || []).some((v) => v.product === "Booster"));
-			const costIsX = guardian.cost === null && !["Site", "Avatar"].includes(guardian.type || "") && hasBooster;
-			for (const set of card.sets || []) {
-				for (const variant of set.variants || []) {
-					metaByVariant.set(
-						`${card.name}|${set.name}|${variant.finish}|${variant.product}|${variant.slug}`,
-						{
-							cost: guardian.cost,
-							costIsX,
-							elements: splitElements(card.elements),
-						},
-					);
-				}
-			}
-		}
-		const variantKey = (p) =>
-			`${p.cardName}|${p.setName}|${p.finish}|${p.product}|${p.slug}`;
-		const metaFor = (p) => metaByVariant.get(variantKey(p)) || {};
+		// cost / elements now live on each row (loadVariantRows), so no second
+		// full-dataset walk is needed here.
 		const costFor = (p) => {
-			const meta = metaFor(p);
-			const cost = meta.cost ?? p.cost;
-			if (cost == null) return meta.costIsX ? "X" : null;
-			const num = Number(cost);
+			if (p.cost == null) return p.costIsX ? "X" : null;
+			const num = Number(p.cost);
 			return Number.isFinite(num) ? num : null;
 		};
-		const elementsFor = (p) =>
-			splitElements(
-				Array.isArray(p.elements) && p.elements.length
-					? p.elements
-					: metaFor(p).elements || [],
-			);
+		const elementsFor = (p) => (Array.isArray(p.elements) ? p.elements : []);
 		const allSubtypes = [
 			...new Set(
 				apiCards.flatMap((card) =>
@@ -2537,13 +2603,8 @@ const SorceryTrackerShared = (() => {
 		const config = configOverride || (await loadConfig());
 		const setName = current.setName;
 		const isPlaySet = current.setMode === "play";
-		const manifestPath = resolvePath(config, [
-			`${config.dataDir}/${config.manifestFile}`,
-			`data/${config.manifestFile}`,
-		]);
-		if (!manifestPath) throw new Error("Missing set-manifests.json");
-		const raw = await app.vault.adapter.read(manifestPath);
-		const manifests = JSON.parse(raw);
+		const manifests = await loadManifests(config);
+		if (!manifests) throw new Error("Missing set-manifests.json");
 		const tokenCardNames = new Set(config.tokenCards || []);
 		const otherCardNames = new Set(config.otherCards || []);
 		const cards = (manifests[setName] ?? []).filter(c => !tokenCardNames.has(c.cardName) || otherCardNames.has(c.cardName));
@@ -2821,15 +2882,11 @@ const SorceryTrackerShared = (() => {
 			const binders = isPlaySet ? playSetBinders : baseSetBinders;
 			const binderField = isPlaySet ? "playSetBinders" : "baseSetBinders";
 
-			const manifestPath = resolvePath(config, [
-				`${config.dataDir}/${config.manifestFile}`,
-				`data/${config.manifestFile}`,
-			]);
-			if (!manifestPath) {
+			const manifests = await loadManifests(config);
+			if (!manifests) {
 				contentEl.createDiv({ text: "Missing set-manifests.json" });
 				return;
 			}
-			const manifests = JSON.parse(await app.vault.adapter.read(manifestPath));
 			const tokenCardNames = new Set(config.tokenCards || []);
 			const otherCardNames = new Set(config.otherCards || []);
 			const cards = (manifests[setName] ?? []).filter((c) => !tokenCardNames.has(c.cardName) || otherCardNames.has(c.cardName));
@@ -3802,22 +3859,10 @@ const SorceryTrackerShared = (() => {
 		const config = await loadConfig();
 		if (!isActive()) return;
 		const binderName = current.binderName || current.file?.name;
-		const apiSource = await loadApiData(config);
-		if (!isActive()) return;
-		const costByCard = new Map();
-		const costIsXByCard = new Set();
-		for (const card of apiSource?.data || []) {
-			if (card.name && card.guardian?.cost !== undefined) {
-				costByCard.set(card.name, card.guardian.cost);
-				const hasBooster = (card.sets || []).some((s) => (s.variants || []).some((v) => v.product === "Booster"));
-				if (card.guardian.cost === null && !["Site", "Avatar"].includes(card.guardian.type || "") && hasBooster)
-					costIsXByCard.add(card.name);
-			}
-		}
+		// cost / costIsX live on each row (loadVariantRows) — no API rescan here.
 		const costFor = (p) => {
-			const raw = costByCard.has(p.cardName) ? costByCard.get(p.cardName) : p.cost;
-			if (raw == null) return costIsXByCard.has(p.cardName) ? "X" : null;
-			const num = Number(raw);
+			if (p.cost == null) return p.costIsX ? "X" : null;
+			const num = Number(p.cost);
 			return Number.isFinite(num) ? num : null;
 		};
 		const variants = (await loadVariantRows(config, dv)).filter((x) =>
@@ -5555,6 +5600,8 @@ const SorceryTrackerShared = (() => {
 		cardLink,
 		readJsonByCandidates,
 		loadApiData,
+		loadManifests,
+		invalidateDataCaches,
 		buildSetManifests,
 		displayProduct,
 		padColumn,
@@ -5592,6 +5639,25 @@ if (typeof module !== "undefined" && module.exports)
 if (typeof app !== "undefined" && !globalThis.__sorceryApiData) {
 	const _S = globalThis.SorceryTrackerShared;
 	_S.loadConfig().then(cfg => _S.loadApiData(cfg)).catch(() => {});
+}
+
+// Invalidate the memoized variant-rows cache. Registered once. Cheap: Dataview
+// auto-refresh is disabled here, so clearing the cache only triggers a rebuild
+// on the next explicit refreshDataview()/navigation, not on every keystroke.
+if (typeof app !== "undefined" && !globalThis.__sorceryRowsInvalidatorRegistered) {
+	globalThis.__sorceryRowsInvalidatorRegistered = true;
+	const clearRows = () => { globalThis.__sorceryVariantRows = null; };
+	// Ownership lives in note frontmatter, so any frontmatter write (Manage
+	// Storage, import, …) must rebuild the flat rows.
+	app.metadataCache.on("changed", clearRows);
+	// loadVariantRows enumerates cards from dv.pages() — Dataview's OWN index,
+	// which lags metadataCache badly on mobile and fires none of the events
+	// above. Clear on Dataview's index updates too, so a build cached from a
+	// half-indexed page set is dropped once the index catches up. (The first
+	// render also waits for dataview:index-ready before building — see
+	// loadVariantRows — so the common cold-start path renders correct once.)
+	app.metadataCache.on("dataview:metadata-change", clearRows);
+	app.metadataCache.on("dataview:index-ready", clearRows);
 }
 
 if (typeof window !== "undefined" && !globalThis.__sorceryMobileDoubleTapFixed) {

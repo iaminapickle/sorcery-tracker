@@ -113,6 +113,7 @@ async function start(params) {
 			JSON.stringify({ ...config, setOrder, costOrder }, null, 2) + "\n",
 		);
 		S.invalidateConfigCache?.();
+		globalThis.__sorceryManifests = null;
 		log.push(`Manifests: ${Object.keys(manifests).length} sets`);
 	} catch (err) {
 		errors.push(`Set manifests: ${err.message}`);
