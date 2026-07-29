@@ -990,6 +990,16 @@ const SorceryTrackerShared = (() => {
 		return () => container.__sorceryRenderToken === token;
 	}
 
+	// Immediate cold-start feedback: shown before the awaitCurrentFm/index-ready
+	// waits below, so mobile users see something other than a blank note body
+	// while Dataview's index catches up. Created once, removed once — no DOM
+	// mutation spans an await, so it can't hit the "detached mid-build" hazard
+	// that awaitCurrentFm/loadVariantRows are written to avoid elsewhere.
+	function showLoadingPlaceholder(container) {
+		const el = container.createDiv({ cls: "sorcery-loading", text: "Loading…" });
+		return () => el.remove();
+	}
+
 	// dv.current() can be null before Dataview indexes the file (startup, multiple
 	// tabs). Fall back to Obsidian's native cache, then to the "resolved" event.
 	async function awaitCurrentFm(dv) {
@@ -1015,6 +1025,35 @@ const SorceryTrackerShared = (() => {
 			current = getFm();
 		}
 		return current;
+	}
+
+	// Memoized: created once per session (globalThis-cached), so the 6s fallback
+	// clock starts once and is shared by every render that needs it, instead of
+	// each call registering its own listener/timer. Call this as fire-and-forget
+	// as early as possible in a render (before awaitCurrentFm) so its wait runs
+	// concurrently with awaitCurrentFm's wait rather than stacking after it.
+	// 6000ms (not 4000ms): this wait used to run AFTER awaitCurrentFm's own
+	// (<=2000ms) wait resolved, so a slow cold start had ~6s of combined budget
+	// (2s+4s) for Dataview's index to finish before rows got built 0-owned and
+	// permanently stuck (nothing auto-refreshes on the index becoming ready
+	// later — see the invalidation-listener comment near __sorceryVariantRows).
+	// Now that this wait starts concurrently with awaitCurrentFm instead of
+	// after it, its own ceiling must match that ~6s combined budget on its own
+	// (max(2000, 6000) = 6000ms) or slow-indexing vaults regress to 0-owned.
+	function awaitDataviewIndexReady() {
+		if (!globalThis.__sorceryIndexReadyPromise) {
+			globalThis.__sorceryIndexReadyPromise = new Promise((resolve) => {
+				const ref = app.metadataCache.on("dataview:index-ready", () => {
+					app.metadataCache.offref(ref);
+					resolve();
+				});
+				setTimeout(() => {
+					app.metadataCache.offref(ref);
+					resolve();
+				}, 6000);
+			});
+		}
+		return globalThis.__sorceryIndexReadyPromise;
 	}
 
 	function binderPlacementsForCard(p) {
@@ -1052,39 +1091,72 @@ const SorceryTrackerShared = (() => {
 		const cache = globalThis.__sorceryVariantRows;
 		if (cache && cache.source === cards) return cache.rows;
 		const cardsRoot = vaultPath(config, config.cardsDir);
-		// On mobile the first render can beat Dataview's own index, so
-		// dv.pages() returns nothing and every card reads as 0-owned. Wait once
-		// for the index to finish (or a short timeout) and re-read, so we build
-		// correct rows on the FIRST render instead of rendering 0-owned and then
-		// re-rendering the whole grid — the double render was the slow cold load.
-		let pages = dv.pages(`"${cardsRoot}"`).array();
-		if (!pages.length) {
+		const cardsPrefix = `${cardsRoot}/`;
+
+		// Enumerate summary notes from the vault's own file list + Obsidian's
+		// native metadataCache — NOT dv.pages(), which is Dataview's own derived
+		// index and lags far behind metadataCache on mobile cold start (this
+		// used to force a wait of up to 6s before every first render).
+		// getMarkdownFiles() is always instantly available (core Vault API, no
+		// plugin indexing involved), and metadataCache.getFileCache() resolves
+		// much sooner than Dataview's index (same reasoning as awaitCurrentFm's
+		// native-cache-first check above) — same pattern already used by the
+		// Codex page's owned-count builder elsewhere in this file.
+		const buildSummaryByCard = () => {
+			const map = new Map();
+			for (const file of app.vault.getMarkdownFiles()) {
+				if (!file.path.startsWith(cardsPrefix) && !file.path.startsWith(`${config.cardsDir}/`))
+					continue;
+				const fm = app.metadataCache.getFileCache(file)?.frontmatter;
+				if (!fm || fm.kind !== "sorcery-card-summary") continue;
+				const cardName = String(fm.cardName || file.basename);
+				map.set(cardName, {
+					path: file.path,
+					name: file.name,
+					ownership: fm.ownership && typeof fm.ownership === "object" ? fm.ownership : {},
+				});
+			}
+			return map;
+		};
+
+		let summaryByCard = buildSummaryByCard();
+		if (!summaryByCard.size) {
+			// Rare: metadataCache hasn't parsed any card note yet (very fresh
+			// cold start). Give it one short chance via the fast "resolved"
+			// event before falling back further.
 			await new Promise((resolve) => {
-				const ref = app.metadataCache.on("dataview:index-ready", () => {
+				const ref = app.metadataCache.on("resolved", () => {
 					app.metadataCache.offref(ref);
 					resolve();
 				});
 				setTimeout(() => {
 					app.metadataCache.offref(ref);
 					resolve();
-				}, 4000);
+				}, 1500);
 			});
-			pages = dv.pages(`"${cardsRoot}"`).array();
+			summaryByCard = buildSummaryByCard();
 		}
-
-		// Summary ownership, read from raw frontmatter (avoids Dataview nested proxies).
-		const summaryByCard = new Map();
-		for (const p of pages) {
-			if (p.kind !== "sorcery-card-summary") continue;
-			const tfile = app.vault.getAbstractFileByPath(p.file.path);
-			const fm = tfile
-				? app.metadataCache.getFileCache(tfile)?.frontmatter || {}
-				: {};
-			summaryByCard.set(p.cardName ?? p.file.name, {
-				path: p.file.path,
-				name: p.file.name,
-				ownership: fm.ownership || {},
-			});
+		if (!summaryByCard.size) {
+			// Last resort: metadataCache itself is somehow still cold. Fall back
+			// to the old Dataview-index-wait path — keeps the previously-fixed
+			// 6s worst-case ceiling as an absolute safety net.
+			let pages = dv.pages(`"${cardsRoot}"`).array();
+			if (!pages.length) {
+				await awaitDataviewIndexReady();
+				pages = dv.pages(`"${cardsRoot}"`).array();
+			}
+			for (const p of pages) {
+				if (p.kind !== "sorcery-card-summary") continue;
+				const tfile = app.vault.getAbstractFileByPath(p.file.path);
+				const fm = tfile
+					? app.metadataCache.getFileCache(tfile)?.frontmatter || {}
+					: {};
+				summaryByCard.set(p.cardName ?? p.file.name, {
+					path: p.file.path,
+					name: p.file.name,
+					ownership: fm.ownership || {},
+				});
+			}
 		}
 
 		const rows = [];
@@ -1141,10 +1213,11 @@ const SorceryTrackerShared = (() => {
 				}
 			}
 		}
-		// Only cache once Dataview's index has actually produced the summary
-		// notes. On mobile the first render can fire before dv.pages() is
-		// populated — caching that build would freeze every card at 0-owned.
-		// The next render (after the index settles) rebuilds and caches correctly.
+		// Only cache once metadataCache has actually produced the summary notes.
+		// On a very fresh cold start summaryByCard can still be empty even after
+		// the fallbacks above — caching that build would freeze every card at
+		// 0-owned. The next render (after the cache settles) rebuilds and caches
+		// correctly.
 		if (summaryByCard.size > 0)
 			globalThis.__sorceryVariantRows = { source: cards, rows };
 		return rows;
@@ -1260,6 +1333,7 @@ const SorceryTrackerShared = (() => {
 
 	async function renderSummary(dv) {
 		const isActive = beginTrackedRender(dv.container);
+		const clearPlaceholder = showLoadingPlaceholder(dv.container);
 		const current = await awaitCurrentFm(dv);
 		if (!current || !isActive()) return;
 		const config = await loadConfig();
@@ -1335,6 +1409,7 @@ const SorceryTrackerShared = (() => {
 			rows[0] ||
 			null;
 
+		clearPlaceholder();
 		if (rows.length) {
 			const picker = dv.container.createDiv({ cls: "sorcery-printing-picker" });
 			picker.createEl("label", {
@@ -1963,6 +2038,7 @@ const SorceryTrackerShared = (() => {
 
 	async function renderCollection(dv) {
 		const isActive = beginTrackedRender(dv.container);
+		const clearPlaceholder = showLoadingPlaceholder(dv.container);
 		const current = await awaitCurrentFm(dv);
 		if (!current || !isActive()) return;
 		const config = await loadConfig();
@@ -1974,6 +2050,7 @@ const SorceryTrackerShared = (() => {
 		const filtered = isSetPage ? all.filter((p) => p.setName === pageSet) : all;
 
 		if (isSetPage) {
+			clearPlaceholder();
 			const stats = dv.container.createDiv({ cls: "sorcery-stats" });
 			const output = dv.container.createDiv({ cls: "sorcery-output" });
 			return renderSet(dv, config, filtered, stats, output);
@@ -2013,6 +2090,7 @@ const SorceryTrackerShared = (() => {
 		].sort();
 
 		// All async work done; DOM manipulation below is now uninterrupted.
+		clearPlaceholder();
 		const topbar = dv.container.createDiv({ cls: "sorcery-deck-actions" });
 		const fireMode = (mode) => {
 			globalThis.__sorceryStoragePreselect = { mode };
@@ -2799,30 +2877,13 @@ const SorceryTrackerShared = (() => {
 	async function renderSetPage(dv) {
 		const isActive = beginTrackedRender(dv.container);
 		const filePath = dv.currentFilePath;
-
-		const getFm = () => {
-			const cached = app.metadataCache.getCache(filePath)?.frontmatter;
-			if (cached) return { ...cached, file: app.vault.getAbstractFileByPath(filePath) };
-			const live = dv.current();
-			if (live) return live;
-			return null;
-		};
-
-		let current = getFm();
-		if (!current) {
-			await new Promise((resolve) => {
-				const ref = app.metadataCache.on("resolved", () => {
-					app.metadataCache.offref(ref);
-					resolve();
-				});
-				setTimeout(resolve, 2000);
-			});
-			current = getFm();
-		}
+		const clearPlaceholder = showLoadingPlaceholder(dv.container);
+		const current = await awaitCurrentFm(dv);
 		if (!current || !isActive()) return;
 
 		const config = await loadConfig();
 		if (!isActive()) return;
+		clearPlaceholder();
 
 		const setName = String(current.setName || "");
 		if (!setName) {
@@ -5650,12 +5711,12 @@ if (typeof app !== "undefined" && !globalThis.__sorceryRowsInvalidatorRegistered
 	// Ownership lives in note frontmatter, so any frontmatter write (Manage
 	// Storage, import, …) must rebuild the flat rows.
 	app.metadataCache.on("changed", clearRows);
-	// loadVariantRows enumerates cards from dv.pages() — Dataview's OWN index,
-	// which lags metadataCache badly on mobile and fires none of the events
-	// above. Clear on Dataview's index updates too, so a build cached from a
-	// half-indexed page set is dropped once the index catches up. (The first
-	// render also waits for dataview:index-ready before building — see
-	// loadVariantRows — so the common cold-start path renders correct once.)
+	// loadVariantRows enumerates cards from app.vault.getMarkdownFiles() +
+	// metadataCache, not dv.pages() — Dataview's own index only comes into play
+	// as a last-resort fallback when metadataCache itself is still cold (see
+	// loadVariantRows). These two events still matter for that rare path: a
+	// build cached from a half-indexed fallback pass must be dropped once
+	// Dataview's index (or metadataCache, via dataview:metadata-change) catches up.
 	app.metadataCache.on("dataview:metadata-change", clearRows);
 	app.metadataCache.on("dataview:index-ready", clearRows);
 }
